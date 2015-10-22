@@ -1,0 +1,16 @@
+C:\GitProjects\WAFF\WAFF.WebUI\obj\Debug\WAFF.WebUI.csprojResolveAssemblyReference.cache
+C:\GitProjects\WAFF\WAFF.WebUI\bin\WAFF.WebUI.dll.config
+C:\GitProjects\WAFF\WAFF.WebUI\bin\WAFF.WebUI.dll
+C:\GitProjects\WAFF\WAFF.WebUI\bin\WAFF.WebUI.pdb
+C:\GitProjects\WAFF\WAFF.WebUI\bin\System.Web.Helpers.dll
+C:\GitProjects\WAFF\WAFF.WebUI\bin\System.Web.Razor.dll
+C:\GitProjects\WAFF\WAFF.WebUI\bin\System.Web.Webpages.Deployment.dll
+C:\GitProjects\WAFF\WAFF.WebUI\bin\System.Web.Webpages.dll
+C:\GitProjects\WAFF\WAFF.WebUI\bin\System.Web.Webpages.Razor.dll
+C:\GitProjects\WAFF\WAFF.WebUI\bin\System.Web.Razor.xml
+C:\GitProjects\WAFF\WAFF.WebUI\bin\System.Web.Webpages.xml
+C:\GitProjects\WAFF\WAFF.WebUI\bin\System.Web.Webpages.Deployment.xml
+C:\GitProjects\WAFF\WAFF.WebUI\bin\System.Web.Webpages.Razor.xml
+C:\GitProjects\WAFF\WAFF.WebUI\bin\System.Web.Helpers.xml
+C:\GitProjects\WAFF\WAFF.WebUI\obj\Debug\WAFF.WebUI.dll
+C:\GitProjects\WAFF\WAFF.WebUI\obj\Debug\WAFF.WebUI.pdb
