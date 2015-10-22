@@ -7,12 +7,12 @@ namespace WAFF.WebUI.Models
 {
     public class Film
     {
-        public int Film_Id { get; set; }
-        public string Film_Name { get; set; }
-        public string Film_Genre { get; set; }
-        public string Film_Desc { get; set; }
-        public int Film_Votes { get; set; }
-        public TimeSpan Film_Length { get; set; }
-        public string Block_Id { get; set; }
+        public int FilmId { get; set; }
+        public string FilmName { get; set; }
+        public string FilmGenre { get; set; }
+        public string FilmDesc { get; set; }
+        public int FilmVotes { get; set; }
+        public TimeSpan FilmLength { get; set; }
+        public string BlockId { get; set; }
     }
 }
