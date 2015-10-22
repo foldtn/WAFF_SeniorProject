@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAFF.WebUI", "WAFF.WebUI\WAFF.WebUI.csproj", "{06E5BBEB-FA5D-4478-BAA9-68EC387BF10C}"
 EndProject
