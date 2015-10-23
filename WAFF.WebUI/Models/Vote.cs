@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WAFF.WebUI.Models
 {
-    public class Film
+    public class Vote
     {
     public int VoteId { get; set; }
     public string VoteComment { get; set; }
