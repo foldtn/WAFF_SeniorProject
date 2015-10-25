@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="Models\Block.cs" />
     <Compile Include="Models\FilmArtist.cs" />
+    <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
