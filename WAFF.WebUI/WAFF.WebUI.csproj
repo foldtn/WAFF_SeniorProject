@@ -86,6 +86,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Block.cs" />
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\FilmArtist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
