@@ -17,6 +17,5 @@ namespace WAFF.WebUI.Models
 
         public decimal Income { get; set; }
 
-        public string Lname { get; set; }
     }
 }
