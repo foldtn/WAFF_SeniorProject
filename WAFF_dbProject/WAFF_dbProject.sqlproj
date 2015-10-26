@@ -62,7 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\tables\Voter.sql" />
-    <Build Include="dbo\tables\Block.sql" />
+    <Build Include="dbo\tables\Blocks.sql" />
+    <Build Include="dbo\tables\FilmArtists.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />
