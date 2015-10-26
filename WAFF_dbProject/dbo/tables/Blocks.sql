@@ -5,5 +5,6 @@
 	[BlockEnd] DateTime	NOT NULL,
 	[BlockLocation] varchar(255) NOT NULL,
 	[BlockType] varchar(50) NOT NULL,
-	[EventID] INT NOT NULL
+	[EventID] INT NOT NULL,
+	FOREIGN KEY (EventID) REFERENCES Events(EventID)
 )
