@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>WAFF_dbProject</Name>
+    <Name>WAFFDBProject</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{1558e977-56e1-48b2-83c7-6a649ce73502}</ProjectGuid>
+    <ProjectGuid>{fbeabb0a-ddca-47df-ad17-b49204db8755}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>WAFF_dbProject</RootNamespace>
-    <AssemblyName>WAFF_dbProject</AssemblyName>
+    <RootNamespace>WAFF_DBProject</RootNamespace>
+    <AssemblyName>WAFF_DBProject</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -47,28 +47,20 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
   <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
-    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
     <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
-    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
   </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo" />
     <Folder Include="dbo\tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\tables\Voter.sql" />
-    <Build Include="dbo\tables\Blocks.sql" />
-    <Build Include="dbo\tables\FilmArtists.sql" />
-    <Build Include="dbo\tables\Event.sql" />
-    <Build Include="dbo\tables\Artists.sql" />
-    <Build Include="dbo\tables\Films.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="WAFF_dbProject.refactorlog" />
+    <Build Include="dbo\tables\test.sql" />
   </ItemGroup>
 </Project>

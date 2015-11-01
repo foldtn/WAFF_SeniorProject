@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Block]
+﻿CREATE TABLE [dbo].[Blocks]
 (
 	[BlockID] INT NOT NULL identity PRIMARY KEY,
 	[BlockStart] DateTime NOT NULL,
