@@ -61,6 +61,12 @@
     <Folder Include="dbo\tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\tables\test.sql" />
+    <Build Include="dbo\tables\Voter.sql" />
+    <Build Include="dbo\tables\Blocks.sql" />
+    <Build Include="dbo\tables\FilmArtists.sql" />
+    <Build Include="dbo\tables\Event.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="WAFF_dbProject.refactorlog" />
   </ItemGroup>
 </Project>
