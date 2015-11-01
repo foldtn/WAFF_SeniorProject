@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[test]
+﻿CREATE TABLE [dbo].[Voters]
 (
 	[VoterID] INT NOT NULL PRIMARY KEY IDENTITY, 
     [VoterAge] NCHAR(10) NOT NULL, 
