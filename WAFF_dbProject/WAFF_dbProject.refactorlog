@@ -14,4 +14,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="EventID" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="f1fc3be5-c5d7-4d97-b0db-8c8bdb120c4d" ChangeDateTime="11/01/2015 17:23:48">
+    <Property Name="ElementName" Value="[dbo].[Votes].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Votes]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FilmId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e18d53de-548e-42d3-914c-bf67a9c9d2ee" ChangeDateTime="11/01/2015 17:33:46">
+    <Property Name="ElementName" Value="[dbo].[Voters].[ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Voters]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="VoterId" />
+  </Operation>
 </Operations>
