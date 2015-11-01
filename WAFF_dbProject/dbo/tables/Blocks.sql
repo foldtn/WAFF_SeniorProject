@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Block]
 (
-	[BlockID] INT NOT NULL PRIMARY KEY,
+	[BlockID] INT NOT NULL identity PRIMARY KEY,
 	[BlockStart] DateTime NOT NULL,
 	[BlockEnd] DateTime	NOT NULL,
 	[BlockLocation] varchar(255) NOT NULL,
