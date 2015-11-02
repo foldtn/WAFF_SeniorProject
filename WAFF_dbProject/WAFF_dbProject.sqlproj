@@ -61,7 +61,7 @@
     <Folder Include="dbo\tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\tables\Voter.sql" />
+    <Build Include="dbo\tables\Voters.sql" />
     <Build Include="dbo\tables\Blocks.sql" />
     <Build Include="dbo\tables\FilmArtists.sql" />
     <Build Include="dbo\tables\Events.sql" />
