@@ -64,12 +64,15 @@
     <Build Include="dbo\tables\Voter.sql" />
     <Build Include="dbo\tables\Blocks.sql" />
     <Build Include="dbo\tables\FilmArtists.sql" />
-    <Build Include="dbo\tables\Event.sql" />
+    <Build Include="dbo\tables\Events.sql" />
     <Build Include="dbo\tables\Artists.sql" />
     <Build Include="dbo\tables\Films.sql" />
     <Build Include="dbo\tables\Votes.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WAFF_dbProject.local.publish.xml" />
   </ItemGroup>
 </Project>
