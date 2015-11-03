@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Artists]
 (
-	[ArtistID] INT NOT NULL PRIMARY KEY identity, 
+	[ArtistID] INT NOT NULL PRIMARY KEY, 
     [ArtistFName] VARCHAR(30) NOT NULL, 
     [ArtistLName] VARCHAR(30) NOT NULL, 
     [ArtistCompany] VARCHAR(30) NOT NULL,
