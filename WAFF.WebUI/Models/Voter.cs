@@ -7,7 +7,7 @@ namespace WAFF.WebUI.Models
 {
     public class Voter
     {
-        public int ID { get; set; } 
+        public int VoterId { get; set; } 
 
         public string Age { get; set; }
 
