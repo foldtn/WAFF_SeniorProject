@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Voters]
+﻿CREATE TABLE [dbo].[VOTERS]
 (
 	[VoterID] INT NOT NULL PRIMARY KEY IDENTITY, 
     [VoterAge] VARCHAR(2) NOT NULL, 

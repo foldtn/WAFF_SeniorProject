@@ -5,11 +5,13 @@ using System.Web;
 
 namespace WAFF.WebUI.Models
 {
+    
     public class Event
     {
-        public int Event_ID { get; set; }
-        public DateTime Event_StartDate { get; set; }
-        public DateTime Event_EndDate { get; set; }
-        public string Event_Location { get; set; }
+        public int EventID { get; set; }
+        public DateTime EventStartDate { get; set; }
+        public DateTime EventEndDate { get; set; }
+        public string EventLocation { get; set; }
     }//end Event class
+
 }//end namespace
