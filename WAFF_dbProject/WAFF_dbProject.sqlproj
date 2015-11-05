@@ -72,4 +72,7 @@
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="WAFF_dbProject.local.publish.xml" />
+  </ItemGroup>
 </Project>
