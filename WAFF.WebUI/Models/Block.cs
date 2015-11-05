@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WAFF.WebUI.Models
 {
-    public class Blocks
+    public class Block
     {
         public int BlockID { get; set; }
         public DateTime BlockStart { get; set; }
