@@ -61,13 +61,13 @@
     <Folder Include="dbo\tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\tables\VOTER.sql" />
-    <Build Include="dbo\tables\BLOCK.sql" />
-    <Build Include="dbo\tables\FILMARTIST.sql" />
-    <Build Include="dbo\tables\EVENT.sql" />
-    <Build Include="dbo\tables\ARTIST.sql" />
-    <Build Include="dbo\tables\FILM.sql" />
-    <Build Include="dbo\tables\VOTE.sql" />
+    <Build Include="dbo\tables\VOTERS.sql" />
+    <Build Include="dbo\tables\BLOCKS.sql" />
+    <Build Include="dbo\tables\FILMARTISTS.sql" />
+    <Build Include="dbo\tables\EVENTS.sql" />
+    <Build Include="dbo\tables\ARTISTS.sql" />
+    <Build Include="dbo\tables\FILMS.sql" />
+    <Build Include="dbo\tables\VOTES.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />

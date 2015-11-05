@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[ARTIST]
+﻿CREATE TABLE [dbo].[ARTISTS]
 (
 	[ArtistID] INT NOT NULL PRIMARY KEY, 
     [ArtistFName] VARCHAR(30) NOT NULL, 

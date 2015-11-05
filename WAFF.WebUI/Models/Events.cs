@@ -6,7 +6,7 @@ using System.Web;
 namespace WAFF.WebUI.Models
 {
     
-    public class Event
+    public class Events
     {
         public int EventID { get; set; }
         public DateTime EventStartDate { get; set; }

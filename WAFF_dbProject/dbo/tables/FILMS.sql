@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[FILM]
+﻿CREATE TABLE [dbo].[FILMS]
 (
 	[FilmID] INT NOT NULL PRIMARY KEY identity, 
     [FilmName] VARCHAR(30) NOT NULL, 
@@ -6,5 +6,5 @@
     [FilmDesc] VARCHAR(250) NOT NULL,
 	[FilmLength] VARCHAR(30) NOT NULL,
 	[BlockId] INT NOT NULL,
-	FOREIGN KEY (BlockID) REFERENCES BLOCK(BlockID)
+	FOREIGN KEY (BlockID) REFERENCES BLOCKS(BlockID)
 )
