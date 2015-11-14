@@ -7,7 +7,7 @@ namespace WAFF.WebUI.Models
 {
     public class Artist
     {
-        public int ArtistId { get; set; }
+        public int ArtistID { get; set; }
         public string ArtistFName { get; set; }
         public string ArtistLName { get; set; }
         public string ArtistCompany { get; set; }

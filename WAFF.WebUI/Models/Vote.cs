@@ -8,12 +8,10 @@ namespace WAFF.WebUI.Models
 {
     class Vote
     {
-        public int voteID { get; set; }
-        public string VoteComment { get; set; }
-        public DateTime VoteTimeStamp { get; set; }
         public int VoterID { get; set; }
         public int FilmID { get; set; }
-
-        
+        public int BlockID { get; set; }
+        public string VoteComment { get; set; }
+   
     }
 }

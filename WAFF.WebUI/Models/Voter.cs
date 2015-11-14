@@ -7,15 +7,17 @@ namespace WAFF.WebUI.Models
 {
     public class Voter
     {
-        public int VoterId { get; set; } 
+        public int VoterID { get; set; } 
 
-        public string Age { get; set; }
+        public string VoterAge { get; set; }
 
-        public string Ethnicity { get; set; }
+        public string VoterEthnicity { get; set; }
 
-        public string Education { get; set; }
+        public string VoterEducation { get; set; }
 
-        public decimal Income { get; set; }
+        public decimal VoterIncome { get; set; }
+
+        public string VoterQRCode { get; set; }
 
     }
 }

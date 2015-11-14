@@ -59,6 +59,7 @@
     <Folder Include="Properties" />
     <Folder Include="dbo" />
     <Folder Include="dbo\tables" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\tables\VOTERS.sql" />
@@ -74,5 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="WAFF_dbProject.local.publish.xml" />
+    <None Include="Scripts\seedWAFF.sql" />
   </ItemGroup>
 </Project>
