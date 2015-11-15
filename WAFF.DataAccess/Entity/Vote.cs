@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WAFF.WebUI.Models
+namespace WAFF.DataAccess.Entity
 {
     public class Vote
     {

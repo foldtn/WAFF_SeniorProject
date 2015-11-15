@@ -5,8 +5,9 @@ using System.Web;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using WAFF.DataAccess.Entity;
 
-namespace WAFF.WebUI.Models
+namespace WAFF.DataAccess.Contexts
 {
     public class EFDbContext : DbContext
     {
