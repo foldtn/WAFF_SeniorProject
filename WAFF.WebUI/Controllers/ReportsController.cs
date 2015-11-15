@@ -9,7 +9,7 @@ namespace WAFF.WebUI.Controllers
     public class ReportsController : Controller
     {
         // GET: Reports
-        public ViewResult Reports()
+        public ActionResult Reports()
         {
             return View();
         }
