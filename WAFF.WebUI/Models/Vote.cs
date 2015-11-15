@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WAFF.WebUI.Models
 {
-    class Vote
+    public class Vote
     {
         public int VoterID { get; set; }
         public int FilmID { get; set; }
