@@ -4,7 +4,7 @@
     [FilmName] VARCHAR(30) NOT NULL, 
     [FilmGenre] VARCHAR(30) NOT NULL, 
     [FilmDesc] VARCHAR(250) NOT NULL,
-	[FilmLength] VARCHAR(30) NOT NULL,
-	[BlockId] INT NOT NULL,
+	[FilmLength] INT NOT NULL,
+	[BlockID] INT NOT NULL,
 	FOREIGN KEY (BlockID) REFERENCES BLOCKS(BlockID)
 )
