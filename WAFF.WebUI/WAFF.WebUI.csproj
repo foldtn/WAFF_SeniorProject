@@ -114,6 +114,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FilmsListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -133,9 +134,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Films\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WAFF.DataAccess\WAFF.DataAccess.csproj">
+      <Project>{d27c6e47-ee56-418b-893f-1e4edf2d2a5e}</Project>
+      <Name>WAFF.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WAFF.Services\WAFF.Services.csproj">
       <Project>{f2d6f1e1-c023-4ebb-b8b1-b84695548474}</Project>
       <Name>WAFF.Services</Name>

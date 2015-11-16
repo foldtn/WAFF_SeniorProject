@@ -1,7 +1,36 @@
-﻿
+﻿@model WAFF.WebUI.Models.FilmsListViewModel
+
 @{
     ViewBag.Title = "Reports";
 }
 
-<h2>Reports</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">Block</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Genre</th>
+            <th class="text-center">Description</th>
+            <th class="text-center">Length</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var f in Model.Films)
+        {
+            <tr>
+                <td class="text-center">@f.FilmID</td>
+                <td class="text-center">@f.BlockID</td>
+                <td class="text-center">@f.FilmName</td>
+                <td class="text-center">@f.FilmGenre</td>
+                <td class="text-center">@f.FilmDesc</td>
+                <td class="text-center">@f.FilmLength</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
 

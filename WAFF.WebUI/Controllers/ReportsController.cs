@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WAFF.Services.Reports;
+using WAFF.WebUI.Models;
+
 
 namespace WAFF.WebUI.Controllers
 {
     public class ReportsController : Controller
     {
-        // GET: Reports
+        private ReportService service = new ReportService();
+        
         public ActionResult Reports()
         {
-            return View();
+            FilmsListViewModel model = new FilmsListViewModel
+            {
+                Films = service.test()
+            };
+            
+            return View(model);
         }
     }
 }
