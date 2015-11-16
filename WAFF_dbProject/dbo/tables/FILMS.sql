@@ -5,6 +5,6 @@
     [FilmGenre] VARCHAR(30) NOT NULL, 
     [FilmDesc] VARCHAR(250) NOT NULL,
 	[FilmLength] INT NOT NULL,
-	[BlockID] INT NOT NULL,
+	[BlockID] INT NULL,
 	FOREIGN KEY (BlockID) REFERENCES BLOCKS(BlockID)
 )
