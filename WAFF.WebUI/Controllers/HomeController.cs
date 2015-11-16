@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace WAFF.WebUI.Controllers
 {
-    public class ReportsController : Controller
+    public class HomeController : Controller
     {
-        // GET: Reports
-        public ActionResult Reports()
+        // GET: Home
+        public ActionResult Index()
         {
             return View();
         }
