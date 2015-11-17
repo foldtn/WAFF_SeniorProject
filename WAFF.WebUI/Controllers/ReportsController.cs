@@ -15,12 +15,28 @@ namespace WAFF.WebUI.Controllers
         
         public ActionResult Reports()
         {
+            
+            return View();
+        }
+
+        public ActionResult LeaderBoards()
+        {
             FilmsListViewModel model = new FilmsListViewModel
             {
                 Films = service.test()
             };
-            
+
             return View(model);
+        }
+
+        public ActionResult Demographics()
+        {
+            return View();
+        }
+
+        public PartialViewResult Menu()
+        {
+            return PartialView();
         }
     }
 }

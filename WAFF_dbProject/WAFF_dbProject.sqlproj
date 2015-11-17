@@ -77,5 +77,6 @@
     <None Include="Scripts\seedWAFF.sql" />
     <None Include="Scripts\seedTimmy.sql" />
     <None Include="WAFF_dbProject.local.publish.xml" />
+    <None Include="Scripts\winners.sql" />
   </ItemGroup>
 </Project>
