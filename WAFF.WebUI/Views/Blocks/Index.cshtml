@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WAFF.DataAccess.Entity.Block>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BlockStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlockEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlockLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlockType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlockStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlockEnd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlockLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlockType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BlockID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BlockID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BlockID })
+        </td>
+    </tr>
+}
+
+</table>
