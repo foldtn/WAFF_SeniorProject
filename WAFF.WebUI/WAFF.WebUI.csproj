@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FilmsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -128,6 +129,11 @@
     <Content Include="Views\Reports\LeaderBoards.cshtml" />
     <Content Include="Views\Reports\Demographics.cshtml" />
     <Content Include="Views\Reports\Menu.cshtml" />
+    <Content Include="Views\Films\Create.cshtml" />
+    <Content Include="Views\Films\Delete.cshtml" />
+    <Content Include="Views\Films\Details.cshtml" />
+    <Content Include="Views\Films\Edit.cshtml" />
+    <Content Include="Views\Films\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -137,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Films\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WAFF.DataAccess\WAFF.DataAccess.csproj">
