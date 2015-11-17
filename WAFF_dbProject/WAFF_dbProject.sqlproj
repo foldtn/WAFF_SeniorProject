@@ -60,6 +60,7 @@
     <Folder Include="dbo" />
     <Folder Include="dbo\tables" />
     <Folder Include="Scripts" />
+    <Folder Include="Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\tables\VOTERS.sql" />
@@ -69,6 +70,7 @@
     <Build Include="dbo\tables\ARTISTS.sql" />
     <Build Include="dbo\tables\FILMS.sql" />
     <Build Include="dbo\tables\VOTES.sql" />
+    <None Include="Stored Procedures\LeaderBoardEntry.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />

@@ -18,5 +18,20 @@ namespace WAFF.Services.Reports
 
             return Films;
         }
+
+        public IEnumerable<position> calcWinners()
+        {
+            
+
+            return null;
+        }
+
+    }
+
+    public class position
+    {
+        public int Position { get; set; }
+        public Film Film { get; set; }
+        public int votePercentage { get; set; }
     }
 }
