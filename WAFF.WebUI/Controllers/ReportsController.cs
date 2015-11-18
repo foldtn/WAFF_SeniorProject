@@ -30,9 +30,11 @@ namespace WAFF.WebUI.Controllers
             return View();
         }
 
-        public PartialViewResult Menu()
+        public PartialViewResult Menu(int selected)
         {
-            return PartialView();
+            ViewBag.Selected = selected;
+
+            return PartialView(selected);
         }
     }
 }
