@@ -4,14 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WAFF.Services.Reports;
-using WAFF.WebUI.Models;
-
 
 namespace WAFF.WebUI.Controllers
 {
     public class ReportsController : Controller
     {
-        private ReportService service = new ReportService();
         
         public ActionResult Reports()
         {
@@ -21,12 +18,11 @@ namespace WAFF.WebUI.Controllers
 
         public ActionResult LeaderBoards()
         {
-            FilmsListViewModel model = new FilmsListViewModel
-            {
-                Films = service.test()
-            };
+            var service = new ReportService();
 
-            return View(model);
+            var list = service.CalculateWinners();
+
+            return View(list);
         }
 
         public ActionResult Demographics()

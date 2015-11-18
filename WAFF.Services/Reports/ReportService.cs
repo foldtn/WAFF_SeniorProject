@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WAFF.DataAccess.Contexts;
-using WAFF.DataAccess.Entity;
+using WAFF.DataAccess.ViewModels;
 
 namespace WAFF.Services.Reports
 {
@@ -12,26 +12,12 @@ namespace WAFF.Services.Reports
     {
         private EFDbContext db = new EFDbContext();
 
-        public IEnumerable<Film> test()
+        public IEnumerable<LeaderBoardEntry> CalculateWinners()
         {
-            IEnumerable<Film> Films = db.Films;
+            var list =  db.Database.SqlQuery<LeaderBoardEntry>("GetLeaderBoardEntries").ToList();
 
-            return Films;
+            return list;
         }
 
-        public IEnumerable<position> calcWinners()
-        {
-            
-
-            return null;
-        }
-
-    }
-
-    public class position
-    {
-        public int Position { get; set; }
-        public Film Film { get; set; }
-        public int votePercentage { get; set; }
     }
 }

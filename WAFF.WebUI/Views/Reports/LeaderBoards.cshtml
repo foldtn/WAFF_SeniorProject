@@ -1,4 +1,4 @@
-﻿@model WAFF.WebUI.Models.FilmsListViewModel
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.LeaderBoardEntry>
 
 @{
     ViewBag.Title = "Reports";
@@ -9,24 +9,20 @@
 <table class="table">
     <thead>
         <tr>
-            <th class="text-center">ID</th>
-            <th class="text-center">Block</th>
             <th class="text-center">Name</th>
             <th class="text-center">Genre</th>
-            <th class="text-center">Description</th>
-            <th class="text-center">Length</th>
+            <th class="text-center">Block</th>
+            <th class="text-center">Votes</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var f in Model.Films)
+        @foreach (var f in Model)
         {
             <tr>
-                <td class="text-center">@f.FilmID</td>
-                <td class="text-center">@f.BlockID</td>
                 <td class="text-center">@f.FilmName</td>
                 <td class="text-center">@f.FilmGenre</td>
-                <td class="text-center">@f.FilmDesc</td>
-                <td class="text-center">@f.FilmLength</td>
+                <td class="text-center">@f.BlockID</td>
+                <td class="text-center">@f.Votes</td> 
             </tr>
         }
     </tbody>

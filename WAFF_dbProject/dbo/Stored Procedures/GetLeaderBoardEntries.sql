@@ -4,9 +4,9 @@ BEGIN
 	SET NOCOUNT ON;
 
 	SELECT
-		f.FilmName,
-		f.FilmGenre,
-		f.BlockID,
+		f.FilmName AS FilmName,
+		f.FilmGenre AS FilmGenre,
+		f.BlockID AS BlockID,
 		COUNT(v.FilmID) AS [Votes]
 
 	FROM [FILMS] f
