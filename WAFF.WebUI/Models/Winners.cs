@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace WAFF.DataAccess.ViewModels
+namespace WAFF.WebUI.Models
 {
-    public class LeaderBoardEntry
+    public class Winners
     {
         public string FilmName { get; set; }
         public string FilmGenre { get; set; }
         public int BlockID { get; set; }
-        public int Votes { get; set; }
+        public double VotePercent { get; set; }
     }
 }

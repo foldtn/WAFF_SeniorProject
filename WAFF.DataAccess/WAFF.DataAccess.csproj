@@ -58,6 +58,7 @@
     <Compile Include="Entity\Voter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\LeaderBoardEntry.cs" />
+    <Compile Include="ViewModels\VotesPerBlock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

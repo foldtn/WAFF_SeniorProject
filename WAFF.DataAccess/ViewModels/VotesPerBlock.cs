@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace WAFF.DataAccess.ViewModels
 {
-    public class LeaderBoardEntry
+    public class VotesPerBlock
     {
-        public string FilmName { get; set; }
-        public string FilmGenre { get; set; }
         public int BlockID { get; set; }
         public int Votes { get; set; }
     }
