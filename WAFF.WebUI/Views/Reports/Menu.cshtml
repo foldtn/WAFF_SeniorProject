@@ -1,17 +1,14 @@
-﻿@model int
+﻿
 
-<div class="navbar">
-    <div class="container">
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                @foreach (var selected in Model)
-                {
-                    <li>@Html.ActionLink("Reports", "Reports", "Reports/Reports", 
-                    null, new {@class = "btn btn-block btn-default btn-lg" + (selected == ViewBag.Selected ? "btn-primary" : "")}) </li>
-                    <li>@Html.ActionLink("Reports", "LeaderBoards", "Reports/LeaderBoards")</li>
-                    <li>@Html.ActionLink("Reports", "Demographics", "Reports/Demographics")</li>
-                }
-            </ul>
-        </div>
+<div class="navbar" style="margin-top:25px">
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li style="padding: 10px">@Html.ActionLink("Reports", "Reports", 
+                null, new {@class = "btn btn-block btn-default btn-lg" })</li>
+            <li style="padding: 10px"> @Html.ActionLink("LeaderBoards", "LeaderBoards",
+                null, new { @class = "btn btn-block btn-default btn-lg" })</li>
+            <li style="padding: 10px">@Html.ActionLink("Demographics", "Demographics",
+                null, new {@class = "btn btn-block btn-default btn-lg" })</li>
+        </ul>
     </div>
 </div>
