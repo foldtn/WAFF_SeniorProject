@@ -26,10 +26,10 @@ namespace WAFF.WebUI.Controllers
             var filmVotes = service.FilmVotes();
 
             // Get Votes for each block
-            var blockVotes = service.BlockVotes();
+            /*var blockVotes = service.BlockVotes();
 
             var final = new List<Winners>();
-            var temp = new List<Winners>();
+            var temp = new List<Winners>(filmVotes.Count());
             int count = 0;
 
             foreach(var f in filmVotes)
@@ -41,7 +41,7 @@ namespace WAFF.WebUI.Controllers
                 count++;
             }
 
-            /*for (int x = 0; x < filmVotes.Count(); x++)
+            for (int x = 0; x < filmVotes.Count(); x++)
             {
                 temp[x].FilmName = filmVotes[x].FilmName;
                 temp[x].FilmGenre = filmVotes[x].FilmGenre;
@@ -50,9 +50,9 @@ namespace WAFF.WebUI.Controllers
             }*/
 
 
-            ViewBag.Count = filmVotes.Count();
+           // ViewBag.Count = filmVotes.Count();
 
-            return View(temp);
+            return View(filmVotes);
         }
 
         public ActionResult Demographics()

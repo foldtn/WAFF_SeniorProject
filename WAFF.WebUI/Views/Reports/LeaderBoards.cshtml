@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WAFF.WebUI.Models.Winners>
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.LeaderBoardEntry>
 
 @{
     ViewBag.Title = "Reports";
@@ -24,10 +24,9 @@
                 <td class="text-center">@f.FilmName</td>
                 <td class="text-center">@f.FilmGenre</td>
                 <td class="text-center">@f.BlockID</td>
-                <td class="text-center">@f.VotePercent</td>
+                <td class="text-center">@f.Votes</td>
             </tr>
         }
     </tbody>
 </table>
 
-@ViewBag.Count
