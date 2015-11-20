@@ -11,7 +11,7 @@ namespace WAFF.WebUI.Controllers
     public class ReportsController : Controller
     {
         
-        public ActionResult Reports()
+        public ActionResult VotingData()
         {
             
             return View();
