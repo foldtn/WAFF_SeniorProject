@@ -9,7 +9,7 @@ namespace WAFF.DataAccess.Entity
     {
         public int VoterID { get; set; } 
 
-        public string VoterAge { get; set; }
+        public int VoterAge { get; set; }
 
         public string VoterEthnicity { get; set; }
 

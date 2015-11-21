@@ -8,6 +8,6 @@
 	[ArtistAddress] VARCHAR(50) NOT NULL,
 	[ArtistCity] VARCHAR(30) NOT NULL,
 	[ArtistState] VARCHAR(2) NOT NULL,
-	[ArtistZip] VARCHAR(30) NOT NULL,
+	[ArtistZip] INT NOT NULL,
 	[ArtistPhone] VARCHAR(30) NOT NULL
 )
