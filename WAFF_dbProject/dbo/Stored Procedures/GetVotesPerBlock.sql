@@ -7,7 +7,7 @@ BEGIN
 		v.BlockID AS BlockID,
 		COUNT(v.VoterID) AS [Votes]
 
-	FROM [Votes] v
+	FROM [VOTES] v
 
 	GROUP BY
 		v.BlockID
