@@ -10,18 +10,18 @@ namespace WAFF.Services.Reports
 {
     public class ReportService
     {
-        private EFDbContext db = new EFDbContext();
+        private EFDbContext _db = new EFDbContext();
 
         public List<LeaderBoardEntry> FilmVotes()
         {
-            var list =  db.Database.SqlQuery<LeaderBoardEntry>("GetLeaderBoardEntries").ToList();
+            var list =  _db.Database.SqlQuery<LeaderBoardEntry>("GetLeaderBoards").ToList();
 
             return list;
         }
 
         public List<VotesPerBlock> BlockVotes()
         {
-            var list = db.Database.SqlQuery<VotesPerBlock>("GetVotesPerBlock").ToList();
+            var list = _db.Database.SqlQuery<VotesPerBlock>("GetVotesPerBlock").ToList();
 
             return list;
         }

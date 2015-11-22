@@ -11,6 +11,6 @@ namespace WAFF.DataAccess.ViewModels
         public string FilmName { get; set; }
         public string FilmGenre { get; set; }
         public int BlockID { get; set; }
-        public int Votes { get; set; }
+        public decimal VotePercentage { get; set; }
     }
 }
