@@ -70,8 +70,6 @@
     <Build Include="dbo\tables\ARTISTS.sql" />
     <Build Include="dbo\tables\FILMS.sql" />
     <Build Include="dbo\tables\VOTES.sql" />
-    <Build Include="dbo\Stored Procedures\GetLeaderBoardEntries.sql" />
-    <Build Include="dbo\Stored Procedures\GetVotesPerBlock.sql" />
     <Build Include="dbo\Stored Procedures\GetLeaderBoards.sql" />
   </ItemGroup>
   <ItemGroup>

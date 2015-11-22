@@ -12,16 +12,9 @@ namespace WAFF.Services.Reports
     {
         private EFDbContext _db = new EFDbContext();
 
-        public List<LeaderBoardEntry> FilmVotes()
+        public List<LeaderBoardEntry> LeaderBoards()
         {
             var list =  _db.Database.SqlQuery<LeaderBoardEntry>("GetLeaderBoards").ToList();
-
-            return list;
-        }
-
-        public List<VotesPerBlock> BlockVotes()
-        {
-            var list = _db.Database.SqlQuery<VotesPerBlock>("GetVotesPerBlock").ToList();
 
             return list;
         }
