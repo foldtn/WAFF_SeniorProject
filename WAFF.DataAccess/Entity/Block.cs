@@ -9,7 +9,7 @@ namespace WAFF.DataAccess.Entity
     public class Block
     {
         public int BlockID { get; set; }
-        [DisplayName("Start Time")]
+        [DisplayName("Block Start Time")]
         public DateTime BlockStart { get; set; }
         [DisplayName("End Time")]
         public DateTime BlockEnd { get; set; }
