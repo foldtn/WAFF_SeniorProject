@@ -48,3 +48,9 @@ function exitFull() {
         document.msExitFullscreen();
     }
 }
+
+window.addEventListener("keypress", test, false);
+
+function test(e) {
+    alert(e.keyCode);
+}
