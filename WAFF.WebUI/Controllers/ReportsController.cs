@@ -27,6 +27,13 @@ namespace WAFF.WebUI.Controllers
             return View(LeaderBoardInfo);
         }
 
+        public PartialViewResult update()
+        {
+            var LeaderBoardInfo = _service.LeaderBoards();
+
+            return PartialView(LeaderBoardInfo);
+        }
+
         public ActionResult Demographics()
         {
             return View();

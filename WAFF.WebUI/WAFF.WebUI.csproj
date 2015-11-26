@@ -108,6 +108,8 @@
     <Content Include="Scripts\Custom\updateLeaderBoards.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -164,6 +166,7 @@
     <Content Include="Views\Blocks\Edit.cshtml" />
     <Content Include="Views\Blocks\Index.cshtml" />
     <Content Include="Views\Vote\Vote.cshtml" />
+    <Content Include="Views\Reports\update.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
