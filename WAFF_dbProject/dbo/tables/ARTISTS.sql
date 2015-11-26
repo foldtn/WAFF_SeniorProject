@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[ARTISTS]
 (
 	[ArtistID] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [ArtistFName] VARCHAR(30) NOT NULL, 
-    [ArtistLName] VARCHAR(30) NOT NULL, 
+    [ArtistFName] VARCHAR(30) NULL, 
+    [ArtistLName] VARCHAR(30) NULL, 
     [ArtistCompany] VARCHAR(30) NULL,
 	[ArtistEmail] VARCHAR(30) NULL,
 	[ArtistAddress] VARCHAR(50) NULL,
