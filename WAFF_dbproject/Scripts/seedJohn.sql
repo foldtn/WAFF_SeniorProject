@@ -39,19 +39,22 @@ INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength, BlockId)
 VALUES ('The Sad Snow Man', 'Action', 'This simple story is about a boy who makes a snowman’s dream a reality.', 5, 1)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
-VALUES ('Dani', 'Bowman', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+VALUES ('Dani', 'Bowman', NULL, NULL, NULL, NULL, NULL, 0, NULL)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
-VALUES ('Englewood Elementary', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+VALUES ('Englewood Elementary', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
-VALUES ('Adam', 'Ricketts', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+VALUES ('Adam', 'Ricketts', NULL, NULL, NULL, NULL, NULL, 0, NULL)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
-VALUES ('Pierre', 'Schantz', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+VALUES ('Pierre', 'Schantz', NULL, NULL, NULL, NULL, NULL, 0, NULL)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
-VALUES ('Keaton', 'Bicknell', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+VALUES ('Keaton', 'Bicknell', NULL, NULL, NULL, NULL, NULL, 0, NULL)
+
+INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
+VALUES ('Kate', 'Duhamel', NULL, NULL, NULL, NULL, NULL, 0, NULL)
 
 INSERT INTO [VOTERS] (VoterID, VoterQRCode)
 VALUES (1, 'abnjnjlanlva')
