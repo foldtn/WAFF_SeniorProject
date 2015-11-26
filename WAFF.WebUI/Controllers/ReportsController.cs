@@ -21,8 +21,6 @@ namespace WAFF.WebUI.Controllers
 
         public ActionResult LeaderBoards()
         {
-            
-
             // Get Leader Board information from database.
             var LeaderBoardInfo = _service.LeaderBoards();
 
