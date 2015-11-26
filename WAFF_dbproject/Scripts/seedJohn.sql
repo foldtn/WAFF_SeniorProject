@@ -38,6 +38,21 @@ VALUES ('Ability: Journey with Rachel', 'Documentory', 'Follow the life of an ex
 INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength, BlockId)
 VALUES ('The Sad Snow Man', 'Action', 'This simple story is about a boy who makes a snowman’s dream a reality.', 5, 1)
 
+INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
+VALUES ('Dani', 'Bowman', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+
+INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
+VALUES ('Englewood Elementary', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+
+INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
+VALUES ('Adam', 'Ricketts', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+
+INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
+VALUES ('Pierre', 'Schantz', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+
+INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
+VALUES ('Keaton', 'Bicknell', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+
 INSERT INTO [VOTERS] (VoterID, VoterQRCode)
 VALUES (1, 'abnjnjlanlva')
 
@@ -101,5 +116,6 @@ VALUES (2, 2, 2)
 SELECT * FROM [EVENTS]
 SELECT * FROM [BLOCKS]
 SELECT * FROM [FILMS]
+SELECT * FROM [ARTISTS]
 SELECT * FROM [VOTERS]
 SELECT * FROM [VOTES] ORDER BY [BlockId]
