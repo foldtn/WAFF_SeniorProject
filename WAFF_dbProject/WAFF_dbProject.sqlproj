@@ -80,5 +80,6 @@
     <None Include="Scripts\seedTimmy.sql" />
     <None Include="WAFF_dbProject.local.publish.xml" />
     <None Include="Scripts\seedTimmy2.sql" />
+    <None Include="Scripts\seedJohn.sql" />
   </ItemGroup>
 </Project>
