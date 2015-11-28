@@ -5,7 +5,7 @@
         document.getElementById("mainNav").style.display = "none";
         document.getElementById("reportsNav").style.display = "none";
         document.getElementById("footer").style.display = "none";
-        document.getElementById("toFull").innerHTML = "Exit Fullscreen"
+        document.getElementById("toFull").innerHTML = "Exit Fullscreen";
     }
     else {
         exitFull();
@@ -13,9 +13,8 @@
         document.getElementById("mainNav").style.display = "inline";
         document.getElementById("reportsNav").style.display = "inline";
         document.getElementById("footer").style.display = "inline";
-        document.getElementById("toFull").innerHTML = "Enter Fullscreen"
+        document.getElementById("toFull").innerHTML = "Enter Fullscreen";
     }
-
 }
 
 function enterFull(docElm) {
@@ -49,8 +48,31 @@ function exitFull() {
     }
 }
 
-window.addEventListener("keypress", test, false);
+if (document.addEventListener)
+{
+    document.addEventListener('webkitfullscreenchange', exitHandler, false);
+    document.addEventListener('moxfullscreenchange', exitHandler, false);
+    document.addEventListener('fullscreenchange', exitHandler, false);
+    document.addEventListener('MSFullscreenChange', exitHandler, false);
+}
 
-function test(e) {
-    alert(e.keyCode);
+function exitHandler()
+{
+    if (document.webkitIsFullScreen || document.mozFullScreen
+        || document.msFullscreenElement !== null)
+    {
+        // 0 means not fullscreen, 1 means fullscreen
+        if (document.getElementById("test").value == 0)
+        {
+            document.getElementById("test").value = 1;
+        }
+        else
+        {
+            document.getElementById("test").value = 0;
+            document.getElementById("isFull").value = "yes";
+            fullScreen("fullScreen");
+        }
+        
+    }
+
 }
