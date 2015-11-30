@@ -17,7 +17,5 @@ namespace WAFF.DataAccess.Entity
 
         public decimal VoterIncome { get; set; }
 
-        public string VoterQRCode { get; set; }
-
     }
 }

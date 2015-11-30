@@ -56,35 +56,35 @@ VALUES ('Keaton', 'Bicknell', NULL, NULL, NULL, NULL, NULL, 0, NULL)
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
 VALUES ('Kate', 'Duhamel', NULL, NULL, NULL, NULL, NULL, 0, NULL)
 
-INSERT INTO [VOTERS] (VoterID, VoterQRCode)
-VALUES (1, 'abnjnjlanlva')
+INSERT INTO [VOTERS] (VoterID)
+VALUES (1)
 
-INSERT INTO [VOTERS] (VoterID, VoterQRCode)
-VALUES (2, 'nlanblalb')
+INSERT INTO [VOTERS] (VoterID)
+VALUES (2)
 
-INSERT INTO [VOTERS] (VoterID, VoterQRCode)
-VALUES (3, 'nklbnaklnblkanklb')
+INSERT INTO [VOTERS] (VoterID)
+VALUES (3)
 
-INSERT INTO [VOTERS] (VoterID, VoterQRCode)
-VALUES (4, 'qhhuonoqnjnava')
+INSERT INTO [VOTERS] (VoterID)
+VALUES (4)
 
-INSERT INTO [VOTERS] (VoterID, VoterQRCode)
-VALUES (5, 'inbanigna')
+INSERT INTO [VOTERS] (VoterID)
+VALUES (5)
 
-INSERT INTO [VOTERS] (VoterID, VoterQRCode)
-VALUES (6, 'ngjnqnonbgqa')
+INSERT INTO [VOTERS] (VoterID)
+VALUES (6)
 
-INSERT INTO [VOTERS] (VoterID, VoterQRCode)
-VALUES (7, 'nklanlnlafklq')
+INSERT INTO [VOTERS] (VoterID)
+VALUES (7)
 
-INSERT INTO [VOTERS] (VoterID, VoterQRCode)
-VALUES (8, 'qlkmlkmklalnpa')
+INSERT INTO [VOTERS] (VoterID)
+VALUES (8)
 
-INSERT INTO [VOTERS] (VoterID, VoterQRCode)
-VALUES (9, 'on1llnjnqanvuoava')
+INSERT INTO [VOTERS] (VoterID)
+VALUES (9)
 
-INSERT INTO [VOTERS] (VoterID, VoterQRCode)
-VALUES (10, 'mknljnqljnouanuvnnaov')
+INSERT INTO [VOTERS] (VoterID)
+VALUES (10)
 
 INSERT INTO [VOTES] (VoterId, BlockId, FilmId)
 VALUES (1, 1, 4)

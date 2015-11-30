@@ -78,9 +78,8 @@
   <ItemGroup>
     <None Include="Scripts\seedWAFF.sql" />
     <None Include="Scripts\seedTimmy.sql" />
-    <None Include="WAFF_dbProject.local.publish.xml" />
-    <None Include="Scripts\seedTimmy2.sql" />
     <None Include="Scripts\seedJohn.sql" />
     <None Include="Scripts\Run this in SSMS to test ajax _while the website is running_.sql" />
+    <None Include="WAFF_dbProject.local.publish.xml" />
   </ItemGroup>
 </Project>
