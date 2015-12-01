@@ -1,2 +1,0 @@
-﻿INSERT INTO [VOTES] (FilmID,BlockID,VoterID) 
-VALUES (3, 2, 7)
