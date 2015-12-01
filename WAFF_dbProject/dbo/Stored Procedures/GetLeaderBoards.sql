@@ -6,7 +6,8 @@ BEGIN
 	SELECT TOP 10 v.[FilmName], v.[FilmGenre], v.[BlockID], 
 	p.[BlockStart], p.[BlockEnd], p.[BlockDayOfWeek],
 	(
-		CAST(
+		CAST
+		(
 			(
 			CAST(v.[Votes] as decimal(5,2))
 			/

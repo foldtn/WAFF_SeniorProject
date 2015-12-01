@@ -93,16 +93,16 @@ INSERT INTO [VOTES] (VoterId, BlockId, FilmId)
 VALUES (2, 1, 1)
 
 INSERT INTO [VOTES] (VoterId, BlockId, FilmId)
-VALUES (3, 1, 5)
+VALUES (3, 1, 6)
 
 INSERT INTO [VOTES] (VoterId, BlockId, FilmId)
-VALUES (4, 1, 5)
+VALUES (4, 1, 6)
 
 INSERT INTO [VOTES] (VoterId, BlockId, FilmId)
-VALUES (5, 1, 5)
+VALUES (5, 1, 6)
 
 INSERT INTO [VOTES] (VoterId, BlockId, FilmId)
-VALUES (6, 1, 5)
+VALUES (6, 1, 6)
 
 INSERT INTO [VOTES] (VoterId, BlockId, FilmId)
 VALUES (7, 1, 4)
@@ -122,3 +122,15 @@ SELECT * FROM [FILMS]
 SELECT * FROM [ARTISTS]
 SELECT * FROM [VOTERS]
 SELECT * FROM [VOTES] ORDER BY [BlockId]
+
+
+SELECT f.FilmID, f.VotesForFilm, b.VotesPerBlock
+FROM	(
+			SELECT	FilmID, BlockID, COUNT(FilmId) AS [VotesForFilm]
+			FROM [VOTES] GROUP BY FilmID, BlockID
+		) f
+JOIN	(
+			SELECT BlockID, COUNT(BlockId) AS [VotesPerBlock]
+			FROM [VOTES] GROUP BY BlockID
+		) b
+ON f.BlockID = b.BlockID
