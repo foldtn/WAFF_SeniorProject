@@ -59,7 +59,7 @@ INSERT INTO [VOTES] (VoterId, BlockId, FilmId)
 VALUES (18, 1, 5)
 
 INSERT INTO [VOTES] (VoterId, BlockId, FilmId)
-VALUES (19, 1, 6)
+VALUES (19, 1, 1)
 
 INSERT INTO [VOTES] (VoterId, BlockId, FilmId)
 VALUES (20, 1, 1)
