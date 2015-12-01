@@ -1,4 +1,23 @@
-﻿INSERT INTO [BLOCKS] (BlockStart, BlockEnd, BlockLocation, BlockType, EventID)
+﻿DELETE FROM [FILMARTISTS]
+DELETE FROM [VOTES]
+DELETE FROM [FILMS]
+DELETE FROM [BLOCKS]
+DELETE FROM [EVENTS]
+DELETE FROM [VOTERS]
+DELETE FROM [ARTISTS]
+
+DBCC CHECKIDENT ('EVENTS', RESEED, 0)
+DBCC CHECKIDENT ('ARTISTS', RESEED, 0)
+DBCC CHECKIDENT ('BLOCKS', RESEED, 0)
+DBCC CHECKIDENT ('FILMS', RESEED, 0)
+
+INSERT INTO [EVENTS] (EventStartDate, EventEndDate, EventLocation)
+VALUES ('2015-10-16','2015-10-18','Jacksonville')
+
+INSERT INTO [BLOCKS] (BlockStart, BlockEnd, BlockLocation, BlockType, EventID)
+VALUES ('2015-10-16 10:00', '2015-10-16 11:15', 'Main Library', 'Film', 1)
+
+INSERT INTO [BLOCKS] (BlockStart, BlockEnd, BlockLocation, BlockType, EventID)
 VALUES (DATEADD(HH, 1, GETUTCDATE()),DATEADD(HH, 2, GETUTCDATE()), 'MainLibrary', 'Film', 1)
 
 INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength, BlockId)
