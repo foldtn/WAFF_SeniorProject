@@ -45,6 +45,9 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
+
+/* the following #centeredmenu is for my reports menu -Tim */
+
 #centeredmenu {
    float:left;
    width:100%;
@@ -53,6 +56,7 @@ input[type="checkbox"].input-validation-error {
    overflow:hidden;
    position:relative;
 }
+
 #centeredmenu ul {
    clear:left;
    float:left;
@@ -63,6 +67,7 @@ input[type="checkbox"].input-validation-error {
    left:50%;
    text-align:center;
 }
+
 #centeredmenu ul li {
    display:block;
    float:left;
