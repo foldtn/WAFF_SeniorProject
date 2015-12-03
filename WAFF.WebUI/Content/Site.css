@@ -3,6 +3,10 @@
     padding-bottom: 20px;
 }
 
+div {
+    display: block;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -39,4 +43,37 @@ input[type="checkbox"].input-validation-error {
 
 .validation-summary-valid {
     display: none;
+}
+
+#centeredmenu {
+   float:left;
+   width:100%;
+   margin-top: 30px;
+   margin-bottom: 25px;
+   overflow:hidden;
+   position:relative;
+}
+#centeredmenu ul {
+   clear:left;
+   float:left;
+   list-style:none;
+   margin:0;
+   padding:0;
+   position:relative;
+   left:50%;
+   text-align:center;
+}
+#centeredmenu ul li {
+   display:block;
+   float:left;
+   list-style:none;
+   margin:0;
+   padding:0;
+   position:relative;
+   right:50%;
+}
+
+#centeredmenu ul li :hover {
+   background:#369;
+   color:#fff;
 }
