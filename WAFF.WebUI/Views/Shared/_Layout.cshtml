@@ -8,7 +8,6 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
-
     <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 
@@ -20,7 +19,6 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("World Arts Film Festival Voting", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
@@ -28,7 +26,6 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Films", "Index", "Films/Index")</li>
                     <li>@Html.ActionLink("Artists", "Index", "Artists/Index")</li>
-                    <li>@Html.ActionLink("FilmArtists", "Index", "FilmArtists/Index")</li>
                     <li>@Html.ActionLink("Events", "Index", "Events/Index")</li>
                     <li>@Html.ActionLink("Blocks", "Index", "Blocks/Index")</li>
                     <li>@Html.ActionLink("Reports", "Reports", "Reports/VotingData")</li>
@@ -38,6 +35,11 @@
     </div>
 
     <div class="container body-content">
+        <ul class="nav navbar-nav">
+            <li>
+                <span><a href="Index.html"><img src="~/Content/Images/girl and film.png" alt="World Arts Film Festival Logo and link to home page" /></a></span>
+            </li>
+        </ul>
         @RenderBody()
         <hr />
         <footer id="footer">
