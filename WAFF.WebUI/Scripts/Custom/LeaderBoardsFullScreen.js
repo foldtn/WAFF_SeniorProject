@@ -5,7 +5,9 @@
         document.getElementById("mainNav").style.display = "none";
         //document.getElementById("reportsNav").style.display = "none";
         document.getElementById("footer").style.display = "none";
-        document.getElementById("girlImageLayout").style.display = "none"
+        document.getElementById("girlImageLayout").style.display = "none";
+        document.getElementById("lbHeader").style.display = "none";
+        document.getElementById("lbImgHeader").style.display = "inline";
         document.getElementById("toFull").innerHTML = "Exit Fullscreen";
     }
     else {
@@ -15,6 +17,9 @@
         //document.getElementById("reportsNav").style.display = "inline";
         document.getElementById("footer").style.display = "inline";
         document.getElementById("girlImageLayout").style.display = "inline";
+        
+        document.getElementById("lbImgHeader").style.display = "none";
+        document.getElementById("lbHeader").style.display = "block";
         document.getElementById("toFull").innerHTML = "Enter Fullscreen";
     }
 }
