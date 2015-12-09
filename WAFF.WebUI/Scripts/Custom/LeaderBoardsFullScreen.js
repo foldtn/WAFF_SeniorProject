@@ -8,7 +8,8 @@
         document.getElementById("girlImageLayout").style.display = "none";
         document.getElementById("lbHeader").style.display = "none";
         document.getElementById("lbImgHeader").style.display = "inline";
-        document.getElementById("toFull").innerHTML = "Exit Fullscreen";
+        document.getElementById("toFull").style.display = "none";
+        //document.getElementById("toFull").innerHTML = "Exit Fullscreen";
     }
     else {
         exitFull();
@@ -20,7 +21,8 @@
         
         document.getElementById("lbImgHeader").style.display = "none";
         document.getElementById("lbHeader").style.display = "block";
-        document.getElementById("toFull").innerHTML = "Enter Fullscreen";
+        document.getElementById("toFull").style.display = "inline";
+        //document.getElementById("toFull").innerHTML = "Enter Fullscreen";
     }
 }
 
@@ -55,17 +57,18 @@ function exitFull() {
     }
 }
 
+//Used for exiting fullscreen using esc or other means.
 if (document.addEventListener)
 {
-    document.addEventListener('webkitfullscreenchange', exitHandler, false);
-    document.addEventListener('moxfullscreenchange', exitHandler, false);
-    document.addEventListener('fullscreenchange', exitHandler, false);
-    document.addEventListener('MSFullscreenChange', exitHandler, false);
+    document.addEventListener('webkitfullscreenchange', handler, false);
+    document.addEventListener('moxfullscreenchange', handler, false);
+    document.addEventListener('fullscreenchange', handler, false);
+    document.addEventListener('MSFullscreenChange', handler, false);
 }
 
-function exitHandler()
+function handler()
 {
-    if (document.webkitIsFullScreen || document.mozFullScreen
+    /*if (document.webkitIsFullScreen || document.mozFullScreen
         || document.msFullscreenElement !== null)
     {
         // 0 means not fullscreen, 1 means fullscreen
@@ -80,6 +83,16 @@ function exitHandler()
             fullScreen("fullScreen");
         }
         
+    }*/
+
+    // 0 means not fullscreen, 1 means fullscreen
+    if (document.getElementById("test").value == 0) {
+        document.getElementById("test").value = 1;
+    }
+    else {
+        document.getElementById("test").value = 0;
+        document.getElementById("isFull").value = "yes";
+        fullScreen("fullScreen");
     }
 
 }
