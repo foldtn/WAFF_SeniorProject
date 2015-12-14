@@ -94,6 +94,7 @@
     <Content Include="Content\Images\pageunderconstruction.png" />
     <Content Include="Content\Images\Red Curtains.jpg" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\votingData.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

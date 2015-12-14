@@ -1,0 +1,57 @@
+﻿#containerMain {
+    margin-top: 60px;
+    display: block;
+}
+
+#containerFlexMain {
+   display: flex; 
+   flex-flow: column nowrap;
+   justify-content: space-around;
+
+   height: 600px;
+}
+
+#containerFlexMainChild1 {
+    order: 1;
+    flex-grow: 1;
+    flex-basis: auto;
+}
+
+#containerFlexMainChild2 {
+    display: flex;
+    flex-flow: row nowrap;
+
+    order: 2;
+    flex-grow: 3;
+    flex-basis: auto;
+
+    width: 100%;
+}
+
+#containerFlexMainChild3 {
+    order: 3;
+    flex-grow: 2;
+    flex-basis: auto;
+}
+
+#subContainerChild1 {
+    order: 1;
+    flex-grow: 1;
+    flex-basis: auto;
+}
+
+#subContainerChild2 {
+    order: 2;
+    flex-grow: 3;
+    flex-basis: auto;
+}
+
+#subContainerChild3 {
+    order: 3;
+    flex-grow: 1;
+    flex-basis: auto;
+}
+
+.border {
+    border: 1px solid black;
+}

@@ -4,12 +4,33 @@
     ViewBag.Title = "Voting Data";
 }
 
+@section AddToHead{
+    <link href="~/Content/votingData.css" rel="stylesheet" type="text/css"/>
+}
+
 <!--@Html.Partial("Menu")-->
 
 <h1 style="padding-top: 30px">Voting Data</h1>
 
-<img src="~/Content/Images/pageunderconstruction.png" class="center-block" />
-
-
-
+<div id="containerMain">
+    <div id="containerFlexMain" class="border">
+        <div id="containerFlexMainChild1" class="border">
+            radio buttons goes here
+        </div>
+        <div id="containerFlexMainChild2" class="border">
+            <div id="subContainerChild1" class="border">
+                genres/blocks go here
+            </div>
+            <div id="subContainerChild2" class="border">
+                pie chart goes here
+            </div>
+            <div id="subContainerChild3" class="border">
+                films go here
+            </div>
+        </div>
+        <div id="containerFlexMainChild3" class="border">
+            film info goes here
+        </div>
+    </div>
+</div>
 
