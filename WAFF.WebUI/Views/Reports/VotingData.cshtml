@@ -6,6 +6,8 @@
 
 @section AddToHead{
     <link href="~/Content/votingData.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="~/Scripts/Custom/pieChart.js"></script>
 }
 
 <!--@Html.Partial("Menu")-->
@@ -13,24 +15,32 @@
 <h1 style="padding-top: 30px">Voting Data</h1>
 
 <div id="containerMain">
-    <div id="containerFlexMain" class="border">
-        <div id="containerFlexMainChild1" class="border">
-            radio buttons goes here
+    <div id="containerMainChild1">
+        <div id="radioContainerVD" class="form-group">
+            <label class="radio-inline"><input id="blockR" type="radio" name="radioVD" value="0" checked="checked">Block</label>
+            <label class="radio-inline"><input id="genreR" type="radio" name="radioVD" value="1">Genre</label>
         </div>
-        <div id="containerFlexMainChild2" class="border">
-            <div id="subContainerChild1" class="border">
-                genres/blocks go here
-            </div>
-            <div id="subContainerChild2" class="border">
-                pie chart goes here
-            </div>
-            <div id="subContainerChild3" class="border">
-                films go here
+        <hr />
+    </div>
+    <div id="containerMainChild2">
+        <div id="subContainerChild1" class="border">
+            <h3 style="text-align: center">Block</h3>
+            <div id="containerBG"></div>
+        </div>
+        <div id="subContainerChild2">
+            <h3 style="text-align: center">Block</h3>
+            <div id="piechart_wrap">
+                <div id="piechart"></div>
             </div>
         </div>
-        <div id="containerFlexMainChild3" class="border">
-            film info goes here
+        <div id="subContainerChild3" class="border">
+            <h3 style="text-align: center">Films</h3>
+            <div id="containerFilms"></div>
         </div>
+    </div>
+    <div id="containerMainChild3">
+        <h3 style="text-align: center">Film Info</h3>
+        <div id="containerFilmInfo">film info goes here</div>
     </div>
 </div>
 

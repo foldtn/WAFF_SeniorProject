@@ -71,6 +71,7 @@
     <Build Include="dbo\tables\FILMS.sql" />
     <Build Include="dbo\tables\VOTES.sql" />
     <Build Include="dbo\Stored Procedures\GetLeaderBoards.sql" />
+    <Build Include="dbo\Stored Procedures\getBlocks.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />

@@ -107,6 +107,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Custom\LeaderBoardsFullScreen.js" />
+    <Content Include="Scripts\Custom\pieChart.js" />
     <Content Include="Scripts\Custom\updateLeaderBoards.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

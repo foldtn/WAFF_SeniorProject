@@ -19,6 +19,13 @@ namespace WAFF.WebUI.Controllers
             return View();
         }
 
+        public PartialViewResult blocks()
+        {
+            var blocks = _service.getBlocks();
+
+            return PartialView(blocks);
+        }
+
         public ActionResult LeaderBoards()
         {
             // Get Leader Board information from database.

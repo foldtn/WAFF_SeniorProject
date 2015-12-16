@@ -19,5 +19,12 @@ namespace WAFF.Services.Reports
             return list;
         }
 
+        public List<blockVD> getBlocks()
+        {
+            var list = _db.Database.SqlQuery<blockVD>("getBlocks").ToList();
+
+            return list;
+        }
+
     }
 }
