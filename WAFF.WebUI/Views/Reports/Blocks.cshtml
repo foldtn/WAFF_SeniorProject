@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.blockVD>
+
+@{
+    var count = 0;
+
+
+    foreach (var block in Model)
+    {
+        @Ajax.ActionLink("Block " + block.BlockID + ": " + block.BlockStart, "FilmsBAsync", "Reports",
+            new
+            {
+                id = block.BlockID
+            },
+            new AjaxOptions
+            {
+                UpdateTargetId = "containerFilms"
+            },
+            new { id = "block" + block.BlockID})
+        <br />
+
+        if (count == 0)
+        {
+            <div style="display:none">
+                @Ajax.ActionLink("Block", "FilmsBAsync", "Reports",
+                    new
+                    {
+                        id = block.BlockID
+                    },
+                    new AjaxOptions
+                    {
+                        UpdateTargetId = "containerFilms"
+                    },
+                    new { id = "InitialFilms"})
+            </div>
+            count++;
+        }
+    }
+}

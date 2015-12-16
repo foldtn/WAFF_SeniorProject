@@ -3,7 +3,7 @@
     ViewBag.Title = "Leader Board";
 }
 
-<!--@Html.Partial("Menu")-->
+
 
 <script src="~/Scripts/Custom/LeaderBoardsFullScreen.js"></script>
 <script src="~/Scripts/Custom/updateLeaderBoards.js"></script>
@@ -24,7 +24,7 @@
     <div style="visibility:hidden">
         <!-- Ajax.Actionlink(linktext, actionName, 
                 routeValues, ajaxOptions, htmlAttributes) -->
-        @Ajax.ActionLink("update", "update", null,
+        @Ajax.ActionLink("update", "Update", "Reports",
             new AjaxOptions
             {
                 UpdateTargetId = "leaderBoardContainer"

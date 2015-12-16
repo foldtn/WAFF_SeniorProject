@@ -1,5 +1,5 @@
 ﻿#containerMain {
-    margin-top: 60px;
+    margin-top: 30px;
     display: block;
 }
 
@@ -23,11 +23,13 @@
     order: 1;
     flex-grow: 1;
     flex-basis: auto;
+
+    width: 20%;
 }
 
 #subContainerChild2 {
     order: 2;
-    flex-grow: 3;
+    flex-grow: 4;
     flex-basis: auto;
 
     margin: auto;
@@ -37,6 +39,8 @@
     order: 3;
     flex-grow: 1;
     flex-basis: auto;
+
+    width: 20%;
 }
 
 #radioContainerVD {

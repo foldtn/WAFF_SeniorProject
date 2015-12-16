@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.filmsVD>
+
+@foreach (var film in Model)
+{
+
+    @Ajax.ActionLink(film.FilmName, "FilmInfo", "Reports",
+    new AjaxOptions
+    {
+        UpdateTargetId = "containerFilms"
+    },
+    new { id = "film" + film.FilmID })
+    <br />
+}

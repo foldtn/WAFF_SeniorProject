@@ -1,16 +1,14 @@
-﻿
-
-@{
+﻿@{
     ViewBag.Title = "Voting Data";
 }
 
 @section AddToHead{
-    <link href="~/Content/votingData.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript" src="~/Scripts/Custom/pieChart.js"></script>
+    <link href="~/Content/votingData.css" rel="stylesheet" type="text/css" />
 }
 
-<!--@Html.Partial("Menu")-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="~/Scripts/Custom/pieChart.js"></script>
+<script type="text/javascript" src="~/Scripts/Custom/VotingData.js"></script>
 
 <h1 style="padding-top: 30px">Voting Data</h1>
 
@@ -23,19 +21,30 @@
         <hr />
     </div>
     <div id="containerMainChild2">
-        <div id="subContainerChild1" class="border">
+        <div id="subContainerChild1">
             <h3 style="text-align: center">Block</h3>
-            <div id="containerBG"></div>
+            <div style="display:none">
+                @Ajax.ActionLink("Block", "Blocks", "Reports",
+
+                new AjaxOptions
+                {
+                    UpdateTargetId = "containerBG",
+                    OnSuccess = "InitialFilms"
+                },
+                new { id = "InitialBlocks" })
+            </div>
+
+            <div id="containerBG" onload="InitialFilms()" style="text-align: left"></div>
         </div>
-        <div id="subContainerChild2">
+        <div id="subContainerChild2" style="border: 1px solid black">
             <h3 style="text-align: center">Block</h3>
             <div id="piechart_wrap">
                 <div id="piechart"></div>
             </div>
         </div>
-        <div id="subContainerChild3" class="border">
+        <div id="subContainerChild3">
             <h3 style="text-align: center">Films</h3>
-            <div id="containerFilms"></div>
+            <div id="containerFilms" style="text-align: right"></div>
         </div>
     </div>
     <div id="containerMainChild3">

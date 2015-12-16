@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using WAFF.Services.Reports;
@@ -15,16 +16,42 @@ namespace WAFF.WebUI.Controllers
         
         public ActionResult VotingData()
         {
-            
             return View();
         }
 
-        public PartialViewResult blocks()
+        public PartialViewResult Blocks()
         {
-            var blocks = _service.getBlocks();
+            var blocks = _service.GetBlocks();
 
             return PartialView(blocks);
         }
+
+        public PartialViewResult Genres()
+        {
+            var genre = _service.GetGenres();
+
+            return PartialView();
+        }
+
+        public async Task<PartialViewResult> FilmsBAsync(int id)
+        {
+            var films = await _service.GetFilmsBAsync(id);
+
+            return PartialView(films);
+        }
+
+        public PartialViewResult FilmsGasync(string genre)
+        {
+            var films = _service.GetFilmsGAsync(genre);
+
+            return PartialView(films);
+        }
+
+        public PartialViewResult FilmInfo(int filmID)
+        {
+            return PartialView();
+        }
+
 
         public ActionResult LeaderBoards()
         {
@@ -34,7 +61,7 @@ namespace WAFF.WebUI.Controllers
             return View(LeaderBoardInfo);
         }
 
-        public PartialViewResult update()
+        public PartialViewResult Update()
         {
             var LeaderBoardInfo = _service.LeaderBoards();
 

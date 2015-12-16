@@ -1,6 +1,4 @@
 ﻿CREATE PROCEDURE [dbo].[getBlocks]
-	@param1 int = 0,
-	@param2 int
 AS
 BEGIN
 	SET NOCOUNT ON;
