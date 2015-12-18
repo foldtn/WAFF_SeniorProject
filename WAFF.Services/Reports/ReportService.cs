@@ -36,7 +36,7 @@ namespace WAFF.Services.Reports
             return list;
         }
 
-        public async Task<IEnumerable<filmsVD>> GetFilmsBAsync(int block)
+        public async Task<IEnumerable<filmsVD>> GetFilmsAsync(int block, string genre)
         {
             
             //create connection
@@ -48,66 +48,25 @@ namespace WAFF.Services.Reports
             //declare command type
             cmd.CommandType = CommandType.StoredProcedure;
 
-            //stored procedure name goes here
-            cmd.CommandText = "getFilmsB";
+            if(block != -1)
+            { 
+                //stored procedure name goes here
+                cmd.CommandText = "getFilmsB";
 
-            //parameters go here
-            cmd.Parameters.Add(new SqlParameter("@block", block));
+                //parameters go here
+                cmd.Parameters.Add(new SqlParameter("@block", block));
+            }
+            else
+            {
+                cmd.CommandText = "getFilmsG";
+                cmd.Parameters.Add(new SqlParameter("@genre", genre));
+            }
 
             //black magic stuff
             var objectConext = ((IObjectContextAdapter)_db).ObjectContext;
 
             var originalState = conn.State;
             
-            if (originalState != ConnectionState.Open)
-            {
-                await conn.OpenAsync();
-            }
-
-            try
-            {
-                //get information in list format
-                using (var reader = await cmd.ExecuteReaderAsync())
-                {
-                    return objectConext.Translate<filmsVD>(reader).ToList();
-                }
-            }
-            finally
-            {
-                if (originalState != ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-
-                if (null != conn)
-                {
-                    conn.Dispose();
-                }
-            }
-        }
-
-        public async Task<IEnumerable<filmsVD>> GetFilmsGAsync(string genre)
-        {
-            //create connection
-            var conn = _db.Database.Connection;
-
-            //create command for connection
-            var cmd = conn.CreateCommand();
-
-            //declare command type
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            //stored procedure name goes here
-            cmd.CommandText = "getFilmsG";
-
-            //parameters go here
-            cmd.Parameters.Add(new SqlParameter("@genre", genre));
-
-            //black magic stuff
-            var objectConext = ((IObjectContextAdapter)_db).ObjectContext;
-
-            var originalState = conn.State;
-
             if (originalState != ConnectionState.Open)
             {
                 await conn.OpenAsync();

@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[getFilmsG]
-	@genre varchar
+	@genre varchar(30)
 AS
 BEGIN
 	SET NOCOUNT ON;

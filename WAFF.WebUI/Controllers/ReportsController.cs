@@ -30,19 +30,21 @@ namespace WAFF.WebUI.Controllers
         {
             var genre = _service.GetGenres();
 
-            return PartialView();
+            return PartialView(genre);
         }
 
         public async Task<PartialViewResult> FilmsBAsync(int id)
         {
-            var films = await _service.GetFilmsBAsync(id);
+            string genre = null;
+            var films = await _service.GetFilmsAsync(id, genre);
 
             return PartialView(films);
         }
 
-        public PartialViewResult FilmsGasync(string genre)
+        public async Task<PartialViewResult> FilmsGAsync(string genre)
         {
-            var films = _service.GetFilmsGAsync(genre);
+            int id = -1;
+            var films = await _service.GetFilmsAsync(id, genre);
 
             return PartialView(films);
         }

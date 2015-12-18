@@ -15,23 +15,34 @@
 <div id="containerMain">
     <div id="containerMainChild1">
         <div id="radioContainerVD" class="form-group">
-            <label class="radio-inline"><input id="blockR" type="radio" name="radioVD" value="0" checked="checked">Block</label>
-            <label class="radio-inline"><input id="genreR" type="radio" name="radioVD" value="1">Genre</label>
+            <label class="radio-inline"><input id="blockR" type="radio" name="radioVD" value=0 onclick="changeB()">Block</label>
+            <label class="radio-inline"><input id="genreR" type="radio" name="radioVD" value=1 onclick="changeG()">Genre</label>
         </div>
         <hr />
     </div>
     <div id="containerMainChild2">
         <div id="subContainerChild1">
-            <h3 style="text-align: center">Block</h3>
+            <h3 id="headerBG" style="text-align: center">Block</h3>
             <div style="display:none">
                 @Ajax.ActionLink("Block", "Blocks", "Reports",
 
                 new AjaxOptions
                 {
                     UpdateTargetId = "containerBG",
-                    OnSuccess = "InitialFilms"
+                    OnSuccess = "InitialFilmsBlock"
                 },
                 new { id = "InitialBlocks" })
+            </div>
+
+            <div style="display:none">
+                @Ajax.ActionLink("Genre", "Genres", "Reports",
+
+                new AjaxOptions
+                {
+                    UpdateTargetId = "containerBG",
+                    OnSuccess = "InitialFilmsGenre"
+                },
+                new { id = "InitialGenres" })
             </div>
 
             <div id="containerBG" onload="InitialFilms()" style="text-align: left"></div>

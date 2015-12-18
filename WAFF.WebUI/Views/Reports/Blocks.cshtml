@@ -1,8 +1,7 @@
 ﻿@model IEnumerable<WAFF.DataAccess.ViewModels.blockVD>
 
 @{
-    var count = 0;
-
+    var first = 0;
 
     foreach (var block in Model)
     {
@@ -13,26 +12,16 @@
             },
             new AjaxOptions
             {
-                UpdateTargetId = "containerFilms"
+                UpdateTargetId = "containerFilms",
+                OnSuccess = "selectedBlock(" + block.BlockID + ")"
             },
             new { id = "block" + block.BlockID})
         <br />
 
-        if (count == 0)
+        if (first == 0)
         {
-            <div style="display:none">
-                @Ajax.ActionLink("Block", "FilmsBAsync", "Reports",
-                    new
-                    {
-                        id = block.BlockID
-                    },
-                    new AjaxOptions
-                    {
-                        UpdateTargetId = "containerFilms"
-                    },
-                    new { id = "InitialFilms"})
-            </div>
-            count++;
+            <input id="currentBlock" type="hidden" value="@block.BlockID" />
+            first++;
         }
-    }
+    } 
 }
