@@ -56,6 +56,8 @@ function selectedBlock(block) {
     document.getElementById('block' + current).style.textDecoration = 'none';
     document.getElementById('block' + block).style.textDecoration = 'underline';
     document.getElementById('currentBlock').value = block;
+
+    // display graph here
 }
 
 function selectedGenre(genre) {
@@ -65,6 +67,8 @@ function selectedGenre(genre) {
     document.getElementById(current).style.textDecoration = 'none';
     document.getElementById(genre).style.textDecoration = 'underline';
     document.getElementById('currentGenre').value = genre;
+
+    // display graph here
 }
 
 

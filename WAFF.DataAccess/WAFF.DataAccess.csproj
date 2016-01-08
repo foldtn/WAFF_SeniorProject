@@ -60,6 +60,7 @@
     <Compile Include="ViewModels\blockVD.cs" />
     <Compile Include="ViewModels\filmsVD.cs" />
     <Compile Include="ViewModels\genreVD.cs" />
+    <Compile Include="ViewModels\graphVD.cs" />
     <Compile Include="ViewModels\LeaderBoardEntry.cs" />
   </ItemGroup>
   <ItemGroup>

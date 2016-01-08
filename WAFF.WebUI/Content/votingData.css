@@ -4,7 +4,7 @@
 }
 
 #containerMainChild1 {
-
+    
 }
 
 #containerMainChild2 {
@@ -23,7 +23,6 @@
     order: 1;
     flex-grow: 1;
     flex-basis: auto;
-
     width: 20%;
 }
 

@@ -49,6 +49,22 @@ namespace WAFF.WebUI.Controllers
             return PartialView(films);
         }
 
+        public async Task<PartialViewResult> GraphBAsync(int id)
+        {
+            string genre = null;
+            var films = await _service.GetGraphAsync(id, genre);
+
+            return PartialView(films);
+        }
+
+        public async Task<PartialViewResult> GraphGAsync(string genre)
+        {
+            int id = -1;
+            var films = await _service.GetGraphAsync(id, genre);
+
+            return PartialView(films);
+        }
+
         public PartialViewResult FilmInfo(int filmID)
         {
             return PartialView();

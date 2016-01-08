@@ -32,9 +32,7 @@
                     OnSuccess = "InitialFilmsBlock"
                 },
                 new { id = "InitialBlocks" })
-            </div>
 
-            <div style="display:none">
                 @Ajax.ActionLink("Genre", "Genres", "Reports",
 
                 new AjaxOptions
@@ -43,6 +41,22 @@
                     OnSuccess = "InitialFilmsGenre"
                 },
                 new { id = "InitialGenres" })
+
+                @Ajax.ActionLink("GraphB", "GraphB", "Reports",
+
+                new AjaxOptions
+                {
+                    UpdateTargetId = "piechartData"
+                },
+                new { id = "GraphB" })
+
+                @Ajax.ActionLink("GraphG", "GraphG", "Reports",
+
+                new AjaxOptions
+                {
+                    UpdateTargetId = "piechartData"
+                },
+                new { id = "GraphG" })
             </div>
 
             <div id="containerBG" onload="InitialFilms()" style="text-align: left"></div>
@@ -50,6 +64,7 @@
         <div id="subContainerChild2" style="border: 1px solid black">
             <h3 style="text-align: center">Block</h3>
             <div id="piechart_wrap">
+                <div id="piechartData"></div>
                 <div id="piechart"></div>
             </div>
         </div>

@@ -75,6 +75,8 @@
     <Build Include="dbo\Stored Procedures\getGenres.sql" />
     <Build Include="dbo\Stored Procedures\getFilmsB.sql" />
     <Build Include="dbo\Stored Procedures\getFilmsG.sql" />
+    <Build Include="dbo\Stored Procedures\getGraphB.sql" />
+    <Build Include="dbo\Stored Procedures\getGraphG.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />
