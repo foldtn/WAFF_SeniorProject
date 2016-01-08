@@ -1,3 +1,4 @@
+DELETE FROM [FILMBLOCKS]
 DELETE FROM [FILMARTISTS]
 DELETE FROM [VOTES]
 DELETE FROM [FILMS]
@@ -20,23 +21,23 @@ VALUES ('2015-10-16 10:00', '2015-10-16 11:15', 'Main Library', 'Film', 1)
 INSERT INTO [BLOCKS] (BlockStart, BlockEnd, BlockLocation, BlockType, EventID)
 VALUES ('2015-10-17 10:00', '2015-10-17 12:00', 'Main Library', 'Film', 1)
 
-INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength, BlockId)
-VALUES ('The Switcheroo', 'Comedy', 'The case of the switched items', 20, 1)
+INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
+VALUES ('The Switcheroo', 'Comedy', 'The case of the switched items', 20)
 
-INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength, BlockId)
-VALUES ('Soda of Doom', 'Animation', 'Would be evil doers try to stop event', 8, 2)
+INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
+VALUES ('Soda of Doom', 'Animation', 'Would be evil doers try to stop event', 8)
 
-INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength, BlockId)
-VALUES ('Adventures of Pelican Pete', 'Animation', 'Pelican Pete finds a hat', 6, 2)
+INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
+VALUES ('Adventures of Pelican Pete', 'Animation', 'Pelican Pete finds a hat', 6)
 
-INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength, BlockId)
-VALUES ('The Music is Moving', 'Educational', 'A look at the visual side of music', 5, 1)
+INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
+VALUES ('The Music is Moving', 'Educational', 'A look at the visual side of music', 5)
 
-INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength, BlockId)
-VALUES ('Ability: Journey with Rachel', 'Documentory', 'Follow the life of an extraordinary teen', 20, 2)
+INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
+VALUES ('Ability: Journey with Rachel', 'Documentory', 'Follow the life of an extraordinary teen', 20)
 
-INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength, BlockId)
-VALUES ('The Sad Snow Man', 'Action', 'This simple story is about a boy who makes a snowman’s dream a reality.', 5, 1)
+INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
+VALUES ('The Sad Snow Man', 'Action', 'This simple story is about a boy who makes a snowman’s dream a reality.', 5)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
 VALUES ('Dani', 'Bowman', NULL, NULL, NULL, NULL, NULL, 0, NULL)
@@ -55,6 +56,24 @@ VALUES ('Keaton', 'Bicknell', NULL, NULL, NULL, NULL, NULL, 0, NULL)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
 VALUES ('Kate', 'Duhamel', NULL, NULL, NULL, NULL, NULL, 0, NULL)
+
+INSERT INTO [FILMBLOCKS] (FilmId, BlockId)
+VALUES (1, 1)
+
+INSERT INTO [FILMBLOCKS] (FilmId, BlockId)
+VALUES (2, 2)
+
+INSERT INTO [FILMBLOCKS] (FilmId, BlockId)
+VALUES (3, 2)
+
+INSERT INTO [FILMBLOCKS] (FilmId, BlockId)
+VALUES (4, 1)
+
+INSERT INTO [FILMBLOCKS] (FilmId, BlockId)
+VALUES (5, 2)
+
+INSERT INTO [FILMBLOCKS] (FilmId, BlockId)
+VALUES (6, 1)
 
 INSERT INTO [VOTERS] (VoterID)
 VALUES (1)
