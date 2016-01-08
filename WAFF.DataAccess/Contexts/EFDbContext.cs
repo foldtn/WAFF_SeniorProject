@@ -16,6 +16,7 @@ namespace WAFF.DataAccess.Contexts
         public DbSet<Event> Events { get; set; }
         public DbSet<Film> Films { get; set; }
         public DbSet<FilmArtist> FilmArtists { get; set; }
+        public DbSet<FilmBlock> FilmBlocks { get; set; }
         public DbSet<Vote> Votes { get; set; }
         public DbSet<Voter> Voters { get; set; }
     }

@@ -17,6 +17,5 @@ namespace WAFF.DataAccess.Entity
         public string FilmDesc { get; set; }
         [DisplayName("Length (minutes)")]
         public int FilmLength { get; set; }
-        public int BlockID { get; set; }
     }
 }
