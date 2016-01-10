@@ -18,20 +18,19 @@
                 <th class="text-center">Action</th>
             </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td class="text-right">@item.FilmID</td>
-        <td>@Html.ActionLink(item.FilmName, "Edit", new{id = item.FilmID})</td>
-        <td>@item.FilmGenre</td>
-        <td class="text-right">@item.FilmLength</td>
-        <td class="text-center">@Html.ActionLink("Delete", "Delete", new { id = item.FilmID })</td>
-    </tr>
-}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-right">@item.FilmID</td>
+                    <td>@Html.ActionLink(item.FilmName, "Edit", new { id = item.FilmID })</td>
+                    <td>@item.FilmGenre</td>
+                    <td class="text-right">@item.FilmLength</td>
+                    <td class="text-center">@Html.ActionLink("Delete", "Delete", new { id = item.FilmID })</td>
+                </tr>
+            }
         </table>
     </div>
     <div class="panel-footer">
-        @Html.ActionLink("Add a new Movie", "Create", null, new { @class="btn btn-default"})
+        @Html.ActionLink("Add a new Movie", "Create", null, new { @class = "btn btn-default" })
     </div>
 </div>
-
-
