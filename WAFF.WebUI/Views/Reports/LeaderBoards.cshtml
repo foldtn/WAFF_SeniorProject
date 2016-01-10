@@ -1,22 +1,30 @@
-﻿@model IEnumerable<WAFF.DataAccess.ViewModels.LeaderBoardEntry>
-
+﻿
 @{
-    ViewBag.Title = "Leader Boards";
+    ViewBag.Title = "Leader Board";
 }
 
-@Html.Partial("Menu")
+
 
 <script src="~/Scripts/Custom/LeaderBoardsFullScreen.js"></script>
 <script src="~/Scripts/Custom/updateLeaderBoards.js"></script>
 
 
 <div id="fullScreen">
-    <h1 style="text-align: center; margin-bottom: 10px"><strong>Leader Board</strong></h1>
+    <h2 id="lbHeader">Leader Board</h2>
+
+    <div id="lbImgHeader" class="centeredmenu" style="display: none">
+        <ul>
+            <li><img src="~/Content/Images/girl and film.png" style="padding:20px" , alt=" world arts film festival logo and link to home page" /></li>
+            <li style="padding-top: 35px"><h2>Leader Board</h2></li>
+        </ul>
+    </div>
+    
+
 
     <div style="visibility:hidden">
         <!-- Ajax.Actionlink(linktext, actionName, 
                 routeValues, ajaxOptions, htmlAttributes) -->
-        @Ajax.ActionLink("update", "update", null,
+        @Ajax.ActionLink("update", "Update", "Reports",
             new AjaxOptions
             {
                 UpdateTargetId = "leaderBoardContainer"

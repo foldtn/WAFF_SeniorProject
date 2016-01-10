@@ -1,0 +1,27 @@
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.blockVD>
+
+@{
+    var first = 0;
+
+    foreach (var block in Model)
+    {
+        @Ajax.ActionLink("Block " + block.BlockID + ": " + block.BlockStart, "FilmsBAsync", "Reports",
+            new
+            {
+                id = block.BlockID
+            },
+            new AjaxOptions
+            {
+                UpdateTargetId = "containerFilms",
+                OnSuccess = "selectedBlock(" + block.BlockID + ")"
+            },
+            new { id = "block" + block.BlockID})
+        <br />
+
+        if (first == 0)
+        {
+            <input id="currentBlock" type="hidden" value="@block.BlockID" />
+            first++;
+        }
+    } 
+}

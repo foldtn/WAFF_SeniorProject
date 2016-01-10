@@ -4,14 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - World Arts Film Festival Voting</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
-
     <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 
+    @if (IsSectionDefined("AddToHead"))
+    {
+        @RenderSection("AddToHead", required: false)
+    }
 </head>
 <body>    
     <div id="mainNav" class="navbar navbar-inverse navbar-fixed-top">
@@ -28,16 +31,30 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Films", "Index", "Films/Index")</li>
                     <li>@Html.ActionLink("Artists", "Index", "Artists/Index")</li>
-                    <li>@Html.ActionLink("FilmArtists", "Index", "FilmArtists/Index")</li>
                     <li>@Html.ActionLink("Events", "Index", "Events/Index")</li>
                     <li>@Html.ActionLink("Blocks", "Index", "Blocks/Index")</li>
-                    <li>@Html.ActionLink("Reports", "Reports", "Reports/VotingData")</li>
+                    <li>@Html.ActionLink("FilmBlocks", "Index", "FilmBlocks/Index")</li>
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Leader Board", "Index", "Reports/LeaderBoards")</li>
+                        <li>@Html.ActionLink("Voting Data", "Index", "Reports/VotingData")</li>
+                        <li><a href="#">Voter Demographics</a></li>
+                    </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="container body-content">
+        
+        <ul id="girlImageLayout"  class="nav navbar-nav">
+            <li>
+                <span><a href="/"><img src="~/Content/Images/girl and film.png" style="padding:20px" , alt=" world arts film festival logo and link to home page" /></a></span>
+            </li>
+        </ul>
+        
         @RenderBody()
         <hr />
         <footer id="footer">

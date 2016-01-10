@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using WAFF.Services.Reports;
@@ -15,9 +16,60 @@ namespace WAFF.WebUI.Controllers
         
         public ActionResult VotingData()
         {
-            
             return View();
         }
+
+        public PartialViewResult Blocks()
+        {
+            var blocks = _service.GetBlocks();
+
+            return PartialView(blocks);
+        }
+
+        public PartialViewResult Genres()
+        {
+            var genre = _service.GetGenres();
+
+            return PartialView(genre);
+        }
+
+        public async Task<PartialViewResult> FilmsBAsync(int id)
+        {
+            string genre = null;
+            var films = await _service.GetFilmsAsync(id, genre);
+
+            return PartialView(films);
+        }
+
+        public async Task<PartialViewResult> FilmsGAsync(string genre)
+        {
+            int id = -1;
+            var films = await _service.GetFilmsAsync(id, genre);
+
+            return PartialView(films);
+        }
+
+        public async Task<PartialViewResult> GraphBAsync(int id)
+        {
+            string genre = null;
+            var films = await _service.GetGraphAsync(id, genre);
+
+            return PartialView(films);
+        }
+
+        public async Task<PartialViewResult> GraphGAsync(string genre)
+        {
+            int id = -1;
+            var films = await _service.GetGraphAsync(id, genre);
+
+            return PartialView(films);
+        }
+
+        public PartialViewResult FilmInfo(int filmID)
+        {
+            return PartialView();
+        }
+
 
         public ActionResult LeaderBoards()
         {
@@ -27,7 +79,7 @@ namespace WAFF.WebUI.Controllers
             return View(LeaderBoardInfo);
         }
 
-        public PartialViewResult update()
+        public PartialViewResult Update()
         {
             var LeaderBoardInfo = _service.LeaderBoards();
 

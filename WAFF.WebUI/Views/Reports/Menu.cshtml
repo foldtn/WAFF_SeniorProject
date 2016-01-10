@@ -1,14 +1,13 @@
 ﻿
 
-<div id="reportsNav" class="navbar" style="margin-top:25px">
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-            <li style="padding: 10px">@Html.ActionLink("VotingData", "VotingData", 
-                null, new {@class = "btn btn-block btn-default btn-lg" })</li>
-            <li style="padding: 10px"> @Html.ActionLink("LeaderBoards", "LeaderBoards",
-                null, new { @class = "btn btn-block btn-default btn-lg" })</li>
-            <li style="padding: 10px">@Html.ActionLink("Demographics", "Demographics",
-                null, new {@class = "btn btn-block btn-default btn-lg" })</li>
-        </ul>
-    </div>
+<div id="centeredmenu">
+    <ul>
+        <li style="padding: 10px">@Html.ActionLink("Voting Data", "VotingData", 
+            null, new {@class = "btn btn-block btn-default btn-lg" })</li>
+        <li style="padding: 10px"> @Html.ActionLink("Leader Board", "LeaderBoards",
+            null, new { @class = "btn btn-block btn-default btn-lg" })</li>
+        <li style="padding: 10px">@Html.ActionLink("Demographics", "Demographics",
+            null, new {@class = "btn btn-block btn-default btn-lg" })</li>
+    </ul>
 </div>
+
