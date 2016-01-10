@@ -1,56 +1,37 @@
 ﻿@model IEnumerable<WAFF.DataAccess.Entity.Film>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index: All Movies";
 }
 
-<h2>Film Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FilmID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FilmName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FilmGenre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FilmDesc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FilmLength)
-        </th>
-    </tr>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>All Movies</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th class="text-right">ID</th>
+                <th>Name</th>
+                <th>Genre</th>
+                <th class="text-right">Length (min)</th>
+                <th class="text-center">Action</th>
+            </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FilmID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FilmName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FilmGenre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FilmDesc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FilmLength)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FilmID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FilmID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FilmID })
-        </td>
+        <td class="text-right">@item.FilmID</td>
+        <td>@Html.ActionLink(item.FilmName, "Edit", new{id = item.FilmID})</td>
+        <td>@item.FilmGenre</td>
+        <td class="text-right">@item.FilmLength</td>
+        <td class="text-center">@Html.ActionLink("Delete", "Delete", new { id = item.FilmID })</td>
     </tr>
 }
+        </table>
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink("Add a new Movie", "Create", null, new { @class="btn btn-default"})
+    </div>
+</div>
 
-</table>
+
