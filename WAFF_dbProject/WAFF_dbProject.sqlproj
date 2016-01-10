@@ -79,7 +79,7 @@
     <None Include="Scripts\seedWAFF.sql" />
     <None Include="Scripts\seedTimmy.sql" />
     <None Include="Scripts\seedJohn.sql" />
-    <None Include="WAFF_dbProject.local.publish.xml" />
     <None Include="Scripts\demoTimmy.sql" />
+    <None Include="WAFF_dbProject.local.publish.xml" />
   </ItemGroup>
 </Project>

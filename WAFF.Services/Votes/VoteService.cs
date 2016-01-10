@@ -16,7 +16,7 @@ namespace WAFF.Services.Votes
         public void SaveVote(Vote vote)
         {
             _db.Votes.Add(vote);
-            _db.SaveChanges();
+             _db.SaveChanges();
         }
     }
 
