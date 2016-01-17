@@ -13,7 +13,6 @@
         @Html.AntiForgeryToken()
         <div class="panel-body" style="margin-top:50px">
             @Html.ValidationSummary(true)
-            @Html.HiddenFor(m => m.FilmID)
             @foreach (var property in ViewData.ModelMetadata.Properties)
             {
                 if (property.PropertyName != "FilmID")

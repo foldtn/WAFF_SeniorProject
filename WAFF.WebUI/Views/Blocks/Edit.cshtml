@@ -1,69 +1,36 @@
 ﻿@model WAFF.DataAccess.Entity.Block
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Block: Edit";
 }
 
-<h2>Edit</h2>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Block</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.BlockID)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BlockStart, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BlockStart)
-                @Html.ValidationMessageFor(model => model.BlockStart)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BlockEnd, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BlockEnd)
-                @Html.ValidationMessageFor(model => model.BlockEnd)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BlockLocation, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BlockLocation)
-                @Html.ValidationMessageFor(model => model.BlockLocation)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BlockType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BlockType)
-                @Html.ValidationMessageFor(model => model.BlockType)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EventID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EventID)
-                @Html.ValidationMessageFor(model => model.EventID)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit Block</h3>
     </div>
-}
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="panel-body" style="margin-top:50px">
+            @Html.ValidationSummary(true)
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                if (property.PropertyName != "BlockID")
+                {
+                    <div class="form-group">
+                        <label>@(property.DisplayName ?? property.PropertyName)</label>
+                        @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                        @Html.ValidationMessage(property.PropertyName)
+                    </div>
+                }
+            }
+        </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
 </div>
+

@@ -47,7 +47,7 @@ namespace WAFF.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength,BlockID")] Film film)
+        public ActionResult Create([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength")] Film film)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace WAFF.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength,BlockID")] Film film)
+        public ActionResult Edit([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength")] Film film)
         {
             if (ModelState.IsValid)
             {

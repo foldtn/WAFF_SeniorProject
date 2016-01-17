@@ -11,7 +11,8 @@
     <div class="panel-body">
         <table class="table table-striped table-condensed table-bordered">
             <tr>
-                <th class="text-right">ID</th>
+                <th>ID</th>
+                <th class="text-center">Action</th>
                 <th>Name</th>
                 <th>Genre</th>
                 <th class="text-right">Length (min)</th>
@@ -21,8 +22,9 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td class="text-right">@item.FilmID</td>
-                    <td>@Html.ActionLink(item.FilmName, "Edit", new { id = item.FilmID })</td>
+                    <td>@item.FilmID</td>
+                    <td class="text-center">@Html.ActionLink("Edit", "Edit", new { id = item.FilmID })</td>
+                    <td>@item.FilmName</td>
                     <td>@item.FilmGenre</td>
                     <td class="text-right">@item.FilmLength</td>
                     <td class="text-center">@Html.ActionLink("Delete", "Delete", new { id = item.FilmID })</td>

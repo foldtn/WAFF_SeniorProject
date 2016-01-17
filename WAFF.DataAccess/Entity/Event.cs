@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace WAFF.DataAccess.Entity
 {
     
     public class Event
     {
+        [HiddenInput(DisplayValue = false)]
         public int EventID { get; set; }
         [DisplayName("Event Start Date")]
         public DateTime EventStartDate { get; set; }
