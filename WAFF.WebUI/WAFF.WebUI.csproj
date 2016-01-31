@@ -203,6 +203,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\Voting\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WAFF.DataAccess\WAFF.DataAccess.csproj">
