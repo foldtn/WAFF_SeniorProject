@@ -110,8 +110,14 @@ namespace WAFF.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            IEnumerable<FilmBlock> fb = db.FilmBlocks.Where(x => x.FilmID == id);
+            db.FilmBlocks.RemoveRange(fb);
+
+            db.SaveChanges();
+
             Film film = db.Films.Find(id);
             db.Films.Remove(film);
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }
