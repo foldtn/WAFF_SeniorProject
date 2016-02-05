@@ -1,73 +1,7 @@
-﻿@model WAFF.DataAccess.Entity.Vote
+﻿@using System.Web.Optimization; 
+@{Layout = null; ViewBag.Title = "what";} 
 
-@{
-    ViewBag.Title = "Vote";
+<div id="voting-mount">
 
-}
-
-@using (Html.BeginForm("Vote", "Vote", FormMethod.Post))
-{
-    @Html.HiddenFor(x => x.VoterID)
-    @Html.HiddenFor(x => x.BlockID)
-
-    <div class="container">
-        <br />
-        <div class="well well-lg">   
-            <table>
-                <tr>
-                    <td>@Html.RadioButtonFor(m => m.FilmID, new List<SelectListItem>
-                        {
-                        })
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="button" class="btn btn-success" /></td>
-                </tr>
-            
-            </table>
-        </div>
-    </div>
-
-    <div class="container">
-        <br />
-        <div class="well well-lg">
-            <table>
-                <tr>
-                    <td>
-                        @Html.DropDownListFor(m => m.FilmID, new List<SelectListItem>
-                        {
-                            new SelectListItem { Text = "Movie 1", Value = "1" },
-                            new SelectListItem { Text = "Movie 2", Value = "2" },
-                            new SelectListItem { Text = "Movie 3", Value = "3" },
-                        })
-                </td>
-            </tr>
-            <tr>
-                <td><input type="submit" name="button" class="btn btn-success" /></td>
-            </tr>
-
-        </table>
-    </div>
 </div>
-        <div class="container">
-            <br />
-            <div class="well well-lg">
-                <table>
-                    <tr>
-                        <td>
-                            @Html.DropDownListFor(m => m.FilmID, new List<SelectListItem>
-                        {
-                            new SelectListItem { Text = "Movie 1", Value = "1" },
-                            new SelectListItem { Text = "Movie 2", Value = "2" },
-                            new SelectListItem { Text = "Movie 3", Value = "3" },
-                        })
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="button" class="btn btn-success" /></td>
-                </tr>
-
-            </table>
-        </div>
-    </div>
-        }
+    

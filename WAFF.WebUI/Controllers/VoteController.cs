@@ -22,7 +22,7 @@ namespace WAFF.WebUI.Controllers
                 VoterID = id,
                 BlockID = blockId,
             };
-            return View(model);
+            return PartialView(model);
         }
         [HttpPost]
         public ActionResult Vote(Vote vote )
