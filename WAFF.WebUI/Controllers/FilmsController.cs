@@ -47,7 +47,7 @@ namespace WAFF.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength,BlockID")] Film film)
+        public ActionResult Create([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength")] Film film)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace WAFF.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength,BlockID")] Film film)
+        public ActionResult Edit([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength")] Film film)
         {
             if (ModelState.IsValid)
             {
@@ -110,8 +110,14 @@ namespace WAFF.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            IEnumerable<FilmBlock> fb = db.FilmBlocks.Where(x => x.FilmID == id);
+            db.FilmBlocks.RemoveRange(fb);
+
+            db.SaveChanges();
+
             Film film = db.Films.Find(id);
             db.Films.Remove(film);
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }

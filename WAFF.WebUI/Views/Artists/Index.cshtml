@@ -1,87 +1,51 @@
 ﻿@model IEnumerable<WAFF.DataAccess.Entity.Artist>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index: All Artists";
 }
 
-<h2>Artist Index</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>All Artists</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th>ID</th>
+                <th class="text-center">Action</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Company</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th class="text-right">Zip Code</th>
+                <th class="text-right">Phone</th>
+                <th class="text-center">Action</th>
+            </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistFName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistLName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistCompany)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistEmail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistCity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistState)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistZip)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArtistPhone)
-        </th>
-        <th></th>
-    </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ArtistID</td>
+                    <td class="text-center">@Html.ActionLink("Edit", "Edit", new { id = item.ArtistID })</td>
+                    <td>@item.ArtistFName</td>
+                    <td>@item.ArtistLName</td>
+                    <td>@item.ArtistCompany</td>
+                    <td>@item.ArtistEmail</td>
+                    <td>@item.ArtistAddress</td>
+                    <td>@item.ArtistCity</td>
+                    <td>@item.ArtistState</td>
+                    <td class="text-right">@item.ArtistZip</td>
+                    <td class="text-right">@item.ArtistPhone</td>
+                    <td class="text-center">@Html.ActionLink("Delete", "Delete", new { id = item.ArtistID })</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink("Add a new Artist", "Create", null, new { @class = "btn btn-default" })
+    </div>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistFName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistLName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistCompany)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistCity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistState)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistZip)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArtistPhone)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ArtistID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ArtistID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ArtistID })
-        </td>
-    </tr>
-}
-
-</table>

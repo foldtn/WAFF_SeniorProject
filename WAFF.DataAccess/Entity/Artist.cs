@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace WAFF.DataAccess.Entity
 {
     public class Artist
     {
-        
+        [HiddenInput(DisplayValue = false)]
         public int ArtistID { get; set; }
         [DisplayName("Artist's First Name")]
         public string ArtistFName { get; set; }
