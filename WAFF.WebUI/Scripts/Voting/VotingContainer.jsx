@@ -15,6 +15,7 @@
             return(
              <div style = {blockStyle}>
                  {this.props.filmName}
+                 <div></div>
              </div>
             )
 

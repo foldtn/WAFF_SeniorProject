@@ -19,7 +19,8 @@
             return React.createElement(
                 'div',
                 { style: blockStyle },
-                this.props.filmName
+                this.props.filmName,
+                React.createElement('div', null)
             );
         }
     });
