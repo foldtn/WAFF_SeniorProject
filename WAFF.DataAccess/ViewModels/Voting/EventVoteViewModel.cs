@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace WAFF.DataAccess.ViewModels.Voting
 {
-    class EventVoteViewModel
+    public class EventVoteViewModel
     {
+        public IEnumerable<BlockViewModel> BlockViewModels; 
     }
 }

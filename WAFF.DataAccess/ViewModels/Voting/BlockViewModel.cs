@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace WAFF.DataAccess.ViewModels.Voting
 {
-    class BlockViewModel
+    public class BlockViewModel
     {
+        public IEnumerable<FilmVoteViewModel> FilmVoteViewModels; 
     }
 }

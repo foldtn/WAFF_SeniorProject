@@ -95,6 +95,9 @@
     <Compile Include="ViewModels\genreVD.cs" />
     <Compile Include="ViewModels\graphVD.cs" />
     <Compile Include="ViewModels\LeaderBoardEntry.cs" />
+    <Compile Include="ViewModels\Voting\BlockViewModel.cs" />
+    <Compile Include="ViewModels\Voting\EventVoteViewModel.cs" />
+    <Compile Include="ViewModels\Voting\FilmVoteViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
