@@ -76,6 +76,7 @@
     <Build Include="dbo\Stored Procedures\getFilmsB.sql" />
     <Build Include="dbo\Stored Procedures\getFilmsG.sql" />
     <Build Include="dbo\tables\FILMBLOCKS.sql" />
+    <Build Include="dbo\tables\USERS.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />
