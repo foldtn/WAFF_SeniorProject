@@ -1,0 +1,29 @@
+﻿@model WAFF.DataAccess.Entity.Vote
+
+@{
+    ViewBag.Title = "Vote";
+
+}
+
+@using (Html.BeginForm("Vote", "Vote", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.VoterID)
+    @Html.HiddenFor(x => x.BlockID)
+
+    <div class="container">
+        <br />
+        <div class="well well-lg">
+
+            @Html.DropDownListFor(m => m.FilmID, new List<SelectListItem>
+            {
+                new SelectListItem { Text = "Movie 1", Value = "1" },
+                new SelectListItem { Text = "Movie 2", Value = "2" },
+                new SelectListItem { Text = "Movie 3", Value = "3" },
+            })
+
+        </div>
+
+        <input type="submit" name="button" class="btn btn-success" />
+
+    </div>
+}

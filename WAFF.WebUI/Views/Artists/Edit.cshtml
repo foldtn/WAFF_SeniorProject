@@ -1,0 +1,36 @@
+﻿@model WAFF.DataAccess.Entity.Artist
+
+@{
+    ViewBag.Title = "Artist: Edit " + @Model.ArtistFName + " " + @Model.ArtistLName;
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Edit @Model.ArtistFName @Model.ArtistLName</h3>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(X => X.ArtistID)
+        @Html.AntiForgeryToken()
+        <div class="panel-body" style="margin-top:50px">
+            @Html.ValidationSummary(true)
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                if (property.PropertyName != "ArtistID")
+                {
+                    <div class="form-group">
+                        <label>@(property.DisplayName ?? property.PropertyName)</label>
+                        @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                        @Html.ValidationMessage(property.PropertyName)
+                    </div>
+                }
+            }
+        </div>
+
+
+        <div class="panel-footer">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="807ba270-e07e-4ab2-b712-b771f214d918" ChangeDateTime="10/25/2015 23:37:26">
+    <Property Name="ElementName" Value="[dbo].[test].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[test]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6959b264-34ef-4668-8bc5-de1e1719c791" ChangeDateTime="10/29/2015 01:37:19">
+    <Property Name="ElementName" Value="[dbo].[Event].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Event]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EventID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bbb73330-6565-4b87-9417-f7fb484730b1" ChangeDateTime="11/01/2015 16:56:35">
+    <Property Name="ElementName" Value="[dbo].[test].[ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[test]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="VoterID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3fa13876-c1ee-4245-85f5-2fb52c20994d" ChangeDateTime="11/01/2015 16:56:41">
+    <Property Name="ElementName" Value="[dbo].[test].[Age]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[test]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="VoterAge" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b048776c-db28-46e3-acaf-aad40ba4e8e3" ChangeDateTime="11/01/2015 16:56:46">
+    <Property Name="ElementName" Value="[dbo].[test].[Ethnicity]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[test]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="VoterEthnicity" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e2bcb246-06ea-4afd-abca-b358e3e56bfb" ChangeDateTime="11/01/2015 16:56:56">
+    <Property Name="ElementName" Value="[dbo].[test].[Education]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[test]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="VoterEducation" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9622154b-8f42-46aa-a09d-34e4fa6afabd" ChangeDateTime="11/01/2015 16:57:02">
+    <Property Name="ElementName" Value="[dbo].[test].[Income]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[test]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="VoterIncome" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d0dd141f-e09a-492b-9d59-90d194b8acc8" ChangeDateTime="11/01/2015 16:58:23">
+    <Property Name="ElementName" Value="[dbo].[test].[VoterQR]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[test]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="VoterQRCode" />
+  </Operation>
+</Operations>

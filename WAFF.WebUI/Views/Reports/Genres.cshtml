@@ -1,0 +1,27 @@
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.genreVD>
+
+@{
+    var first = 0;
+
+    foreach (var genre in Model)
+    {
+        @Ajax.ActionLink(genre.FilmGenre, "FilmsGAsync", "Reports",
+            new
+            {
+                genre = genre.FilmGenre
+            },
+            new AjaxOptions
+            {
+                UpdateTargetId = "containerFilms",
+                OnSuccess = "selectedGenre('" + genre.FilmGenre + "')"
+            },
+            new { id = genre.FilmGenre })
+        <br />
+
+        if (first == 0)
+        {
+            <input id="currentGenre" type="hidden" value="@genre.FilmGenre" />
+            first++;
+        }
+    }
+}
