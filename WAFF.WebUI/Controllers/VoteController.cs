@@ -30,5 +30,12 @@ namespace WAFF.WebUI.Controllers
             _service.SaveVote(vote);
             return View();
         }
+
+        //Passing the date.object into the service.GetAllBlocksForEvent
+        public JsonResult GetAllBlocksForEvent(DateTime currentDate)
+        {
+            var results = _service.GetAllBlocksForEventsAsync(currentDate);
+            return Json(results);
+        }
     }
 }
