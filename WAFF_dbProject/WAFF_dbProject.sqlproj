@@ -78,6 +78,7 @@
     <Build Include="dbo\tables\USERS.sql" />
     <Build Include="dbo\Stored Procedures\getVotes.sql" />
     <Build Include="dbo\Stored Procedures\getLBVoted.sql" />
+    <Build Include="dbo\Stored Procedures\getLBDataFinal.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />
