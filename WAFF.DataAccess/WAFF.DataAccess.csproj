@@ -96,6 +96,7 @@
     <Compile Include="ViewModels\graphVD.cs" />
     <Compile Include="ViewModels\LeaderBoardData.cs" />
     <Compile Include="ViewModels\LeaderBoardEntry.cs" />
+    <Compile Include="ViewModels\VotesLB.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
