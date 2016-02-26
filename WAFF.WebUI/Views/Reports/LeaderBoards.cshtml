@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Leader Board";
 }
 
@@ -18,11 +17,11 @@
             <li style="padding-top: 35px"><h2>Leader Board</h2></li>
         </ul>
     </div>
-    
+
 
 
     <div style="visibility:hidden">
-        <!-- Ajax.Actionlink(linktext, actionName, 
+        <!-- Ajax.Actionlink(linktext, actionName,
                 routeValues, ajaxOptions, htmlAttributes) -->
         @Ajax.ActionLink("update", "Update", "Reports",
             new AjaxOptions
@@ -39,6 +38,6 @@
     <div class="text-center">
         <div id="toFull" class="btn btn-default btn-lg" onclick="fullScreen(fullScreen)">Enter Fullscreen</div>
         <input id="test" type="hidden" value="0" />
-     </div>
-    
+    </div>
+
 </div>

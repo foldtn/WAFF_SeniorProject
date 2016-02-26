@@ -14,44 +14,46 @@
         @{
             var count = 0;
             decimal votePercent = 0;
+            string vote;
 
             foreach (var f in Model)
             {
                 <tr>
                     <td class="text-center">
                         @{
-                if (votePercent == f.VotePercentage)
-                {
-                    count--;
-                }
-
-                votePercent = f.VotePercentage;
-
-                switch (count)
-                {
-                    case 0:
-                        <h4 style="color: gold"><i class="fa fa-trophy"></i> 1st</h4>
-                        count++;
-                        break;
-                    case 1:
-                    <h4 style="color: silver"><i class="fa fa-trophy"></i> 2nd</h4>
-                        count++;
-                        break;
-                    case 2:
-                    <h4 style="color: #cd7f32"><i class="fa fa-trophy"></i> 3rd</h4>
-                        count++;
-                        break;
-                    default:
-                    <h4>@(count + 1)th</h4>
-                        count++;
-                        break;
-                }
+                            if (votePercent == f.VotePercentage)
+                            {
+                                count--;
+                            }
+                            
+                            votePercent = f.VotePercentage;
+                            vote = votePercent.ToString("0.00");
+                            
+                            switch (count)
+                            {
+                                case 0:
+                                    <h4 style="color: gold"><i class="fa fa-trophy"></i> 1st</h4>
+                                    count++;
+                                    break;
+                                case 1:
+                                <h4 style="color: silver"><i class="fa fa-trophy"></i> 2nd</h4>
+                                    count++;
+                                    break;
+                                case 2:
+                                <h4 style="color: #cd7f32"><i class="fa fa-trophy"></i> 3rd</h4>
+                                    count++;
+                                    break;
+                                default:
+                                <h4>@(count + 1)th</h4>
+                                    count++;
+                                    break;
+                            }
                         }
                     </td>
                     <td class="text-center"><h4>@f.FilmName</h4></td>
                     <td class="text-center"><h4>@f.FilmGenre</h4></td>
                     <td class="text-center"><h4>@f.BlockDayOfWeek @f.BlockStart to @f.BlockEnd</h4></td>
-                    <td class="text-center"><h4>@f.VotePercentage%</h4></td>
+                    <td class="text-center"><h4>@vote%</h4></td>
                 </tr>
             }
         }

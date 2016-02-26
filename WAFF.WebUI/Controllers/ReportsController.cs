@@ -13,7 +13,7 @@ namespace WAFF.WebUI.Controllers
     {
         // Create a ReportsService object to get information for Leaderboards
         ReportService _service = new ReportService();
-        
+
         public ActionResult VotingData()
         {
             return View();
@@ -33,34 +33,34 @@ namespace WAFF.WebUI.Controllers
             return PartialView(genre);
         }
 
-        public async Task<PartialViewResult> FilmsBAsync(int id)
+        public PartialViewResult FilmsBAsync(int id)
         {
             string genre = null;
-            var films = await _service.GetFilmsAsync(id, genre);
+            var films = _service.GetFilmsAsync(id, genre);
 
             return PartialView(films);
         }
 
-        public async Task<PartialViewResult> FilmsGAsync(string genre)
+        public PartialViewResult FilmsGAsync(string genre)
         {
             int id = -1;
-            var films = await _service.GetFilmsAsync(id, genre);
+            var films = _service.GetFilmsAsync(id, genre);
 
             return PartialView(films);
         }
 
-        public async Task<PartialViewResult> GraphBAsync(int id)
+        public PartialViewResult GraphBAsync(int id)
         {
             string genre = null;
-            var films = await _service.GetGraphAsync(id, genre);
+            var films = _service.GetGraphAsync(id, genre);
 
             return PartialView(films);
         }
 
-        public async Task<PartialViewResult> GraphGAsync(string genre)
+        public PartialViewResult GraphGAsync(string genre)
         {
             int id = -1;
-            var films = await _service.GetGraphAsync(id, genre);
+            var films = _service.GetGraphAsync(id, genre);
 
             return PartialView(films);
         }
