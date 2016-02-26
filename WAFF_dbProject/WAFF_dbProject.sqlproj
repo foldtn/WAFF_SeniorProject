@@ -70,7 +70,6 @@
     <Build Include="dbo\tables\ARTISTS.sql" />
     <Build Include="dbo\tables\FILMS.sql" />
     <Build Include="dbo\tables\VOTES.sql" />
-    <Build Include="dbo\Stored Procedures\GetLeaderBoards.sql" />
     <Build Include="dbo\Stored Procedures\getBlocks.sql" />
     <Build Include="dbo\Stored Procedures\getGenres.sql" />
     <Build Include="dbo\Stored Procedures\getFilmsB.sql" />
