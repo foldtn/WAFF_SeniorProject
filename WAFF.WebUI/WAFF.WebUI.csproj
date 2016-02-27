@@ -194,6 +194,8 @@
     <Content Include="Views\FilmBlocks\Details.cshtml" />
     <Content Include="Views\FilmBlocks\Edit.cshtml" />
     <Content Include="Views\FilmBlocks\Index.cshtml" />
+    <Content Include="Views\Reports\EventSelect.cshtml" />
+    <Content Include="Views\Reports\EventLB.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -16,7 +16,7 @@ namespace WAFF.Services.Reports
     {
         private EFDbContext _db = new EFDbContext();
 
-        public List<LeaderBoardEntry> LeaderBoards()
+        public List<LeaderBoardEntry> LeaderBoards(int EventID)
         {
             // declare variables
             List<LeaderBoardEntry> finalList = new List<LeaderBoardEntry>();
@@ -28,9 +28,9 @@ namespace WAFF.Services.Reports
             List<VotesLB> filler2 = new List<VotesLB>();
             List<List<VotesLB>> tempVotes = new List<List<VotesLB>>();
 
-            int tempEvent = 1;
+            //int tempEvent = 1;
 
-            var list = getLBData(tempEvent);
+            var list = getLBData(EventID);
 
             // splits duplicates and non-duplicates
             temp = getDuplicates(list);
@@ -333,6 +333,13 @@ namespace WAFF.Services.Reports
 
             return list;
         } // End GetGenres
+
+        public List<eventDate> GetEvents()
+        {
+            var list = _db.Database.SqlQuery<eventDate>("getEvents").ToList();
+
+            return list;
+        }
 
         public IEnumerable<filmsVD> GetFilmsAsync(int block, string genre)
         {

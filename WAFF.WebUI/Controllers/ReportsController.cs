@@ -19,6 +19,20 @@ namespace WAFF.WebUI.Controllers
             return View();
         }
 
+        public PartialViewResult EventSelect()
+        {
+            var events = _service.GetEvents();
+
+            return PartialView(events);
+        }
+
+        public PartialViewResult EventLB()
+        {
+            var events = _service.GetEvents();
+
+            return PartialView(events);
+        }
+
         public PartialViewResult Blocks()
         {
             var blocks = _service.GetBlocks();
@@ -73,15 +87,13 @@ namespace WAFF.WebUI.Controllers
 
         public ActionResult LeaderBoards()
         {
-            // Get Leader Board information from database.
-            var LeaderBoardInfo = _service.LeaderBoards();
 
-            return View(LeaderBoardInfo);
+            return View();
         }
 
-        public PartialViewResult Update()
+        public PartialViewResult Update(int EventID)
         {
-            var LeaderBoardInfo = _service.LeaderBoards();
+            var LeaderBoardInfo = _service.LeaderBoards(EventID);
 
             return PartialView(LeaderBoardInfo);
         }

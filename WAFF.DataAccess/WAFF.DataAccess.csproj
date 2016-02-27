@@ -91,6 +91,7 @@
     <Compile Include="Entity\Voter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\blockVD.cs" />
+    <Compile Include="ViewModels\eventDate.cs" />
     <Compile Include="ViewModels\filmsVD.cs" />
     <Compile Include="ViewModels\genreVD.cs" />
     <Compile Include="ViewModels\graphVD.cs" />

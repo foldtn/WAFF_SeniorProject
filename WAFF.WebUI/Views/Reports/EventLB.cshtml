@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.eventDate>
+
+<div style="display: none">
+    @{
+        foreach (var Event in Model)
+        {
+            
+            @Ajax.ActionLink("update", "Update", "Reports",
+            new
+            {
+                EventID = Event.EventID
+            },
+            new AjaxOptions
+            {
+                UpdateTargetId = "leaderBoardContainer"
+            },
+            new { id = "Event" + Event.EventID })
+        }
+    }
+</div>

@@ -9,6 +9,7 @@
         document.getElementById("lbHeader").style.display = "none";
         document.getElementById("lbImgHeader").style.display = "inline";
         document.getElementById("toFull").style.display = "none";
+        document.getElementById("events").style.display = "none";
         //document.getElementById("toFull").innerHTML = "Exit Fullscreen";
     }
     else {
@@ -22,6 +23,7 @@
         document.getElementById("lbImgHeader").style.display = "none";
         document.getElementById("lbHeader").style.display = "block";
         document.getElementById("toFull").style.display = "inline";
+        document.getElementById("events").style.display = "inline";
         //document.getElementById("toFull").innerHTML = "Enter Fullscreen";
     }
 }

@@ -2,12 +2,22 @@
 var tick = 5000;
 
 function update() {
+    var o = document.getElementById('events');
+    var event = o.options[o.selectedIndex].value;
     
-    document.getElementById('updateLink').click();
+    document.getElementById('Event' + event).click();
 }
 
 window.onload = function () {
-    update();
+    document.getElementById('eventLoadSelect').click();
+    document.getElementById('eventLoadLB').click();
+    
 };
 
-setInterval(update, tick);
+function beginUpdate()
+{
+    update();
+    setInterval(update, tick);
+}
+
+
