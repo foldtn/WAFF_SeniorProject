@@ -16,35 +16,30 @@
                 height: '200px',
                 padding: '5px'
             };
-
-            var filmSegment = {
-                border: 'solid',
+            var segOne = {
                 display: 'flex',
+                border: 'solid',
                 justifyContent: 'flex-start',
                 flexDirection: 'row',
-                alignItems: 'flex-start',
-                width: '25%',
-                height: '180px',
+                width: '75%',
+                height: '100px',
                 padding: '5px'
             };
+
             return React.createElement(
                 'div',
                 { style: blockStyle },
                 this.props.filmName,
                 React.createElement(
                     'div',
-                    { style: filmSegment },
+                    null,
                     React.createElement(
                         'div',
                         null,
                         React.createElement(
                             'ul',
                             null,
-                            React.createElement(
-                                'li',
-                                null,
-                                '1'
-                            )
+                            React.createElement('li', { style: segOne })
                         )
                     )
                 )
@@ -69,11 +64,7 @@
         render: function render() {
             return React.createElement(
                 'div',
-                { style: { display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' } },
-                React.createElement(Block, { filmName: ' Late at Night' }),
-                React.createElement(Block, { filmName: ' Pinocho' }),
-                React.createElement(Block, { filmName: ' Somenthing Crazy' }),
-                React.createElement(Block, { filmName: ' React is an array of weirdness' }),
+                null,
                 React.createElement(Block, { filmName: ' Late at Night' })
             );
         },

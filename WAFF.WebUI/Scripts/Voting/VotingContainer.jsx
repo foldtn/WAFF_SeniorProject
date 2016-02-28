@@ -12,30 +12,29 @@
                 height: '200px',
                 padding: '5px'
             };
-
-            var filmSegment = {
-                border: 'solid',
+            var segOne = {
                 display: 'flex',
-                justifyContent:'flex-start',
-                flexDirection:'row',
-                alignItems:'flex-start',
-                width:'25%',
-                height: '180px',
+                border: 'solid',
+                justifyContent: 'flex-start',
+                flexDirection: 'row',
+                width: '75%',
+                height: '100px',
                 padding: '5px'
             };
+
             return(
              <div style = {blockStyle}>
                  {this.props.filmName}
-                 <div style= {filmSegment}>
-                     <div>
-                         <ul>
-                            <li>1</li>
+                <div>
+                    <div>
+                        <ul>
+                            <li style = {segOne}></li>
                         </ul>
-                     </div>
-                 </div>
+                    </div>
+                </div>
+
              </div>
             )
-
         }
     });
 
@@ -58,12 +57,8 @@
 
         render(){
             return(
-                <div style = {{display:'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+                <div>
                     <Block filmName = " Late at Night" />
-                    <Block filmName = " Pinocho"/>
-                    <Block filmName = " Somenthing Crazy"/>
-                    <Block filmName = " React is an array of weirdness"/>
-                    <Block filmName = " Late at Night"/>
                 </div>)
         },
 
