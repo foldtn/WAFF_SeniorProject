@@ -1,0 +1,28 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_reactLayout</title>
+</head>
+<body>
+    <div> 
+        @RenderBody()
+    </div>
+</body>
+
+@Scripts.Render("~/scripts/react")
+<script type="text/javascript">
+        (function () {
+
+            React.render(React.createElement(VotingContainer, {}), document.getElementById("voting-mount"));
+
+
+        })();
+</script>
+</html>

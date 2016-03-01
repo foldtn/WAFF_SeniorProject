@@ -22,13 +22,20 @@ namespace WAFF.WebUI.Controllers
                 VoterID = id,
                 BlockID = blockId,
             };
-            return View(model);
+            return PartialView(model);
         }
         [HttpPost]
         public ActionResult Vote(Vote vote )
         {
             _service.SaveVote(vote);
             return View();
+        }
+
+        //Passing the date.object into the service.GetAllBlocksForEvent
+        public JsonResult GetAllBlocksForEvent(DateTime currentDate)
+        {
+            var results = _service.GetAllBlocksForEventsAsync(currentDate);
+            return Json(results);
         }
     }
 }
