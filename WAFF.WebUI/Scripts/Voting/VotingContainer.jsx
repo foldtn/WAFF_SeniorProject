@@ -1,84 +1,95 @@
-(function (){
+(function () {
+
+    var Film = React.createClass({
+        render() {
+            return (
+                <div style={{display:'flex', flexDirection:'row'}}>
+                    {this.props.film.FilmName}
+                </div>
+            )
+        }
+    });
 
     var Block = React.createClass({
         render(){
             var blockStyle = {
                 border: 'solid',
                 display: 'flex',
-                justifyContent:'center',
-                alignItems:'center',
-                flexDirection:'column',
-                width:'75%',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'column',
+                width: '75%',
                 height: '200px',
                 padding: '5px'
             };
-            var segOne = {
-                display: 'flex',
-                border: 'solid',
-                justifyContent: 'flex-start',
-                flexDirection: 'row',
-                width: '75%',
-                height: '100px',
-                padding: '5px'
-            };
 
-            return(
-             <div style = {blockStyle}>
-                 {this.props.filmName}
-                <div>
+            /*var filmElementStyle = {
+              border:'solid',
+              float:'left',
+              display:'flex',
+              justifyContent:'flex-start',
+              alignItems:'flex-start',
+              flexDirection:'row',
+              width:'25%',
+              height:'100px',
+              padding:'5px'
+            };*/
+
+            var filmElements = this.props.films.map(film =>
+                <Film film={film} />
+            );
+
+            return (
+                <div style={blockStyle}>
                     <div>
-                        <ul>
-                            <li style = {segOne}></li>
-                        </ul>
+                        {filmElements}
                     </div>
                 </div>
-
-             </div>
             )
+
         }
     });
 
+    window.VotingContainer = React.createClass({
 
 
-
-
-    window.VotingContainer= React.createClass({
-
-        //Once the component is made , give me the state it should start in
         getInitialState() {
-            return{
+            return {
                 BlockDetailList: []
             }
         },
-        // Call this function when it mounts.
+
         componentDidMount(){
-            this._getAllBlocksForEvents();
+
         },
 
         render(){
-            return(
-                <div>
-                    <Block filmName = " Late at Night" />
+            var blocks = Blocks.Lists;
+
+            var blocksAndFilms = blocks.map(array =>
+                <Block films={array} />
+            );
+
+            return (
+                <div style={{display:'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+                    {blocksAndFilms}
                 </div>)
         },
 
-        //Where is this call going, if return right data do something
-        _getAllBlocksForEvents()
-        {
+        _getAllBlocksForEvent() {
             var currentDate = new Date().toJSON();
 
             $.ajax({
-                url: "/Vote/GetAllBlockForEvent/?currentDate=" + currentDate,
+                url: "/Vote/GetAllBlocksForEvent/?currentDate=" + currentDate,
                 success: function (data) {
                     this.setState({
                         BlockDetailList: data
                     })
                 }
             })
-
         }
-    });
 
+    });
 
 
 })(window.React);

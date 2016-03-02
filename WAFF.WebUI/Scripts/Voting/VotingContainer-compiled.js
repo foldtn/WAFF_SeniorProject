@@ -2,6 +2,18 @@
 
 (function () {
 
+    var Film = React.createClass({
+        displayName: 'Film',
+
+        render: function render() {
+            return React.createElement(
+                'div',
+                { style: { display: 'flex', flexDirection: 'row' } },
+                this.props.film.FilmName
+            );
+        }
+    });
+
     var Block = React.createClass({
         displayName: 'Block',
 
@@ -16,32 +28,30 @@
                 height: '200px',
                 padding: '5px'
             };
-            var segOne = {
-                display: 'flex',
-                border: 'solid',
-                justifyContent: 'flex-start',
-                flexDirection: 'row',
-                width: '75%',
-                height: '100px',
-                padding: '5px'
-            };
+
+            /*var filmElementStyle = {
+              border:'solid',
+              float:'left',
+              display:'flex',
+              justifyContent:'flex-start',
+              alignItems:'flex-start',
+              flexDirection:'row',
+              width:'25%',
+              height:'100px',
+              padding:'5px'
+            };*/
+
+            var filmElements = this.props.films.map(function (film) {
+                return React.createElement(Film, { film: film });
+            });
 
             return React.createElement(
                 'div',
                 { style: blockStyle },
-                this.props.filmName,
                 React.createElement(
                     'div',
                     null,
-                    React.createElement(
-                        'div',
-                        null,
-                        React.createElement(
-                            'ul',
-                            null,
-                            React.createElement('li', { style: segOne })
-                        )
-                    )
+                    filmElements
                 )
             );
         }
@@ -50,31 +60,33 @@
     window.VotingContainer = React.createClass({
         displayName: 'VotingContainer',
 
-        //Once the component is made , give me the state it should start in
         getInitialState: function getInitialState() {
             return {
                 BlockDetailList: []
             };
         },
-        // Call this function when it mounts.
-        componentDidMount: function componentDidMount() {
-            this._getAllBlocksForEvents();
-        },
+
+        componentDidMount: function componentDidMount() {},
 
         render: function render() {
+            var blocks = Blocks.Lists;
+
+            var blocksAndFilms = blocks.map(function (array) {
+                return React.createElement(Block, { films: array });
+            });
+
             return React.createElement(
                 'div',
-                null,
-                React.createElement(Block, { filmName: ' Late at Night' })
+                { style: { display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' } },
+                blocksAndFilms
             );
         },
 
-        //Where is this call going, if return right data do something
-        _getAllBlocksForEvents: function _getAllBlocksForEvents() {
+        _getAllBlocksForEvent: function _getAllBlocksForEvent() {
             var currentDate = new Date().toJSON();
 
             $.ajax({
-                url: "/Vote/GetAllBlockForEvent/?currentDate=" + currentDate,
+                url: "/Vote/GetAllBlocksForEvent/?currentDate=" + currentDate,
                 success: function success(data) {
                     this.setState({
                         BlockDetailList: data
@@ -82,6 +94,7 @@
                 }
             });
         }
+
     });
 })(window.React);
 

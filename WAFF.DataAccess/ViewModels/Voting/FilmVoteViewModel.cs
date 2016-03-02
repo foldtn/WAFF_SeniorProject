@@ -8,8 +8,18 @@ namespace WAFF.DataAccess.ViewModels.Voting
 {
     public class FilmVoteViewModel
     {
+        public int FilmId { get; set; }
+        public int BlockId { get; set; }
+        public int EventId { get; set; }
         public string FilmName { get; set; }
-        public string ArtistName { get; set; }
+        public string FilmDescription { get; set; }
+        public string FilmGenre { get; set; }
+        public int FilmLength { get; set; }
+        public string BlockType { get; set; }
+        public DateTime BlockStart { get; set; }
+        public DateTime BlockEnd { get; set; }
+        public string BlockLocation { get; set; }
+
 
     }
 }

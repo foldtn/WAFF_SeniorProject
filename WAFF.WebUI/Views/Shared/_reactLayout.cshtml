@@ -14,15 +14,7 @@
     <div> 
         @RenderBody()
     </div>
+
+    @RenderSection("scripts", false)
 </body>
-
-@Scripts.Render("~/scripts/react")
-<script type="text/javascript">
-        (function () {
-
-            React.render(React.createElement(VotingContainer, {}), document.getElementById("voting-mount"));
-
-
-        })();
-</script>
 </html>

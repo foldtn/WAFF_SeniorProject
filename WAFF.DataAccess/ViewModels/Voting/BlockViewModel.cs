@@ -8,6 +8,6 @@ namespace WAFF.DataAccess.ViewModels.Voting
 {
     public class BlockViewModel
     {
-        public IEnumerable<FilmVoteViewModel> FilmVoteViewModels; 
+        public IList<FilmVoteViewModel> FilmVoteViewModels; 
     }
 }
