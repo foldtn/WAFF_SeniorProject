@@ -8,7 +8,7 @@
         render: function render() {
             return React.createElement(
                 'div',
-                { style: { display: 'flex', flexDirection: 'row' } },
+                { style: { border: 'solid', display: 'flex', flexDirection: 'column' } },
                 this.props.film.FilmName
             );
         }
@@ -23,7 +23,7 @@
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                flexDirection: 'column',
+                flexDirection: 'row',
                 width: '75%',
                 height: '200px',
                 padding: '5px'

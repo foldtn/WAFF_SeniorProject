@@ -3,7 +3,7 @@
     var Film = React.createClass({
         render() {
             return (
-                <div style={{display:'flex', flexDirection:'row'}}>
+                <div style={{border:'solid', display:'flex', flexDirection:'column'}}>
                     {this.props.film.FilmName}
                 </div>
             )
@@ -17,7 +17,7 @@
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                flexDirection: 'column',
+                flexDirection: 'row',
                 width: '75%',
                 height: '200px',
                 padding: '5px'
