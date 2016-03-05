@@ -6,10 +6,15 @@
         displayName: 'Film',
 
         render: function render() {
+
             return React.createElement(
                 'div',
-                { style: { border: 'solid', display: 'flex', flexDirection: 'column' } },
-                this.props.film.FilmName
+                { style: { border: 'solid', display: 'flex', flexDirection: 'column', width: '25%', height: '100px', padding: '5px' } },
+                React.createElement(
+                    'div',
+                    null,
+                    this.props.film.FilmName
+                )
             );
         }
     });
@@ -47,11 +52,16 @@
 
             return React.createElement(
                 'div',
-                { style: blockStyle },
+                { style: { display: 'flex', flexDirection: 'column', border: 'solid', justifyContent: 'center', alignItems: 'center', width: '75%' } },
                 React.createElement(
                     'div',
-                    null,
+                    { style: blockStyle },
                     filmElements
+                ),
+                React.createElement(
+                    'div',
+                    { style: { display: 'flex', border: 'solid', justifyContent: 'center', alignItems: 'center', padding: '10px' } },
+                    React.createElement('input', { type: 'button', value: 'BLA' })
                 )
             );
         }

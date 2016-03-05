@@ -2,9 +2,11 @@
 
     var Film = React.createClass({
         render() {
+
             return (
-                <div style={{border:'solid', display:'flex', flexDirection:'column'}}>
-                    {this.props.film.FilmName}
+                <div style={{border:'solid', display:'flex', flexDirection:'column',width:'25%', height:'100px', padding:'5px'}}>
+                    <div>{this.props.film.FilmName}</div>
+
                 </div>
             )
         }
@@ -40,10 +42,16 @@
             );
 
             return (
-                <div style={blockStyle}>
-                    <div>
-                        {filmElements}
-                    </div>
+
+                <div style={{display:'flex', flexDirection:'column', border:'solid', justifyContent:'center',alignItems:'center', width:'75%'}}>
+
+                       <div style={blockStyle}>
+                           {filmElements}
+                       </div>
+
+                       <div style={{display:'flex', border:'solid', justifyContent:'center',alignItems:'center', padding:'10px'}}>
+                        <input type="button" value="BLA"/>
+                       </div>
                 </div>
             )
 
