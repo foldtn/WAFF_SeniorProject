@@ -4,8 +4,10 @@
         render() {
 
             return (
-                <div style={{border:'solid', display:'flex', flexDirection:'column',width:'25%', height:'100px', padding:'5px'}}>
+                <div style={{border:'solid', display:'flex', flexDirection:'column',width:'25%', height:'100px', padding:'5px', margin:'5px'}}>
                     <div>{this.props.film.FilmName}</div>
+                    <input type="radio"/>
+
 
                 </div>
             )
@@ -15,12 +17,12 @@
     var Block = React.createClass({
         render(){
             var blockStyle = {
-                border: 'solid',
+               // border: 'solid',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'row',
-                width: '75%',
+                width: '98%',
                 height: '200px',
                 padding: '5px'
             };
@@ -49,7 +51,7 @@
                            {filmElements}
                        </div>
 
-                       <div style={{display:'flex', border:'solid', justifyContent:'center',alignItems:'center', padding:'10px'}}>
+                       <div style={{display:'flex',justifyContent:'center',alignItems:'center', padding:'10px'}}>
                         <input type="button" value="BLA"/>
                        </div>
                 </div>

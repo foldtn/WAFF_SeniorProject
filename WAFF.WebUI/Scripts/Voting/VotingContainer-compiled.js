@@ -9,12 +9,13 @@
 
             return React.createElement(
                 'div',
-                { style: { border: 'solid', display: 'flex', flexDirection: 'column', width: '25%', height: '100px', padding: '5px' } },
+                { style: { border: 'solid', display: 'flex', flexDirection: 'column', width: '25%', height: '100px', padding: '5px', margin: '5px' } },
                 React.createElement(
                     'div',
                     null,
                     this.props.film.FilmName
-                )
+                ),
+                React.createElement('input', { type: 'radio' })
             );
         }
     });
@@ -24,12 +25,12 @@
 
         render: function render() {
             var blockStyle = {
-                border: 'solid',
+                // border: 'solid',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'row',
-                width: '75%',
+                width: '98%',
                 height: '200px',
                 padding: '5px'
             };
@@ -60,7 +61,7 @@
                 ),
                 React.createElement(
                     'div',
-                    { style: { display: 'flex', border: 'solid', justifyContent: 'center', alignItems: 'center', padding: '10px' } },
+                    { style: { display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px' } },
                     React.createElement('input', { type: 'button', value: 'BLA' })
                 )
             );
