@@ -341,7 +341,7 @@ namespace WAFF.Services.Reports
             return list;
         }
 
-        public IEnumerable<filmsVD> GetFilmsAsync(int block, string genre)
+        public IEnumerable<filmsVD> GetFilms(int block, string genre)
         {
             if (block != -1)
             {
@@ -357,9 +357,9 @@ namespace WAFF.Services.Reports
 
                 return results;
             }
-        } // End GetFilmsAsync
+        } // End GetFilms
 
-        public IEnumerable<graphVD> GetGraphAsync(int block, string genre)
+        public IEnumerable<graphVD> GetGraph(int block, string genre)
         {
             if (block != -1)
             {
@@ -375,6 +375,6 @@ namespace WAFF.Services.Reports
 
                 return results;
             }
-        } // End GetGraphAsync
+        } // End GetGraph
     } // End ReportService
 }
