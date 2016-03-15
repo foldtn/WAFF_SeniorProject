@@ -12,7 +12,7 @@ namespace WAFF.WebUI.Controllers
 {
     public class VoteController : Controller
     {
-        private VoteService _service = new VoteService();
+        private readonly VoteService _service = new VoteService();
         // GET: Vote
         [HttpGet]
         public ActionResult Vote(int id)
@@ -35,6 +35,8 @@ namespace WAFF.WebUI.Controllers
                 BlockId = x.BlockId,
                 FilmLength = x.FilmLength,
                 FilmName = x.FilmName,
+                FilmId = x.FilmId,
+                EventId = x.EventId
             }).Where(y => y.BlockId == i).ToList()));
 
             return View(listOfLists);
