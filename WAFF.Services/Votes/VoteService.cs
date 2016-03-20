@@ -13,10 +13,19 @@ namespace WAFF.Services.Votes
         private EFDbContext _db = new EFDbContext();
 
 
-        public void SaveVote(Vote vote)
+        public int SaveVote(Vote vote)
         {
             _db.Votes.Add(vote);
-            _db.SaveChanges();
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (Exception e) 
+            { 
+                //Console.WriteLine(e);
+                return 0;
+            }
+            return vote.BlockID; 
         }
 
         public IEnumerable<FilmVoteViewModel> GetAllBlocksForEventsAsync(DateTime currentDate)

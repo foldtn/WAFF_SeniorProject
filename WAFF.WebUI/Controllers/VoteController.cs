@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -17,14 +18,7 @@ namespace WAFF.WebUI.Controllers
         [HttpGet]
         public ActionResult Vote(int id)
         {
-            // var blockId = 1;
-
-            // var model = new Vote
-            //{
-            //      VoterID = id,
-            //      BlockID = blockId,
-            //  };
-            //   return PartialView(model);
+           
             var results = _service.GetAllBlocksForEventsAsync(new DateTime());
             var blockIdArray = results.Select(x => x.BlockId).Distinct().ToList();
 
@@ -43,10 +37,9 @@ namespace WAFF.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Vote(Vote vote)
+        public int SubmitVote(Vote vote)
         {
-            _service.SaveVote(vote);
-            return View();
+            return _service.SaveVote(vote);
         }
 
         public JsonResult GetAllBlockForEvent(DateTime currentDate)

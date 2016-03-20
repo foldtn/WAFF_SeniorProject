@@ -15,7 +15,7 @@
             var filmInfoStyle = {
                 display: 'flex',
                 flexDirection: 'column',
-                width: '25%',
+                width: '75%',
                 height: '100px',
                 padding: '5px',
                 margin: '5px',
@@ -30,7 +30,7 @@
                     onClick: this._setFilmSelected },
                 React.createElement(
                     'div',
-                    { style: { fontSize: '2.25rem' } },
+                    { style: { fontSize: '1rem' } },
                     this.props.film.FilmName
                 )
             );
@@ -67,7 +67,7 @@
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                flexDirection: 'row',
+                flexDirection: 'column',
                 width: '98%',
                 height: '200px',
                 padding: '5px'
@@ -80,6 +80,8 @@
                     selected: _this2.state.selectedFilmId === film.FilmID });
             });
 
+            var blockIdTag = this.props.blockId;
+
             return React.createElement(
                 'div',
                 { style: { display: 'flex',
@@ -88,7 +90,9 @@
                         alignItems: 'center',
                         width: '75%',
                         margin: '15px' },
-                    className: 'panel panel-default' },
+                    className: 'panel panel-default',
+                    id: blockIdTag },
+                React.createElement('div', { id: 'timeInfo', style: { display: 'flex', justifyContent: 'center', alignItem: 'center' } }),
                 React.createElement(
                     'div',
                     { style: blockStyle },
@@ -100,7 +104,7 @@
                             justifyContent: 'center',
                             alignItems: 'center',
                             padding: '10px',
-                            width: '75%',
+                            width: '100%',
                             flexDirection: 'column' } },
                     React.createElement(
                         'div',
@@ -111,7 +115,7 @@
                                 width: '75%',
                                 padding: '1px' } },
                         React.createElement(
-                            'h3',
+                            'h4',
                             null,
                             this.state.selectedFilmName
                         )
@@ -119,7 +123,7 @@
                     React.createElement(
                         'button',
                         { type: 'button',
-                            onclick: this._onVoteSubmit,
+                            onClick: this._onVoteSubmit,
                             className: 'btn btn-lg btn-primary',
                             style: { width: '75%' } },
                         'Vote'
@@ -138,10 +142,52 @@
         },
 
         _onVoteSubmit: function _onVoteSubmit() {
+            var _this3 = this;
+
             //temp, was to see info is being passed
-            alert(this.state.selectedFilmId + " " + this.state.selectedBlockId);
+            //alert(this.state.selectedFilmId + " " + this.state.selectedBlockId);
+            var filmId = this.state.selectedFilmId;
+            var blockedId = this.state.selectedBlockId;
+
+            if (filmId === 0 && blockedId === 0) {
+                alert("Please pick a film to submit vote!");
+                return false;
+            }
+
+            var href = window.location.href;
+            var VoterId = href.substr(href.lastIndexOf('/') + 1);
+
+            var voteArg = {
+                FilmId: this.state.selectedFilmId,
+                BlockId: this.state.selectedBlockId,
+                VoterId: VoterId
+
+            };
 
             //next is make ajax call!
+            $.ajax({
+                url: '/Vote/SubmitVote/',
+                type: 'POST',
+                data: voteArg,
+                success: function success(data) {
+                    return _this3._greyOutBlock(data, voteArg.BlockId);
+                },
+                error: function error(data) {
+                    return _this3._greyOutBlock(data);
+                }
+            });
+        },
+
+        _greyOutBlock: function _greyOutBlock(data, blockId) {
+            var thanks = "";
+
+            if (data) {
+                thanks = "<h1 style={{fontSize: '3.5rem'}}>A vote for that film and block has already been saved!</h1>";
+            } else thanks = "<h1 style={{fontSize: '5rem'}}>Thanks fpr voting!!</h1>";
+
+            var killThisBlock = document.getElementById(blockId);
+
+            killThisBlock.innerHTML = thanks;
         }
     });
 
@@ -154,7 +200,8 @@
 
             var blocksAndFilms = blocks.map(function (array, i) {
                 return React.createElement(Block, { films: array,
-                    key: i });
+                    key: i,
+                    blockId: array[0].BlockId });
             });
 
             return React.createElement(
