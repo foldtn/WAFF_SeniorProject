@@ -359,19 +359,19 @@ namespace WAFF.Services.Reports
             }
         } // End GetFilms
 
-        public IEnumerable<graphVD> GetGraph(int block, string genre)
+        public IEnumerable<graphVD> GetGraph(int block, string genre, int eventID)
         {
             if (block != -1)
             {
                 var pBlock = new SqlParameter("@block", block);
-                var results = _db.Database.SqlQuery<graphVD>("getGraphB @block", pBlock).ToList();
+                var results = _db.Database.SqlQuery<graphVD>("getGraphB @block, @event", pBlock, eventID).ToList();
 
                 return results;
             }
             else
             {
                 var pGenre = new SqlParameter("@genre", genre);
-                var results = _db.Database.SqlQuery<graphVD>("getGraphsG @genre", pGenre).ToList();
+                var results = _db.Database.SqlQuery<graphVD>("getGraphsG @genre, @event", pGenre, eventID).ToList();
 
                 return results;
             }

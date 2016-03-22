@@ -97,8 +97,8 @@
     <Compile Include="ViewModels\Voting Data\blockVD.cs" />
     <Compile Include="ViewModels\Leader Boards\eventDate.cs" />
     <Compile Include="ViewModels\Voting Data\filmsVD.cs" />
-    <Compile Include="ViewModels\Voting Data\Graphs\genreVD.cs" />
-    <Compile Include="ViewModels\Voting Data\Graphs\graphVD.cs" />
+    <Compile Include="ViewModels\Voting Data\genreVD.cs" />
+    <Compile Include="ViewModels\Voting Data\graphVD.cs" />
     <Compile Include="ViewModels\Leader Boards\LeaderBoardData.cs" />
     <Compile Include="ViewModels\Leader Boards\LeaderBoardEntry.cs" />
     <Compile Include="ViewModels\Leader Boards\VotesLB.cs" />

@@ -6,7 +6,7 @@ google.setOnLoadCallback(drawChart);
 function drawChart() {
 
     var data = google.visualization.arrayToDataTable([
-      ['Task', 'Hours per Day'],
+      ['Film', 'Votes'],
       ['Work',     11],
       ['Eat',      2],
       ['Commute',  2],
