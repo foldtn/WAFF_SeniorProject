@@ -2,8 +2,8 @@
     ViewBag.Title = "Leader Board";
 }
 
-<script src="~/Scripts/Custom/LeaderBoardsFullScreen.js"></script>
-<script src="~/Scripts/Custom/updateLeaderBoards.js"></script>
+<script src="~/Scripts/LeaderBoards/LeaderBoardsFullScreen.js"></script>
+<script src="~/Scripts/LeaderBoards/updateLeaderBoards.js"></script>
 
 <div id="fullScreen">
     <h2 id="lbHeader">Leader Board</h2>
@@ -34,7 +34,7 @@
             new { id = "eventLoadLB" })
     </div>
 
-    <div id="EventSelect"></div>
+    <div id="EventSelect">@Html.Action("EventSelect", "Reports")</div>
     <div id="EventLB"></div>
 
     <div id="leaderBoardContainer"></div>

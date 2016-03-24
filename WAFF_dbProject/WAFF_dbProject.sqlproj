@@ -80,6 +80,7 @@
     <Build Include="dbo\Stored Procedures\getLBVoted.sql" />
     <Build Include="dbo\Stored Procedures\getLBDataFinal.sql" />
     <Build Include="dbo\Stored Procedures\getEvents.sql" />
+    <Build Include="dbo\Stored Procedures\getGraphsB.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />

@@ -9,7 +9,7 @@ function update() {
 }
 
 window.onload = function () {
-    document.getElementById('eventLoadSelect').click();
+    //document.getElementById('eventLoadSelect').click();
     document.getElementById('eventLoadLB').click();
     
 };

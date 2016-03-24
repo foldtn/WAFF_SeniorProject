@@ -47,34 +47,34 @@ namespace WAFF.WebUI.Controllers
             return PartialView(genre);
         }
 
-        public PartialViewResult FilmsBAsync(int id)
+        public PartialViewResult FilmsB(int id)
         {
             string genre = null;
-            var films = _service.GetFilmsAsync(id, genre);
+            var films = _service.GetFilms(id, genre);
 
             return PartialView(films);
         }
 
-        public PartialViewResult FilmsGAsync(string genre)
+        public PartialViewResult FilmsG(string genre)
         {
             int id = -1;
-            var films = _service.GetFilmsAsync(id, genre);
+            var films = _service.GetFilms(id, genre);
 
             return PartialView(films);
         }
 
-        public PartialViewResult GraphBAsync(int id)
+        public PartialViewResult GraphB(int id, int eventID)
         {
             string genre = null;
-            var films = _service.GetGraphAsync(id, genre);
+            var films = _service.GetGraph(id, genre, eventID);
 
             return PartialView(films);
         }
 
-        public PartialViewResult GraphGAsync(string genre)
+        public PartialViewResult GraphG(string genre, int eventID)
         {
             int id = -1;
-            var films = _service.GetGraphAsync(id, genre);
+            var films = _service.GetGraph(id, genre, eventID);
 
             return PartialView(films);
         }

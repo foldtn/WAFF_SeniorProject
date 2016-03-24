@@ -130,10 +130,10 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\Custom\LeaderBoardsFullScreen.js" />
-    <Content Include="Scripts\Custom\pieChart.js" />
-    <Content Include="Scripts\Custom\updateLeaderBoards.js" />
-    <Content Include="Scripts\Custom\VotingData.js" />
+    <Content Include="Scripts\LeaderBoards\LeaderBoardsFullScreen.js" />
+    <Content Include="Scripts\VotingData\pieChart.js" />
+    <Content Include="Scripts\LeaderBoards\updateLeaderBoards.js" />
+    <Content Include="Scripts\VotingData\VotingData.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -209,10 +209,10 @@
     <Content Include="Views\Vote\Vote.cshtml" />
     <Content Include="Views\Reports\Update.cshtml" />
     <Content Include="Views\Reports\Genres.cshtml" />
-    <Content Include="Views\Reports\FilmsGAsync.cshtml" />
+    <Content Include="Views\Reports\FilmsG.cshtml" />
     <Content Include="Views\Reports\VotingData.cshtml" />
     <Content Include="Views\Reports\Blocks.cshtml" />
-    <Content Include="Views\Reports\FilmsBAsync.cshtml" />
+    <Content Include="Views\Reports\FilmsB.cshtml" />
     <Content Include="Views\FilmBlocks\Create.cshtml" />
     <Content Include="Views\FilmBlocks\Delete.cshtml" />
     <Content Include="Views\FilmBlocks\Edit.cshtml" />
