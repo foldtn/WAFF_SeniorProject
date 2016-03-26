@@ -1,13 +1,9 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Leader Board";
 }
 
-
-
-<script src="~/Scripts/Custom/LeaderBoardsFullScreen.js"></script>
-<script src="~/Scripts/Custom/updateLeaderBoards.js"></script>
-
+<script src="~/Scripts/LeaderBoards/LeaderBoardsFullScreen.js"></script>
+<script src="~/Scripts/LeaderBoards/updateLeaderBoards.js"></script>
 
 <div id="fullScreen">
     <h2 id="lbHeader">Leader Board</h2>
@@ -18,27 +14,35 @@
             <li style="padding-top: 35px"><h2>Leader Board</h2></li>
         </ul>
     </div>
-    
 
-
-    <div style="visibility:hidden">
-        <!-- Ajax.Actionlink(linktext, actionName, 
+    <div style="display: none">
+        <!-- Ajax.Actionlink(linktext, actionName,
                 routeValues, ajaxOptions, htmlAttributes) -->
-        @Ajax.ActionLink("update", "Update", "Reports",
+        @Ajax.ActionLink("EventSelect", "EventSelect", "Reports",
             new AjaxOptions
             {
-                UpdateTargetId = "leaderBoardContainer"
+                UpdateTargetId = "EventSelect"
             },
-            new { id = "updateLink" })
+            new { id = "eventLoadSelect" })
+
+        @Ajax.ActionLink("EventLB", "EventLB", "Reports",
+            new AjaxOptions
+            {
+                UpdateTargetId = "EventLB",
+                OnSuccess = "beginUpdate()"
+            },
+            new { id = "eventLoadLB" })
     </div>
 
-    <div id="leaderBoardContainer">
-    </div>
+    <div id="EventSelect">@Html.Action("EventSelect", "Reports")</div>
+    <div id="EventLB"></div>
+
+    <div id="leaderBoardContainer"></div>
 
     <input id="isFull" type="hidden" value="no">
     <div class="text-center">
         <div id="toFull" class="btn btn-default btn-lg" onclick="fullScreen(fullScreen)">Enter Fullscreen</div>
         <input id="test" type="hidden" value="0" />
-     </div>
-    
+    </div>
+
 </div>

@@ -13,10 +13,24 @@ namespace WAFF.WebUI.Controllers
     {
         // Create a ReportsService object to get information for Leaderboards
         ReportService _service = new ReportService();
-        
+
         public ActionResult VotingData()
         {
             return View();
+        }
+
+        public PartialViewResult EventSelect()
+        {
+            var events = _service.GetEvents();
+
+            return PartialView(events);
+        }
+
+        public PartialViewResult EventLB()
+        {
+            var events = _service.GetEvents();
+
+            return PartialView(events);
         }
 
         public PartialViewResult Blocks()
@@ -33,34 +47,34 @@ namespace WAFF.WebUI.Controllers
             return PartialView(genre);
         }
 
-        public async Task<PartialViewResult> FilmsBAsync(int id)
+        public PartialViewResult FilmsB(int id)
         {
             string genre = null;
-            var films = await _service.GetFilmsAsync(id, genre);
+            var films = _service.GetFilms(id, genre);
 
             return PartialView(films);
         }
 
-        public async Task<PartialViewResult> FilmsGAsync(string genre)
+        public PartialViewResult FilmsG(string genre)
         {
             int id = -1;
-            var films = await _service.GetFilmsAsync(id, genre);
+            var films = _service.GetFilms(id, genre);
 
             return PartialView(films);
         }
 
-        public async Task<PartialViewResult> GraphBAsync(int id)
+        public PartialViewResult GraphB(int id, int eventID)
         {
             string genre = null;
-            var films = await _service.GetGraphAsync(id, genre);
+            var films = _service.GetGraph(id, genre, eventID);
 
             return PartialView(films);
         }
 
-        public async Task<PartialViewResult> GraphGAsync(string genre)
+        public PartialViewResult GraphG(string genre, int eventID)
         {
             int id = -1;
-            var films = await _service.GetGraphAsync(id, genre);
+            var films = _service.GetGraph(id, genre, eventID);
 
             return PartialView(films);
         }
@@ -73,15 +87,13 @@ namespace WAFF.WebUI.Controllers
 
         public ActionResult LeaderBoards()
         {
-            // Get Leader Board information from database.
-            var LeaderBoardInfo = _service.LeaderBoards();
 
-            return View(LeaderBoardInfo);
+            return View();
         }
 
-        public PartialViewResult Update()
+        public PartialViewResult Update(int EventID)
         {
-            var LeaderBoardInfo = _service.LeaderBoards();
+            var LeaderBoardInfo = _service.LeaderBoards(EventID);
 
             return PartialView(LeaderBoardInfo);
         }

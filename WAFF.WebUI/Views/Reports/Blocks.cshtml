@@ -5,7 +5,7 @@
 
     foreach (var block in Model)
     {
-        @Ajax.ActionLink("Block " + block.BlockID + ": " + block.BlockStart, "FilmsBAsync", "Reports",
+        @Ajax.ActionLink("Block " + block.BlockID + ": " + block.BlockStart, "FilmsB", "Reports",
             new
             {
                 id = block.BlockID

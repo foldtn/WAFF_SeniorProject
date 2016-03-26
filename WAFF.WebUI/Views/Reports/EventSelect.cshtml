@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.eventDate>
+
+<select id="events" onchange="update()">
+    @{
+        int count = 0;
+
+        foreach (var Event in Model)
+        {
+            if (count == 0)
+            {
+                <option value="@Event.EventID" selected="selected">@Event.EventDate</option>
+                count++;
+            }
+            else
+            {
+                <option value="@Event.EventID">@Event.EventDate</option>
+            }
+
+        }
+    }
+</select>
+
+
+

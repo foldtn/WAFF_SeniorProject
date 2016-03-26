@@ -21,5 +21,6 @@ namespace WAFF.DataAccess.Entity
         public string FilmDesc { get; set; }
         [DisplayName("Length (minutes)")]
         public int FilmLength { get; set; }
+        public Boolean FilmVotable { get; set; }
     }
 }
