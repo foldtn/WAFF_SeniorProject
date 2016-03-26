@@ -5,24 +5,29 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Mvc;
+using WAFF.Services.Mobile;
 
 
 namespace WAFF.WebUI.Controllers
 {
     
-    public class MobileController : ApiController
+    public class MobileController : Controller
     {
 
-        //private MobileService _mobileService = new MobileService();
+        private MobileService _mobileService = new MobileService();
 
-        public JsonResult GetAllFilmsByEventId(int eventId)
+        public JsonResult GetAllFilmsByEvent()
         {
             //front door
 
-            var result =
+            var result = _mobileService.GetFilmsByBlockByEvent();
             //var result = Call Service passing along eventId
 
-            return;
+
+
+            var json = new JsonResult() { Data = result, JsonRequestBehavior = JsonRequestBehavior.AllowGet};
+
+            return json;
         }
 
 
