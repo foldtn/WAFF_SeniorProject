@@ -4,8 +4,6 @@
     //document.getElementById('InitialBlocks').click();
 };
 
-
-
 function update() {
     var o = document.getElementById('events');
     var event = o.options[o.selectedIndex].value;

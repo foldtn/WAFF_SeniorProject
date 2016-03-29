@@ -6,7 +6,7 @@ BEGIN
 
 	SELECT	b.EventID, b.BlockID, 
 		(DATENAME(DW,b.[BlockStart]) + ' ' +
-		CONVERT(VARCHAR(5),b.[BlockStart], 108) + ' ' +
+		LEFT(RIGHT(CONVERT(VARCHAR(19),b.[BlockStart], 100), 7), 5) + ' ' +
 		RIGHT(CONVERT(VARCHAR, b.[BlockStart], 100), 2)) AS [BlockStart]
 	FROM [BLOCKS] b
 	WHERE b.EventID = @event
