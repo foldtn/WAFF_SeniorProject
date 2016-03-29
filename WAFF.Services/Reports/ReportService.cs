@@ -320,16 +320,20 @@ namespace WAFF.Services.Reports
             return results;
         }
 
-        public List<blockVD> GetBlocks()
+        public List<blockVD> GetBlocks(int eventID)
         {
-            var list = _db.Database.SqlQuery<blockVD>("getBlocks").ToList();
+            var pEvent = new SqlParameter("@event", eventID);
+
+            var list = _db.Database.SqlQuery<blockVD>("getBlocks @event", pEvent).ToList();
 
             return list;
         } // End GetBlocks
 
-        public List<genreVD> GetGenres()
+        public List<genreVD> GetGenres(int eventID)
         {
-            var list = _db.Database.SqlQuery<genreVD>("getGenres").ToList();
+            var pEvent = new SqlParameter("@event", eventID);
+
+            var list = _db.Database.SqlQuery<genreVD>("getGenres @event", pEvent).ToList();
 
             return list;
         } // End GetGenres
@@ -341,7 +345,7 @@ namespace WAFF.Services.Reports
             return list;
         }
 
-        public IEnumerable<filmsVD> GetFilms(int block, string genre)
+        public IEnumerable<filmsVD> GetFilms(int block, string genre, int eventID)
         {
             if (block != -1)
             {
@@ -353,7 +357,8 @@ namespace WAFF.Services.Reports
             else
             {
                 var pGenre = new SqlParameter("@genre", genre);
-                var results = _db.Database.SqlQuery<filmsVD>("getFilmsG @genre", pGenre).ToList();
+                var pEvent = new SqlParameter("@event", eventID);
+                var results = _db.Database.SqlQuery<filmsVD>("getFilmsG @genre, @event", pGenre, pEvent).ToList();
 
                 return results;
             }

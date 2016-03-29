@@ -8,6 +8,7 @@ namespace WAFF.DataAccess.ViewModels
 {
     public class genreVD
     {
+        public int EventID { get; set; }
         public string FilmGenre { get; set; }
     }
 }

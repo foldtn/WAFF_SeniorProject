@@ -8,6 +8,7 @@ namespace WAFF.DataAccess.ViewModels
 {
     public class blockVD
     {
+        public int EventID { get; set; }
         public int BlockID { get; set; }
         public string BlockStart { get; set; }
     }

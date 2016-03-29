@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.eventDate>
+
+@{
     ViewBag.Title = "Voting Data";
 }
 
@@ -24,25 +26,36 @@
     <div id="containerMainChild2">
         <div id="subContainerChild1">
             <h3 id="headerBG" style="text-align: center">Block</h3>
-            <div style="display:none">
-                @Ajax.ActionLink("Block", "Blocks", "Reports",
+            <div id="initialEvent" style="display:none">
+                 @{
+                     foreach (var Event in Model)
+                     {
+                         @Ajax.ActionLink("Block", "Blocks", "Reports",
+                         new
+                         {
+                             eventID = Event.EventID
+                         },
+                         new AjaxOptions
+                         {
+                             UpdateTargetId = "containerBG",
+                             OnSuccess = "InitialFimsBlock"
+                         },
+                         new { id = "InitialBlocks" + Event.EventID})
 
-                new AjaxOptions
-                {
-                    UpdateTargetId = "containerBG",
-                    OnSuccess = "InitialFilmsBlock"
-                },
-                new { id = "InitialBlocks" })
-
-                @Ajax.ActionLink("Genre", "Genres", "Reports",
-
-                new AjaxOptions
-                {
-                    UpdateTargetId = "containerBG",
-                    OnSuccess = "InitialFilmsGenre"
-                },
-                new { id = "InitialGenres" })
-
+                         @Ajax.ActionLink("Genre", "Genres", "Reports",
+                         new
+                         {
+                             eventID = Event.EventID
+                         },
+                         new AjaxOptions
+                         {
+                             UpdateTargetId = "containerBG",
+                             OnSuccess = "InitialFilmsGenre"
+                         },
+                         new { id = "InitialGenres" + Event.EventID })
+                     }
+                 }
+                
                 @Ajax.ActionLink("GraphB", "GraphB", "Reports",
 
                 new AjaxOptions

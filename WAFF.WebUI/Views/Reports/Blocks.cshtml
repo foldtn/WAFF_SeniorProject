@@ -8,7 +8,8 @@
         @Ajax.ActionLink("Block " + block.BlockID + ": " + block.BlockStart, "FilmsB", "Reports",
             new
             {
-                id = block.BlockID
+                id = block.BlockID,
+                eventID = block.EventID
             },
             new AjaxOptions
             {
