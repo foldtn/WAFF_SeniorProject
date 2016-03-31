@@ -38,7 +38,7 @@
                          new AjaxOptions
                          {
                              UpdateTargetId = "containerBG",
-                             OnSuccess = "InitialFimsBlock"
+                             OnSuccess = "InitialFilmsBlock"
                          },
                          new { id = "InitialBlocks" + Event.EventID})
 
@@ -55,22 +55,6 @@
                          new { id = "InitialGenres" + Event.EventID })
                      }
                  }
-                
-                @Ajax.ActionLink("GraphB", "GraphB", "Reports",
-
-                new AjaxOptions
-                {
-                    UpdateTargetId = "piechartData"
-                },
-                new { id = "GraphB" })
-
-                @Ajax.ActionLink("GraphG", "GraphG", "Reports",
-
-                new AjaxOptions
-                {
-                    UpdateTargetId = "piechartData"
-                },
-                new { id = "GraphG" })
             </div>
 
             <div id="containerBG" onload="InitialFilms()" style="text-align: left"></div>

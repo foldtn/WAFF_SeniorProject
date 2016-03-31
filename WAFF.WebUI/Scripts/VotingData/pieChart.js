@@ -1,25 +1,24 @@
-﻿
-google.load("visualization", "1", { packages: ["corechart"] });
-
-google.setOnLoadCallback(drawChart);
+﻿google.load("visualization", "1", { packages: ["corechart"] });
 
 function drawChart() {
+    var max = document.getElementById('maxGraphCount').value;
 
-    var data = google.visualization.arrayToDataTable([
-      ['Film', 'Votes'],
-      ['Work',     11],
-      ['Eat',      2],
-      ['Commute',  2],
-      ['Watch TV', 2],
-      ['Sleep',    7]
-    ]);
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Film');
+    data.addColumn('number', 'Votes');
 
+    for (var x = 0; x < max; x++) {
+        var film = document.getElementById('FilmName' + x).value;
+        var votes = parseInt(document.getElementById('FilmVotes' + x).value);
+        data.addRow([film, votes]);
+    }
+   
     var options = {
         title: 'Block',
         height: '100%',
         width: '100%',
         chartArea: {
-            
+
             left: "10%",
             top: "3%",
             height: "80%",
@@ -28,7 +27,6 @@ function drawChart() {
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
     chart.draw(data, options);
 }
 

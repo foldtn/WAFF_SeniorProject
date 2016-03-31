@@ -86,6 +86,7 @@
     <Build Include="dbo\Stored Procedures\Reports\Leader Board\getLBDataFinal.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Leader Board\getLBVoted.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Leader Board\getVotes.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getGraphsG.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />

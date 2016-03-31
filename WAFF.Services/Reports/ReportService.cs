@@ -369,14 +369,16 @@ namespace WAFF.Services.Reports
             if (block != -1)
             {
                 var pBlock = new SqlParameter("@block", block);
-                var results = _db.Database.SqlQuery<graphVD>("getGraphB @block, @event", pBlock, eventID).ToList();
+                var pEvent = new SqlParameter("@event", eventID);
+                var results = _db.Database.SqlQuery<graphVD>("getGraphsB @block, @event", pBlock, pEvent).ToList();
 
                 return results;
             }
             else
             {
                 var pGenre = new SqlParameter("@genre", genre);
-                var results = _db.Database.SqlQuery<graphVD>("getGraphsG @genre, @event", pGenre, eventID).ToList();
+                var pEvent = new SqlParameter("@event", eventID);
+                var results = _db.Database.SqlQuery<graphVD>("getGraphsG @genre, @event", pGenre, pEvent).ToList();
 
                 return results;
             }

@@ -26,7 +26,8 @@ function changeB() {
         radio[0].value = 0;
         radio[1].value = 1;
         
-        update()
+        update();
+        drawChart();
     } 
 }
 
@@ -47,10 +48,11 @@ function changeG() {
         var event = o.options[o.selectedIndex].value;
 
         document.getElementById('InitialGenres' + event).click();
+        drawChart();
     }
 }
 
-function InitialFimsBlock() {
+function InitialFilmsBlock() {
     var block = document.getElementById('currentBlock').value;
     document.getElementById('block' + block).click();
     document.getElementById('headerBG').innerHTML = 'Block';
@@ -72,6 +74,7 @@ function selectedBlock(block) {
     document.getElementById('block' + block).style.textDecoration = 'underline';
     document.getElementById('currentBlock').value = block;
 
+    document.getElementById('GraphB' + block).click();
     // display graph here
 }
 
@@ -83,8 +86,7 @@ function selectedGenre(genre) {
     document.getElementById(genre).style.textDecoration = 'underline';
     document.getElementById('currentGenre').value = genre;
 
+    document.getElementById('GraphG' + genre).click();
+
     // display graph here
 }
-
-
-

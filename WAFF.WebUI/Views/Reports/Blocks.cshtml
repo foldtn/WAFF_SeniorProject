@@ -24,5 +24,20 @@
             <input id="currentBlock" type="hidden" value="@block.BlockID" />
             first++;
         }
-    } 
+
+        <div style="display:none">
+            @Ajax.ActionLink("GraphB", "GraphB", "Reports",
+            new
+            {
+                id = block.BlockID,
+                eventID = block.EventID
+            },
+            new AjaxOptions
+            {
+                UpdateTargetId = "piechartData",
+                OnSuccess = "drawChart()"
+            },
+            new { id = "GraphB" + block.BlockID })
+        </div>
+    }
 }

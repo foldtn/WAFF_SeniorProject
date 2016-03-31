@@ -9,4 +9,5 @@ BEGIN
   JOIN [FILMBLOCKS] fb
   ON f.FilmID = fb.FilmID
   WHERE fb.BlockID = @block
+  ORDER BY f.FilmName
 END
