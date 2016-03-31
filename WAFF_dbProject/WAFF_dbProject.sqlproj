@@ -80,13 +80,13 @@
     <Build Include="dbo\Stored Procedures\Mobile\GetFilmsByBlockByEvent.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Voting Data\getBlocks.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Voting Data\getFilmsB.sql" />
-    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getFilmsG.sql" />
-    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getGenres.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Voting Data\getGraphsB.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Leader Board\getLBDataFinal.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Leader Board\getLBVoted.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Leader Board\getVotes.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Voting Data\getGraphsG.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getFilmsG.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getGenres.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />
