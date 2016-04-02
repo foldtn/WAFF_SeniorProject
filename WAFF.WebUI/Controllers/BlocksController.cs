@@ -21,21 +21,6 @@ namespace WAFF.WebUI.Controllers
             return View(db.Blocks.ToList());
         }
 
-        // GET: Blocks/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Block block = db.Blocks.Find(id);
-            if (block == null)
-            {
-                return HttpNotFound();
-            }
-            return View(block);
-        }
-
         // GET: Blocks/Create
         public ActionResult Create()
         {

@@ -21,21 +21,6 @@ namespace WAFF.WebUI.Controllers
             return View(db.FilmBlocks.ToList());
         }
 
-        // GET: FilmBlocks/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            FilmBlock filmBlock = db.FilmBlocks.Find(id);
-            if (filmBlock == null)
-            {
-                return HttpNotFound();
-            }
-            return View(filmBlock);
-        }
-
         // GET: FilmBlocks/Create
         public ActionResult Create()
         {
