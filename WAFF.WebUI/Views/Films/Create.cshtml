@@ -25,7 +25,41 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FilmGenre, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FilmGenre)
+                @{
+                    List<SelectListItem> listItems = new List<SelectListItem>();
+                    listItems.Add(new SelectListItem
+                         {
+                             Text = "Narrative",
+                             Value = "Narrative"
+                         });
+                    listItems.Add(new SelectListItem
+                         {
+                             Text = "Documentary",
+                             Value = "Documentary"
+                         });
+                    listItems.Add(new SelectListItem
+                         {
+                             Text = "Animation",
+                             Value = "Animation"
+                         });
+                    listItems.Add(new SelectListItem
+                        {
+                            Text = "Experimental",
+                            Value = "Experimental"
+                        });
+                    listItems.Add(new SelectListItem
+                        {
+                            Text = "New Media",
+                            Value = "New Media"
+                        });
+                    listItems.Add(new SelectListItem
+                        {
+                            Text = "Student",
+                            Value = "Student",
+                            Selected = true                           
+                        });                         
+                }
+                @Html.DropDownListFor(model => model.FilmGenre, listItems, "-- Select Type --")
                 @Html.ValidationMessageFor(model => model.FilmGenre)
             </div>
         </div>
@@ -43,6 +77,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.FilmLength)
                 @Html.ValidationMessageFor(model => model.FilmLength)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FilmVotable, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FilmVotable)
+                @Html.ValidationMessageFor(model => model.FilmVotable)
             </div>
         </div>
 

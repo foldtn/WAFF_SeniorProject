@@ -16,6 +16,7 @@
                 <th>Name</th>
                 <th>Genre</th>
                 <th class="text-right">Length (min)</th>
+                <th class="text-center">Votable?</th>
                 <th class="text-center">Action</th>
             </tr>
 
@@ -27,6 +28,7 @@
                     <td>@item.FilmName</td>
                     <td>@item.FilmGenre</td>
                     <td class="text-right">@item.FilmLength</td>
+                    <td class="text-right">@item.FilmVotable</td>
                     <td class="text-center">@Html.ActionLink("Delete", "Delete", new { id = item.FilmID })</td>
                 </tr>
             }
