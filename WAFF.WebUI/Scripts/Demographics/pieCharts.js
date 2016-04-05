@@ -14,7 +14,7 @@ function drawChartIncome() {
     data.addRow(['$200,000 & Up', parseInt(document.getElementById('graphIncome5').value)]);
 
     var options = {
-        title: 'Block',
+        title: 'HouseHold Income',
         height: '100%',
         width: '100%',
         sliceVisibilityThreshold: 0,
@@ -44,7 +44,7 @@ function drawChartAge() {
     data.addRow(['55 & Older', parseInt(document.getElementById('graphAge4').value)]);
 
     var options = {
-        title: 'Block',
+        title: 'Age',
         height: '100%',
         width: '100%',
         sliceVisibilityThreshold: 0,
@@ -75,7 +75,7 @@ function drawChartEducation() {
     data.addRow(['Doctorate', parseInt(document.getElementById('graphEducation5').value)]);
 
     var options = {
-        title: 'Block',
+        title: 'Education',
         height: '100%',
         width: '100%',
         sliceVisibilityThreshold: 0,
@@ -107,7 +107,7 @@ function drawChartEthnicity() {
     data.addRow(['Prefer Not to Answer', parseInt(document.getElementById('graphEthnicity6').value)]);
 
     var options = {
-        title: 'Block',
+        title: 'Ethnicity',
         height: '100%',
         width: '100%',
         sliceVisibilityThreshold: 0,

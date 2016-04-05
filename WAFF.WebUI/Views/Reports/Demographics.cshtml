@@ -11,10 +11,34 @@
 <div id="EventSelect">@Html.Action("EventSelect", "Reports")</div>
 <br/><br/><br/>
 <hr />
+<div style ="display:inline-block; width:100%;">
+    <div class="demoGraphs">
+        <h3 style="padding-bottom: 10px">Age</h3>
+        <div id="demoAge"></div>
+    </div>
+    <div class="demoGraphs">
+        <h3 style="padding-bottom: 10px">Ethnicity</h3>
+        <div id="demoEthnicity"></div>
+    </div>
+    <div class="demoGraphs">
+        <h3 style="padding-bottom: 10px">Education</h3>
+        <div id="demoEducation"></div>
+    </div>
+    <div class="demoGraphs">
+        <h3 style="padding-bottom: 10px">Income</h3>
+        <div id="demoIncome"></div>
+    </div>
+</div>
+
+<div style="display:none" id="demoAgeInfo"></div>
+<div style="display:none" id="demoEthnicityInfo"></div>
+<div style="display:none" id="demoEducationInfo"></div>
+<div style="display:none" id="demoIncomeInfo"></div>
+
 <div id="initialEvent" style="display:none">
     @{
         foreach (var Event in Model)
-        { 
+        {
             @Ajax.ActionLink("Income", "getIncome", "Reports",
             new
             {
@@ -26,7 +50,7 @@
                 OnSuccess = "drawChartIncome()"
             },
             new { id = "Income" + Event.EventID })
-        
+
             @Ajax.ActionLink("Age", "getAge", "Reports",
             new
             {
@@ -38,7 +62,7 @@
                 OnSuccess = "drawChartAge()"
             },
             new { id = "Age" + Event.EventID })
-        
+
             @Ajax.ActionLink("Education", "getEducation", "Reports",
             new
             {
@@ -50,7 +74,7 @@
                 OnSuccess = "drawChartEducation()"
             },
             new { id = "Education" + Event.EventID })
-        
+
             @Ajax.ActionLink("Ethnicity", "getEthnicity", "Reports",
             new
             {
@@ -63,19 +87,6 @@
             },
                  new { id = "Ethnicity" + Event.EventID })
         }
-}
+    }
 </div>
-
-<div style ="display:inline-block; width:100%;">
-    <div id="demoAge" class="demoGraphs"></div>
-    <div id="demoEthnicity" class="demoGraphs"></div>
-    <div id="demoEducation" class="demoGraphs"></div>
-    <div id="demoIncome" class="demoGraphs"></div>
-    
-</div>
-
-<div style="display:none" id="demoAgeInfo"></div>
-    <div style="display:none" id="demoEthnicityInfo"></div>
-    <div style="display:none" id="demoEducationInfo"></div>
-    <div style="display:none" id="demoIncomeInfo"></div>
 

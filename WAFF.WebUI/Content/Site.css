@@ -49,4 +49,5 @@ input[type="checkbox"].input-validation-error {
     float:left;
     width: 50%;
     padding-bottom: 20px;
+    text-align: center;
 }

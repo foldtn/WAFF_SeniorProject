@@ -75,6 +75,8 @@ function selectedBlock(block) {
     document.getElementById('currentBlock').value = block;
 
     document.getElementById('GraphB' + block).click();
+    document.getElementById('chartTitle').innerHTML = "Block " + block;
+
 }
 
 function selectedGenre(genre) {
@@ -86,6 +88,7 @@ function selectedGenre(genre) {
     document.getElementById('currentGenre').value = genre;
 
     document.getElementById('GraphG' + genre).click();
+    document.getElementById('chartTitle').innerHTML = genre;
 }
 
 function selectedFilm(film) {

@@ -24,8 +24,6 @@ function drawChart() {
         height: '100%',
         width: '100%',
         chartArea: {
-
-            left: "10%",
             top: "3%",
             height: "80%",
             width: "100%"
