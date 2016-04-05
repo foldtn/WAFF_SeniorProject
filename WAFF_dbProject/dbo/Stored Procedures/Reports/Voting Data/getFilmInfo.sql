@@ -7,7 +7,7 @@ BEGIN
 	SELECT	f.FilmName, f.FilmGenre, f.FilmDesc, f.FilmLength,
 			a.ArtistFName, a.ArtistLName, a.ArtistCompany, a.ArtistEmail,
 			a.ArtistPhone, a.ArtistAddress, a.ArtistCity, a.ArtistState,
-			a.ArtistZip
+			ISNULL(a.ArtistZip, 0) AS 'ArtistZip'
 	FROM FILMS f
 	LEFT JOIN FILMARTISTS fa
 	ON f.FilmID = fa.FilmID
