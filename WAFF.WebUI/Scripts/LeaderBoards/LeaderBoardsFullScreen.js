@@ -1,4 +1,5 @@
-﻿function fullScreen(docElm) {
+﻿
+function fullScreen(docElm) {
     if (document.getElementById("isFull").value === "no") {
         enterFull(docElm);
         document.getElementById("isFull").value = "yes";

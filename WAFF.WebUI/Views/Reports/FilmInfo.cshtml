@@ -1,0 +1,10 @@
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.Voting_Data.filmInfoVD>
+
+@{
+    var film = Model.First();
+
+    <div style="display:inline">
+        <h3 style="width: 200px">Film:</h3>
+        <h6>@film.FilmName</h6>
+    </div>
+}

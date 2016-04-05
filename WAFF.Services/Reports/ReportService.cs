@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.Data;
 using WAFF.DataAccess.Contexts;
 using WAFF.DataAccess.ViewModels;
+using WAFF.DataAccess.ViewModels.Voting_Data;
+using WAFF.DataAccess.ViewModels.Leader_Boards;
+using WAFF.DataAccess.ViewModels.Demographics;
 using WAFF.DataAccess.Entity;
 using System.Data.SqlClient;
 using System.Data.Entity.Infrastructure;
@@ -383,5 +386,122 @@ namespace WAFF.Services.Reports
                 return results;
             }
         } // End GetGraph
+
+        public IEnumerable<filmInfoVD> GetFilmInfo(int filmID)
+        {
+            var pFilm = new SqlParameter("@film", filmID);
+            var results = _db.Database.SqlQuery<filmInfoVD>("getFilmInfo @film", pFilm).ToList();
+
+            return results;
+        }
+
+        private voterCount getIncomeCount(int eventID, int begin, double end)
+        {
+            var pEvent = new SqlParameter("@event", eventID);
+            var pBegin = new SqlParameter("@begin", begin);
+            var pEnd = new SqlParameter("@end", end);
+
+            var temp = _db.Database.SqlQuery<voterCount>("getVoterIncomeCount @begin, @end, @event", pBegin, pEnd, pEvent).First();
+
+            return temp;
+        }
+        
+        public IEnumerable<voterCount> GetIncomeChart(int eventID)
+        {
+            List<voterCount> results = new List<voterCount>();
+
+            //Household Income "Less than $35,000"
+            results.Add(getIncomeCount(eventID, 1, 34999.99));
+            //Household Income "$35,000 to $50,000"
+            results.Add(getIncomeCount(eventID, 35000, 49999.99));
+            //Household Income "#50,000 to #100,000"
+            results.Add(getIncomeCount(eventID, 50000, 99999.99));
+            //Household Income "$100,000 to $150,000"
+            results.Add(getIncomeCount(eventID, 100000, 149999.99));
+            //Household Income "$150,000 to $200,000"
+            results.Add(getIncomeCount(eventID, 150000, 199999.99));
+            //Household Income "$200,000 & Up"
+            results.Add(getIncomeCount(eventID, 200000, 999999999999.99)); // Made it highly unlikely to reach "max" of $999 billion income...
+
+            return results;
+        }
+
+        private voterCount getAgeCount(int eventID, int begin, int end)
+        {
+            var pEvent = new SqlParameter("@event", eventID);
+            var pBegin = new SqlParameter("@begin", begin);
+            var pEnd = new SqlParameter("@end", end);
+
+            var temp = _db.Database.SqlQuery<voterCount>("getVoterAgeCount @begin, @end, @event", pBegin, pEnd, pEvent).First();
+
+            return temp;
+        }
+
+        public IEnumerable<voterCount> GetAgeChart(int eventID)
+        {
+            List<voterCount> results = new List<voterCount>();
+
+            //Age 19 & Younger
+            results.Add(getAgeCount(eventID, 1, 19));
+            //Age 20 to 29
+            results.Add(getAgeCount(eventID, 20, 29));
+            //Age 30 to 44
+            results.Add(getAgeCount(eventID, 30, 44));
+            //Age 45 to 54
+            results.Add(getAgeCount(eventID, 45, 54));
+            //Age 55 & Older
+            results.Add(getAgeCount(eventID, 55, 200));
+
+            return results;
+        }
+
+        private voterCount getEducationCount(int eventID, string education)
+        {
+            var pEvent = new SqlParameter("@event", eventID);
+            var pEducation = new SqlParameter("@education", education);
+
+            var temp = _db.Database.SqlQuery<voterCount>("getVoterEducationCount @education, @event", pEducation, pEvent).First();
+
+            return temp;
+        }
+
+        public IEnumerable<voterCount> GetEducationChart(int eventID)
+        {
+            List<voterCount> results = new List<voterCount>();
+
+            results.Add(getEducationCount(eventID, "High School Diploma"));
+            results.Add(getEducationCount(eventID, "Some College"));
+            results.Add(getEducationCount(eventID, "Bachelor's"));
+            results.Add(getEducationCount(eventID, "Some Graduate School"));
+            results.Add(getEducationCount(eventID, "Master's"));
+            results.Add(getEducationCount(eventID, "Doctorate"));
+
+            return results;
+        }
+
+        private voterCount getEthnicityCount(int eventID, string ethnicity)
+        {
+            var pEvent = new SqlParameter("@event", eventID);
+            var pEthnicity = new SqlParameter("@ethnicity", ethnicity);
+
+            var temp = _db.Database.SqlQuery<voterCount>("getVoterEthnicityCount @ethnicity, @event", pEthnicity, pEvent).First();
+
+            return temp;
+        }
+
+        public IEnumerable<voterCount> GetEthnicityChart(int eventID)
+        {
+            List<voterCount> results = new List<voterCount>();
+
+            results.Add(getEthnicityCount(eventID, "Native American/Alaska Native"));
+            results.Add(getEthnicityCount(eventID, "Black/African American"));
+            results.Add(getEthnicityCount(eventID, "Hispanic"));
+            results.Add(getEthnicityCount(eventID, "Other/Multi-Racial"));
+            results.Add(getEthnicityCount(eventID, "Asian/Pacific Islander"));
+            results.Add(getEthnicityCount(eventID, "Caucasian"));
+            results.Add(getEthnicityCount(eventID, "Prefer Not to Answer"));
+
+            return results;
+        }
     } // End ReportService
 }

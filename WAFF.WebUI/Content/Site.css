@@ -45,45 +45,8 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
-
-/* 
-    the following #centeredmenu is for my reports menu -Tim 
-    currently not using this (good to understand how to do
-    this in the future though
-*/
-
-.centeredmenu {
-   float:left;
-   width:100%;
-   margin-top: 30px;
-   margin-bottom: 25px;
-   overflow:hidden;
-   position:relative;
-}
-
-.centeredmenu ul {
-   clear:left;
-   float:left;
-   list-style:none;
-   margin:0;
-   padding:0;
-   position:relative;
-   left:50%;
-   text-align:center;
-}
-
-.centeredmenu ul li {
-   display:block;
-   float:left;
-   list-style:none;
-   margin:0;
-   padding:0;
-   position:relative;
-   right:50%;
-   
-}
-
-#centeredmenu ul li :hover {
-   background:#369;
-   color:#fff;
+.demoGraphs {
+    float:left;
+    width: 50%;
+    padding-bottom: 20px;
 }

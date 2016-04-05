@@ -3,6 +3,12 @@
 function drawChart() {
     var max = document.getElementById('maxGraphCount').value;
 
+    if (max > 0) {
+        var film = document.getElementById('currentFilm').value;
+
+        document.getElementById('film' + film).click();
+    }
+
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Film');
     data.addColumn('number', 'Votes');
@@ -12,7 +18,7 @@ function drawChart() {
         var votes = parseInt(document.getElementById('FilmVotes' + x).value);
         data.addRow([film, votes]);
     }
-   
+
     var options = {
         title: 'Block',
         height: '100%',

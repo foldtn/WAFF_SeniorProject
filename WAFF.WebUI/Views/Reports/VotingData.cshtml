@@ -16,13 +16,13 @@
 <div id="EventSelect">@Html.Action("EventSelect", "Reports")</div>
 
 <div id="containerMain">
-    <div id="containerMainChild1">
-        <div id="radioContainerVD" class="form-group">
-            <label class="radio-inline"><input id="blockR" type="radio" name="radioVD" value=0 onclick="changeB()">Block</label>
-            <label class="radio-inline"><input id="genreR" type="radio" name="radioVD" value=1 onclick="changeG()">Genre</label>
-        </div>
-        <hr />
+    
+    <div id="radioContainerVD" class="form-group">
+        <label class="radio-inline"><input id="blockR" type="radio" name="radioVD" value=0 onclick="changeB()">Block</label>
+        <label class="radio-inline"><input id="genreR" type="radio" name="radioVD" value=1 onclick="changeG()">Genre</label>
     </div>
+    <hr />
+    
     <div id="containerMainChild2">
         <div id="subContainerChild1">
             <h3 id="headerBG" style="text-align: center">Block</h3>
@@ -63,7 +63,7 @@
             <h3 style="text-align: center">Block</h3>
             <div id="piechart_wrap">
                 <div id="piechartData"></div>
-                <div id="piechart"></div>
+                <div id="piechart" style="padding:5px;"></div>
             </div>
         </div>
         <div id="subContainerChild3">
@@ -73,7 +73,7 @@
     </div>
     <div id="containerMainChild3">
         <h3 style="text-align: center">Film Info</h3>
-        <div id="containerFilmInfo">film info goes here</div>
+        <div id="containerFilmInfo"></div>
     </div>
 </div>
 

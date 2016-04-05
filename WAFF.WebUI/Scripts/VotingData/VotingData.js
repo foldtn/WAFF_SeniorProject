@@ -75,7 +75,6 @@ function selectedBlock(block) {
     document.getElementById('currentBlock').value = block;
 
     document.getElementById('GraphB' + block).click();
-    // display graph here
 }
 
 function selectedGenre(genre) {
@@ -87,6 +86,12 @@ function selectedGenre(genre) {
     document.getElementById('currentGenre').value = genre;
 
     document.getElementById('GraphG' + genre).click();
+}
 
-    // display graph here
+function selectedFilm(film) {
+    var current = document.getElementById('currentFilm').value;
+
+    document.getElementById('film' + current).style.textDecoration = 'none';
+    document.getElementById('film' + film).style.textDecoration = 'underline';
+    document.getElementById('currentFilm').value = film;
 }

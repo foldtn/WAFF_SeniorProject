@@ -65,6 +65,7 @@
     <Folder Include="dbo\Stored Procedures\Reports" />
     <Folder Include="dbo\Stored Procedures\Reports\Leader Board" />
     <Folder Include="dbo\Stored Procedures\Reports\Voting Data" />
+    <Folder Include="dbo\Stored Procedures\Reports\Demographics" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\tables\VOTERS.sql" />
@@ -87,6 +88,11 @@
     <Build Include="dbo\Stored Procedures\Reports\Voting Data\getGraphsG.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Voting Data\getFilmsG.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Voting Data\getGenres.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getFilmInfo.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Demographics\getVoterIncomeCount.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Demographics\getVoterAgeCount.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Demographics\getVoterEducationCount.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Demographics\getVoterEthnicityCount.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />

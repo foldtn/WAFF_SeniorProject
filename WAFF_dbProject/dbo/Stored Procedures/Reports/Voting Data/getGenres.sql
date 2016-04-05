@@ -10,6 +10,6 @@ BEGIN
 	ON f.FilmID = fb.FilmID
 	JOIN BLOCKS b
 	ON b.BlockID = fb.BlockID
-	WHERE b.eventID = @event
+	WHERE b.EventID = @event
 	GROUP BY b.EventID, f.FilmGenre
 END

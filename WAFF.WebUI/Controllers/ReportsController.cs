@@ -84,7 +84,9 @@ namespace WAFF.WebUI.Controllers
 
         public PartialViewResult FilmInfo(int filmID)
         {
-            return PartialView();
+            var filmInfo = _service.GetFilmInfo(filmID);
+
+            return PartialView(filmInfo);
         }
 
 
@@ -103,12 +105,37 @@ namespace WAFF.WebUI.Controllers
 
         public ActionResult Demographics()
         {
-            return View();
+            var events = _service.GetEvents();
+
+            return View(events);
         }
 
-        public PartialViewResult Menu()
+        public PartialViewResult getIncome(int eventID)
         {
-            return PartialView();
+            var income = _service.GetIncomeChart(eventID);
+
+            return PartialView(income);
+        }
+
+        public PartialViewResult getAge(int eventID)
+        {
+            var age = _service.GetAgeChart(eventID);
+
+            return PartialView(age);
+        }
+
+        public PartialViewResult getEducation(int eventID)
+        {
+            var education = _service.GetEducationChart(eventID);
+
+            return PartialView(education);
+        }
+
+        public PartialViewResult getEthnicity(int eventID)
+        {
+            var ethnicity = _service.GetEthnicityChart(eventID);
+
+            return PartialView(ethnicity);
         }
     }
 }

@@ -14,7 +14,7 @@ BEGIN
 			JOIN FILMBLOCKS fb
 			ON b.BlockID = fb.BlockID
 			JOIN FILMS f
-			ON fb.FilmID = f.filmID
+			ON fb.FilmID = f.FilmID
 			WHERE b.EventID = @event AND f.FilmGenre = @genre
 		) f
 	ON v.FilmID = f.FilmID AND v.BlockID = f.BlockID

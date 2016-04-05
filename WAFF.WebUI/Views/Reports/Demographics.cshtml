@@ -3,9 +3,79 @@
     ViewBag.Title = "Demographics";
 }
 
-<!--@Html.Partial("Menu")-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="~/Scripts/Demographics/Demographics.js"></script>
+<script type="text/javascript" src="~/Scripts/Demographics/pieCharts.js"></script>
 
-<h1 style="padding-top: 30px">Demographics</h1>
+<h1>Demographics</h1>
+<div id="EventSelect">@Html.Action("EventSelect", "Reports")</div>
+<br/><br/><br/>
+<hr />
+<div id="initialEvent" style="display:none">
+    @{
+        foreach (var Event in Model)
+        { 
+            @Ajax.ActionLink("Income", "getIncome", "Reports",
+            new
+            {
+                eventID = Event.EventID
+            },
+            new AjaxOptions
+            {
+                UpdateTargetId = "demoIncomeInfo",
+                OnSuccess = "drawChartIncome()"
+            },
+            new { id = "Income" + Event.EventID })
+        
+            @Ajax.ActionLink("Age", "getAge", "Reports",
+            new
+            {
+                eventID = Event.EventID
+            },
+            new AjaxOptions
+            {
+                UpdateTargetId = "demoAgeInfo",
+                OnSuccess = "drawChartAge()"
+            },
+            new { id = "Age" + Event.EventID })
+        
+            @Ajax.ActionLink("Education", "getEducation", "Reports",
+            new
+            {
+                eventID = Event.EventID
+            },
+            new AjaxOptions
+            {
+                UpdateTargetId = "demoEducationInfo",
+                OnSuccess = "drawChartEducation()"
+            },
+            new { id = "Education" + Event.EventID })
+        
+            @Ajax.ActionLink("Ethnicity", "getEthnicity", "Reports",
+            new
+            {
+                eventID = Event.EventID
+            },
+            new AjaxOptions
+            {
+                UpdateTargetId = "demoEthnicityInfo",
+                OnSuccess = "drawChartEthnicity()"
+            },
+                 new { id = "Ethnicity" + Event.EventID })
+        }
+}
+</div>
 
-<img src="~/Content/Images/pageunderconstruction.png" alt="Under Construction" class="center-block" />
+<div style ="display:inline-block; width:100%;">
+    <div id="demoAge" class="demoGraphs"></div>
+    <div id="demoEthnicity" class="demoGraphs"></div>
+    <div id="demoEducation" class="demoGraphs"></div>
+    <div id="demoIncome" class="demoGraphs"></div>
+    
+</div>
+
+<div style="display:none" id="demoAgeInfo"></div>
+    <div style="display:none" id="demoEthnicityInfo"></div>
+    <div style="display:none" id="demoEducationInfo"></div>
+    <div style="display:none" id="demoIncomeInfo"></div>
 
