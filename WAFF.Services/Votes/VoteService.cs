@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WAFF.DataAccess.Contexts;
 using WAFF.DataAccess.Entity;
+using WAFF.DataAccess.ViewModels.Voting;
 
 namespace WAFF.Services.Votes
 {
@@ -14,46 +13,55 @@ namespace WAFF.Services.Votes
         private EFDbContext _db = new EFDbContext();
 
 
-        public void SaveVote(Vote vote)
+        public int SaveVote(Vote vote)
         {
             _db.Votes.Add(vote);
-             _db.SaveChanges();
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (Exception e) 
+            { 
+                //Console.WriteLine(e);
+                return 0;
+            }
+            return vote.BlockID; 
         }
 
-        public IEnumerable<EventBlocksFilmsViewModel> GetAllBlocksForEventsAsync(DateTime currentDate)
+        public IEnumerable<FilmVoteViewModel> GetAllBlocksForEventsAsync(DateTime currentDate)
         {
             var pCurrentDate = new SqlParameter("@currentDate", currentDate);
 
-            var results = _db.Database.SqlQuery<EventBlocksFilmsViewModel>("GetEventBlocksFilmsViewModel", pCurrentDate);
+            
+            var results = _db.Database.SqlQuery<FilmVoteViewModel>("GetEventBlocksFilmsDetail @currentDate",
+            pCurrentDate);
 
             return results.ToList();
+
+           /* var tempResults = from f in _db.Films
+                              join fb in _db.FilmBlocks
+                                  on f.FilmID equals fb.FilmID
+                              join b in _db.Blocks
+                                  on fb.BlockID equals b.BlockID
+                              join e in _db.Events
+                                  on b.EventID equals e.EventID
+                              select new FilmVoteViewModel()
+                              {
+                                  FilmId = f.FilmID,
+                                  BlockId = b.BlockID,
+                                  EventId = e.EventID,
+                                  FilmName = f.FilmName,
+                                  FilmDescription = f.FilmDesc,
+                                  FilmGenre = f.FilmGenre,
+                                  FilmLength = f.FilmLength,
+                                  BlockType = b.BlockType,
+                                  BlockStart = b.BlockStart,
+                                  BlockEnd = b.BlockEnd,
+                                  BlockLocation = b.BlockLocation
+                              };
+            var tempList = tempResults.ToList();
+
+            return tempList;*/
         }
     }
-
-    public class EventBlocksFilmsViewModel
-    {
-        public int FilmId { get; set; }
-
-        public int BlockId {get; set;}
-
-        public int EventId { get; set; }
-
-        public string FilmName { get; set; }
-
-        public string FilmDescription { get; set; }
-
-        public string FilmGenre { get; set; }
-
-        public int FilmLength { get; set; } 
-        
-        public string BlockType { get; set; }
-
-        public DateTime BlockStart { get; set; }
-
-        public DateTime BlockEnd { get; set; }
-
-        public string BlockLocation { get; set; }
-
-    }
-    
 }

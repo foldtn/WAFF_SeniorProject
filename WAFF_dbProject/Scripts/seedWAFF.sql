@@ -21,6 +21,9 @@ INSERT INTO [EVENTS] (EventStartDate, EventEndDate, EventLocation)
 VALUES ('2015-10-16','2015-10-18','Jacksonville')
 
 INSERT INTO [EVENTS] (EventStartDate, EventEndDate, EventLocation)
+VALUES (CONVERT (date, GETDATE()-1), CONVERT (date, GETDATE()+1), 'Jacksonville')
+
+INSERT INTO [EVENTS] (EventStartDate, EventEndDate, EventLocation)
 VALUES ('2016-10-16','2016-10-18','Jacksonville')
 
 INSERT INTO [BLOCKS] (BlockStart, BlockEnd, BlockLocation, BlockType, EventID)

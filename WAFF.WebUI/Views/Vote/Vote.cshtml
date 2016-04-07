@@ -1,7 +1,26 @@
-﻿@using System.Web.Optimization; 
+﻿@model List<List<WAFF.DataAccess.ViewModels.Voting.FilmVoteViewModel>>
+
+@using System.Web.Optimization; 
+@using Newtonsoft.Json
 @{Layout = "~/Views/Shared/_reactLayout.cshtml"; ViewBag.Title = "what";} 
 
 <div id="voting-mount">
 
 </div>
+
+@section scripts {
+    @Scripts.Render("~/scripts/react")
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <script type="text/javascript">
+        var Blocks = Blocks || {};
+        Blocks.Lists = @Html.Raw(JsonConvert.SerializeObject(Model));
+    </script>
+    <script type="text/javascript">
+        (function () {
+
+            React.render(React.createElement(VotingContainer, {}), document.getElementById("voting-mount"));
+         })();
+    </script>
+}
     
