@@ -21,21 +21,6 @@ namespace WAFF.WebUI.Controllers
             return View(db.Films.ToList());
         }
 
-        // GET: Films/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Film film = db.Films.Find(id);
-            if (film == null)
-            {
-                return HttpNotFound();
-            }
-            return View(film);
-        }
-
         // GET: Films/Create
         public ActionResult Create()
         {
@@ -47,7 +32,7 @@ namespace WAFF.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength")] Film film)
+        public ActionResult Create([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength,FilmVotable")] Film film)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +64,7 @@ namespace WAFF.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength")] Film film)
+        public ActionResult Edit([Bind(Include = "FilmID,FilmName,FilmGenre,FilmDesc,FilmLength,FilmVotable")] Film film)
         {
             if (ModelState.IsValid)
             {

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.Demographics.voterCount>
+
+@{
+    int count = 0;
+    int total = 0;
+
+    foreach (var age in Model)
+    {
+        <input type="hidden" id="@("graphAge" + count++)" value="@age.VoterCount" />
+        total = total + age.VoterCount;
+    }
+    
+    <input type="hidden" id="graphAgeTotal" value="@total" />
+}

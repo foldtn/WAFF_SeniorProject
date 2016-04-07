@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AdminService.cs" />
+    <Compile Include="Mobile\MobileService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\ReportService.cs" />
     <Compile Include="Votes\VoteService.cs" />

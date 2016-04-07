@@ -21,21 +21,6 @@ namespace WAFF.WebUI.Controllers
             return View(db.Artists.ToList());
         }
 
-        // GET: Artists/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Artist artist = db.Artists.Find(id);
-            if (artist == null)
-            {
-                return HttpNotFound();
-            }
-            return View(artist);
-        }
-
         // GET: Artists/Create
         public ActionResult Create()
         {

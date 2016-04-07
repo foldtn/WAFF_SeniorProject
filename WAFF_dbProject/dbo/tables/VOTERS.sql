@@ -5,4 +5,5 @@
     [VoterEthnicity] VARCHAR(50) NULL, 
     [VoterEducation] VARCHAR(50) NULL, 
     [VoterIncome] MONEY NULL,
+	[VoterFirstTimer] BIT NOT NULL DEFAULT 0
 )

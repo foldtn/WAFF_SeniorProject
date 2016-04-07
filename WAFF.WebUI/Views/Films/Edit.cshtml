@@ -1,44 +1,102 @@
 ﻿@model WAFF.DataAccess.Entity.Film
 
 @{
-    ViewBag.Title = "Film: Edit " + @Model.FilmName;
+    ViewBag.Title = "Edit";
 }
 
-<div class="panel">
-    <div class="panel-heading">
-        <h3>Edit @Model.FilmName</h3>
-    </div>
-    @using (Html.BeginForm())
-    {
-        @Html.HiddenFor(X => X.FilmID)
-        @Html.AntiForgeryToken()
-        <div class="panel-body" style="margin-top:50px">
-            @Html.ValidationSummary(true)
-            @foreach (var property in ViewData.ModelMetadata.Properties)
-            {
-                if (property.PropertyName != "FilmID")
-                {
-                    <div class="form-group">
-                        <label>@(property.DisplayName ?? property.PropertyName)</label>
-                        @if (property.PropertyName == "FilmDesc")
-                        {
-                            @Html.TextArea(property.PropertyName, null,
-                                     new { @class = "form-control", rows = 5 })
-                        }
-                        else
-                        {
-                            @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
-                        }
-                        @Html.ValidationMessage(property.PropertyName)
-                    </div>
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Film</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.FilmID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FilmName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FilmName)
+                @Html.ValidationMessageFor(model => model.FilmName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FilmGenre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @{
+                List<SelectListItem> listItems = new List<SelectListItem>();
+                listItems.Add(new SelectListItem
+                     {
+                         Text = "Narrative",
+                         Value = "Narrative"
+                     });
+                listItems.Add(new SelectListItem
+                     {
+                         Text = "Documentary",
+                         Value = "Documentary"
+                     });
+                listItems.Add(new SelectListItem
+                     {
+                         Text = "Animation",
+                         Value = "Animation"
+                     });
+                listItems.Add(new SelectListItem
+                    {
+                        Text = "Experimental",
+                        Value = "Experimental"
+                    });
+                listItems.Add(new SelectListItem
+                    {
+                        Text = "New Media",
+                        Value = "New Media"
+                    });
+                listItems.Add(new SelectListItem
+                    {
+                        Text = "Student",
+                        Value = "Student"                       
+                    });
                 }
-            }
+                @Html.DropDownListFor(model => model.FilmGenre, listItems, "-- Select Type --")
+                @Html.ValidationMessageFor(model => model.FilmGenre)
+            </div>
         </div>
 
-
-        <div class="panel-footer">
-            <input type="submit" value="Save" class="btn btn-primary" />
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.FilmDesc, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FilmDesc)
+                @Html.ValidationMessageFor(model => model.FilmDesc)
+            </div>
         </div>
-    }
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FilmLength, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FilmLength)
+                @Html.ValidationMessageFor(model => model.FilmLength)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FilmVotable, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FilmVotable)
+                @Html.ValidationMessageFor(model => model.FilmVotable)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
 </div>

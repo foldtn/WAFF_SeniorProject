@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WAFF.DataAccess.ViewModels.genreVD>
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.Voting_Data.genreVD>
 
 @{
     var first = 0;
@@ -8,7 +8,8 @@
         @Ajax.ActionLink(genre.FilmGenre, "FilmsG", "Reports",
             new
             {
-                genre = genre.FilmGenre
+                genre = genre.FilmGenre,
+                eventID = genre.EventID
             },
             new AjaxOptions
             {
@@ -23,5 +24,20 @@
             <input id="currentGenre" type="hidden" value="@genre.FilmGenre" />
             first++;
         }
+
+        <div style="display:none">
+            @Ajax.ActionLink("GraphG", "GraphG", "Reports",
+            new
+            {
+                genre = genre.FilmGenre,
+                eventID = genre.EventID
+            },
+            new AjaxOptions
+            {
+                UpdateTargetId = "piechartData",
+                OnSuccess = "drawChart()"
+            },
+            new { id = "GraphG" + genre.FilmGenre })
+        </div>
     }
 }

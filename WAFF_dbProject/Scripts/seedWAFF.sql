@@ -45,6 +45,9 @@ INSERT INTO [BLOCKS] (BlockStart, BlockEnd, BlockLocation, BlockType, EventID)
 VALUES ('2015-10-17 13:45', '2015-10-17 15:00', 'Main Library', 'Film', 1)
 
 INSERT INTO [BLOCKS] (BlockStart, BlockEnd, BlockLocation, BlockType, EventID)
+VALUES ('2015-10-17 16:00', '2015-10-17 17:25', 'Main Library', 'Film', 1)
+
+INSERT INTO [BLOCKS] (BlockStart, BlockEnd, BlockLocation, BlockType, EventID)
 VALUES ('2016-10-16 11:30', '2016-10-16 12:30', 'Main Library', 'Film', 2)
 
 INSERT INTO [BLOCKS] (BlockStart, BlockEnd, BlockLocation, BlockType, EventID)
@@ -90,22 +93,22 @@ INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
 VALUES ('Harry Coder and the Coders Code', 'Action', 'Dummy film 11', 14)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
-VALUES ('Dani', 'Bowman', NULL, NULL, NULL, NULL, NULL, 0, NULL)
+VALUES ('Dani', 'Bowman', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
-VALUES ('Englewood Elementary', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL)
+VALUES ('Englewood Elementary', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
-VALUES ('Adam', 'Ricketts', NULL, NULL, NULL, NULL, NULL, 0, NULL)
+VALUES ('Adam', 'Ricketts', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
-VALUES ('Pierre', 'Schantz', NULL, NULL, NULL, NULL, NULL, 0, NULL)
+VALUES ('Pierre', 'Schantz', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
-VALUES ('Keaton', 'Bicknell', NULL, NULL, NULL, NULL, NULL, 0, NULL)
+VALUES ('Keaton', 'Bicknell', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
 
 INSERT INTO [ARTISTS] (ArtistFName, ArtistLName, ArtistCompany, ArtistEmail, ArtistAddress, ArtistCity, ArtistState, ArtistZip, ArtistPhone)
-VALUES ('Kate', 'Duhamel', NULL, NULL, NULL, NULL, NULL, 0, NULL)
+VALUES ('Kate', 'Duhamel', NULL, NULL, NULL, NULL, NULL, NULL, NULL)
 
 INSERT INTO [FILMBLOCKS] (BlockID, FilmID)
 VALUES (1, 1)
@@ -233,35 +236,35 @@ VALUES (5, 5)
 INSERT INTO [FILMARTISTS] (ArtistID, FilmID)
 VALUES (6, 6)
 
-INSERT INTO [VOTERS] (VoterID)
-VALUES (1)
+INSERT INTO [VOTERS] (VoterID, VoterAge, VoterEthnicity, VoterEducation, VoterIncome)
+VALUES (1, 29, 'NativeAmerican/Alaska Native', 'Some College', '$29,000')
 
-INSERT INTO [VOTERS] (VoterID)
-VALUES (2)
+INSERT INTO [VOTERS] (VoterID, VoterAge, VoterEthnicity, VoterEducation, VoterIncome)
+VALUES (2, 35, 'Cacasian', 'Bachelor''s', '$35,000')
 
 INSERT INTO [VOTERS] (VoterID)
 VALUES (3)
 
-INSERT INTO [VOTERS] (VoterID)
-VALUES (4)
+INSERT INTO [VOTERS] (VoterID, VoterAge, VoterEthnicity, VoterEducation, VoterIncome)
+VALUES (4, 54, 'Hispanic', 'Master''s', '$200,001')
 
 INSERT INTO [VOTERS] (VoterID)
 VALUES (5)
 
-INSERT INTO [VOTERS] (VoterID)
-VALUES (6)
+INSERT INTO [VOTERS] (VoterID, VoterAge, VoterEthnicity, VoterEducation, VoterIncome)
+VALUES (6, 55, 'Asian/Pacific Islander', 'Some College', '$123,000.23')
 
-INSERT INTO [VOTERS] (VoterID)
-VALUES (7)
+INSERT INTO [VOTERS] (VoterID, VoterAge, VoterEthnicity, VoterEducation, VoterIncome)
+VALUES (7, 18, 'Asian/Pacific Islander', 'Doctorate', '$15,231,021')
 
 INSERT INTO [VOTERS] (VoterID)
 VALUES (8)
 
-INSERT INTO [VOTERS] (VoterID)
-VALUES (9)
+INSERT INTO [VOTERS] (VoterID, VoterAge, VoterEthnicity, VoterEducation, VoterIncome)
+VALUES (9, 21, 'Prefer Not to Answer', 'High School Diploma', '$33,020')
 
-INSERT INTO [VOTERS] (VoterID)
-VALUES (10)
+INSERT INTO [VOTERS] (VoterID, VoterAge, VoterEthnicity, VoterEducation)
+VALUES (10, 32, 'Caucasian', 'Master''s')
 
 INSERT INTO [VOTES] (VoterId, BlockId, FilmId)
 VALUES (1, 1, 1)

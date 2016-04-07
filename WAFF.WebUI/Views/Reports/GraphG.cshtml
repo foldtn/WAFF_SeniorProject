@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.Voting_Data.graphVD>
+
+@{
+    int count = 0;
+
+    foreach (var graph in Model)
+    {
+        <input type="hidden" id="@("FilmID" + count)" value="@graph.FilmID" />
+        <input type="hidden" id="@("FilmName" + count)" value="@graph.FIlmName" />
+        <input type="hidden" id="@("FilmVotes" + count)" value="@graph.FilmVotes" />
+
+        count++;
+    }
+    
+    <input type="hidden" id="maxGraphCount" value="@count" />
+}

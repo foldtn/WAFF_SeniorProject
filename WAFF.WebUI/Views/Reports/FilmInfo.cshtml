@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.Voting_Data.filmInfoVD>
+
+@{
+    var film = Model.First();
+    <hr />
+    <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>Film:</em></p></div>
+    <div style="width: 70%; display: inline-block"><p>@film.FilmName</p></div>
+    <br />
+
+    <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>Genre:</em></p></div>
+    <div style="width: 70%; display: inline-block"><p>@film.FilmGenre</p></div>
+    <br />
+
+    <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>Description:</em></p></div>
+    <div style="width: 70%; display: inline-block"><p>@film.FilmDesc</p></div>
+    <br />
+
+    <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>Length:</em></p></div>
+    <div style="width: 70%; display: inline-block"><p>@film.FilmLength Minutes</p></div>
+    <br />
+
+    <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>Total Votes:</em></p></div>
+    <div style="width: 70%; display: inline-block"><p id="filmTotal"></p></div>
+    <br />
+    
+    <h3 style="text-align: center">Artists</h3>
+
+    foreach (var f in Model)
+    {
+        <hr />
+        <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>Name:</em></p></div>
+        <div style="width: 70%; display: inline-block"><p>@film.ArtistFName @f.ArtistLname</p></div>
+        <br /><br />
+
+        <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>Company:</em></p></div>
+        <div style="width: 70%; display: inline-block"><p>@film.ArtistCompany</p></div>
+        <br /><br />
+
+        <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>Email:</em></p></div>
+        <div style="width: 30%; display: inline-block"><p>@film.ArtistEmail</p></div>
+
+        <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>Phone:</em></p></div>
+        <div style="width: 30%; display: inline-block"><p>@film.ArtistPhone</p></div>
+        <br />
+
+        <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>Address:</em></p></div>
+        <div style="width: 30%; display: inline-block"><p>@film.ArtistAddress</p></div>
+
+        <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>City:</em></p></div>
+        <div style="width: 30%; display: inline-block"><p>@film.ArtistCity</p></div>
+        <br />
+
+        <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>State:</em></p></div>
+        <div style="width: 30%; display: inline-block"><p>@film.ArtistState</p></div>
+
+        <div style="width: 20%; display: inline-block"><p style="font-size: 18px;"><em>Zip:</em></p></div>
+        if (film.ArtistZip != 0)
+        {
+            <div style="width: 30%; display: inline-block"><p>@film.ArtistZip</p></div>
+        }
+        else
+        {
+            <div style="width: 30%; display: inline-block"><p></p></div>
+        }
+
+    }
+}

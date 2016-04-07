@@ -1,12 +1,27 @@
-﻿@model IEnumerable<WAFF.DataAccess.ViewModels.filmsVD>
+﻿@model IEnumerable<WAFF.DataAccess.ViewModels.Voting_Data.filmsVD>
 
-@foreach (var film in Model)
-{ 
-    @Ajax.ActionLink(film.FilmName, "FilmInfo", "Reports",
-    new AjaxOptions
+@{
+    var first = 0;
+
+    foreach (var film in Model)
     {
-        UpdateTargetId = "containerFilms"
-    },
-    new { id = "film" + film.FilmID })
-    <br />
+        @Ajax.ActionLink(film.FilmName, "FilmInfo", "Reports",
+        new
+        {
+            filmID = film.FilmID 
+        },
+        new AjaxOptions
+        {
+            UpdateTargetId = "containerFilmInfo",
+            OnSuccess = "selectedFilm(" + film.FilmID + ")"
+        },
+        new { id = "film" + film.FilmID })
+        <br />
+
+        if (first == 0)
+        {
+            <input id="currentFilm" type="hidden" value="@film.FilmID" />
+            first++;
+        }
+    }
 }
