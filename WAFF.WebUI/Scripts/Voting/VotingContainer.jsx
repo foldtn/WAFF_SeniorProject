@@ -23,7 +23,7 @@
                 <button style={filmInfoStyle}
                     className="btn btn-out"
                     onClick={this._setFilmSelected}>
-                    <div style={{fontSize: '1rem'}}>{this.props.film.FilmName}</div>
+                    <div style={{fontSize: '1.4rem'}}>{this.props.film.FilmName}</div>
                 </button>
             )
         },
@@ -51,13 +51,15 @@
         render(){
             var blockStyle = {
                 // border: 'solid',
+
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'column',
-                width: '98%',
+                width: '100%',
                 height: '200px',
-                padding: '5px'
+                padding: '5px',
+                backgroundColor:'#f5f5f0'
             };
 
             var filmElements = this.props.films.map((film, i) =>
@@ -92,20 +94,21 @@
                                     alignItems:'center',
                                     padding:'10px',
                                     width: '100%',
-                                    flexDirection: 'column'}}>
+                                    flexDirection: 'column',
+                                    backgroundColor:'#f5f5f0'}}>
                         <div className="well well-sm"
                              style={{display:'flex',
                                         justifyContent: 'center',
                                         alignItems: 'center',
-                                        width: '75%',
+                                        width: '65%',
                                         padding: '1px'}}>
-                            <h4>{this.state.selectedFilmName}</h4>
+                            <h6>{this.state.selectedFilmName}</h6>
                         </div>
 
                         <button type="button"
                                 onClick={this._onVoteSubmit}
                                 className="btn btn-lg btn-primary"
-                                style={{width:'75%'}}>
+                                style={{width:'30%',backgroundColor:'#0d0d0d'}}>
                             Vote
                         </button>
                     </div>
@@ -158,9 +161,9 @@
             var thanks = "";
 
             if(data){
-                thanks = "<h1 style={{fontSize: '3.5rem'}}>A vote for that film and block has already been saved!</h1>"
+                thanks = "<h1 class='text-center' style={{fontSize: '3rem'}}>Your vote has been saved <br/>Thank You!</h1>"
             } else  (
-                thanks = "<h1 style={{fontSize: '5rem'}}>Thanks fpr voting!!</h1>"
+                thanks = "<h1 style={{fontSize: '4rem'}}>Thanks for voting!!</h1>"
             )
 
             var killThisBlock = document.getElementById(blockId);
@@ -182,14 +185,15 @@
             );
 
             return (
-                <div style={{display:'flex',
+                <div style= {{display:'flex',
                              justifyContent: 'center',
                              alignItems: 'center',
-                             flexDirection: 'column'}}>
+                             flexDirection: 'column',
+                             backgroundColor:'#8a8a5c'}}>
 
                     {blocksAndFilms}
                 </div>)
-        },
+        }
     });
 
 })(window.React);

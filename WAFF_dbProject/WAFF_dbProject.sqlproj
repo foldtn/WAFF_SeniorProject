@@ -81,6 +81,7 @@
     <Build Include="dbo\Stored Procedures\getLBDataFinal.sql" />
     <Build Include="dbo\Stored Procedures\getEvents.sql" />
     <Build Include="dbo\Stored Procedures\getGraphsB.sql" />
+    <Build Include="dbo\Stored Procedures\GetEventBlocksFilmsDetail.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />

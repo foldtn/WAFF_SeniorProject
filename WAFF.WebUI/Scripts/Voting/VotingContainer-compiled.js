@@ -30,7 +30,7 @@
                     onClick: this._setFilmSelected },
                 React.createElement(
                     'div',
-                    { style: { fontSize: '1rem' } },
+                    { style: { fontSize: '1.4rem' } },
                     this.props.film.FilmName
                 )
             );
@@ -64,13 +64,15 @@
 
             var blockStyle = {
                 // border: 'solid',
+
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'column',
-                width: '98%',
+                width: '100%',
                 height: '200px',
-                padding: '5px'
+                padding: '5px',
+                backgroundColor: '#f5f5f0'
             };
 
             var filmElements = this.props.films.map(function (film, i) {
@@ -105,17 +107,18 @@
                             alignItems: 'center',
                             padding: '10px',
                             width: '100%',
-                            flexDirection: 'column' } },
+                            flexDirection: 'column',
+                            backgroundColor: '#f5f5f0' } },
                     React.createElement(
                         'div',
                         { className: 'well well-sm',
                             style: { display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                                width: '75%',
+                                width: '65%',
                                 padding: '1px' } },
                         React.createElement(
-                            'h4',
+                            'h6',
                             null,
                             this.state.selectedFilmName
                         )
@@ -125,7 +128,7 @@
                         { type: 'button',
                             onClick: this._onVoteSubmit,
                             className: 'btn btn-lg btn-primary',
-                            style: { width: '75%' } },
+                            style: { width: '30%', backgroundColor: '#0d0d0d' } },
                         'Vote'
                     )
                 )
@@ -182,8 +185,8 @@
             var thanks = "";
 
             if (data) {
-                thanks = "<h1 style={{fontSize: '3.5rem'}}>A vote for that film and block has already been saved!</h1>";
-            } else thanks = "<h1 style={{fontSize: '5rem'}}>Thanks fpr voting!!</h1>";
+                thanks = "<h1 class='text-center' style={{fontSize: '3rem'}}>Your vote has been saved <br/>Thank You!</h1>";
+            } else thanks = "<h1 style={{fontSize: '4rem'}}>Thanks for voting!!</h1>";
 
             var killThisBlock = document.getElementById(blockId);
 
@@ -209,7 +212,8 @@
                 { style: { display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        flexDirection: 'column' } },
+                        flexDirection: 'column',
+                        backgroundColor: '#8a8a5c' } },
                 blocksAndFilms
             );
         }

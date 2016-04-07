@@ -18,8 +18,9 @@ namespace WAFF.WebUI.Controllers
         [HttpGet]
         public ActionResult Vote(int id)
         {
+            var currentDate = DateTime.Now;
            
-            var results = _service.GetAllBlocksForEventsAsync(new DateTime());
+            var results = _service.GetAllBlocksForEventsAsync(currentDate);
             var blockIdArray = results.Select(x => x.BlockId).Distinct().ToList();
 
             var listOfLists = new List<List<FilmVoteViewModel>>() { };

@@ -30,16 +30,15 @@ namespace WAFF.Services.Votes
 
         public IEnumerable<FilmVoteViewModel> GetAllBlocksForEventsAsync(DateTime currentDate)
         {
-            //var pCurrentDate = new SqlParameter("@currentDate", currentDate);
+            var pCurrentDate = new SqlParameter("@currentDate", currentDate);
 
-            //leaving the stored procedure name the same for now
-            //but returns filmvoteviewmodels instead of EventBlocksFilms.
-            //var results = _db.Database.SqlQuery<FilmVoteViewModel>("GetEventBlocksFilmsDetail @currentDate",
-            //pCurrentDate);
+            
+            var results = _db.Database.SqlQuery<FilmVoteViewModel>("GetEventBlocksFilmsDetail @currentDate",
+            pCurrentDate);
 
-            //return results.ToList();
+            return results.ToList();
 
-            var tempResults = from f in _db.Films
+           /* var tempResults = from f in _db.Films
                               join fb in _db.FilmBlocks
                                   on f.FilmID equals fb.FilmID
                               join b in _db.Blocks
@@ -62,7 +61,7 @@ namespace WAFF.Services.Votes
                               };
             var tempList = tempResults.ToList();
 
-            return tempList;
+            return tempList;*/
         }
     }
 }
