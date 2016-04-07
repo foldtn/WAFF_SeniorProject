@@ -30,6 +30,12 @@ namespace WAFF.WebUI.Controllers
             return json;
         }
 
+        public JsonResult DummyAPI()
+        {
+            var json = new JsonResult() { Data = "You have reached the API", JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+
+            return json;
+        }
 
     }//end class
 
