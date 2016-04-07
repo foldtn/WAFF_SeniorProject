@@ -25,10 +25,15 @@ namespace WAFF.Services.Mobile
 
             var results = _dbContext.Database.SqlQuery<EventBlocksFilmsViewModel>("GetFilmsByBlockByEvent", mCurrentDate);
 
-            
-
             //return list of objects
             return results.ToList();
+        }
+
+        public JsonResult GetFilmsJson()
+        {
+            var json = new JsonResult() { Data = "You have reached the API.", JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+
+            return json;
         }
 
     }//end class
