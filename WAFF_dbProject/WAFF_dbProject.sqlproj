@@ -61,6 +61,11 @@
     <Folder Include="dbo\tables" />
     <Folder Include="Scripts" />
     <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\Stored Procedures\Mobile" />
+    <Folder Include="dbo\Stored Procedures\Reports" />
+    <Folder Include="dbo\Stored Procedures\Reports\Leader Board" />
+    <Folder Include="dbo\Stored Procedures\Reports\Voting Data" />
+    <Folder Include="dbo\Stored Procedures\Reports\Demographics" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\tables\VOTERS.sql" />
@@ -70,17 +75,24 @@
     <Build Include="dbo\tables\ARTISTS.sql" />
     <Build Include="dbo\tables\FILMS.sql" />
     <Build Include="dbo\tables\VOTES.sql" />
-    <Build Include="dbo\Stored Procedures\getBlocks.sql" />
-    <Build Include="dbo\Stored Procedures\getGenres.sql" />
-    <Build Include="dbo\Stored Procedures\getFilmsB.sql" />
-    <Build Include="dbo\Stored Procedures\getFilmsG.sql" />
     <Build Include="dbo\tables\FILMBLOCKS.sql" />
     <Build Include="dbo\tables\USERS.sql" />
-    <Build Include="dbo\Stored Procedures\getVotes.sql" />
-    <Build Include="dbo\Stored Procedures\getLBVoted.sql" />
-    <Build Include="dbo\Stored Procedures\getLBDataFinal.sql" />
     <Build Include="dbo\Stored Procedures\getEvents.sql" />
-    <Build Include="dbo\Stored Procedures\getGraphsB.sql" />
+    <Build Include="dbo\Stored Procedures\Mobile\GetFilmsByBlockByEvent.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getBlocks.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getFilmsB.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getGraphsB.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Leader Board\getLBDataFinal.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Leader Board\getLBVoted.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Leader Board\getVotes.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getGraphsG.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getFilmsG.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getGenres.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Voting Data\getFilmInfo.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Demographics\getVoterIncomeCount.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Demographics\getVoterAgeCount.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Demographics\getVoterEducationCount.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\Demographics\getVoterEthnicityCount.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />

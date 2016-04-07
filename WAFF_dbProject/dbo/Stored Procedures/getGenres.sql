@@ -1,9 +1,0 @@
-﻿CREATE PROCEDURE [dbo].[getGenres]
-AS
-BEGIN
-	SET NOCOUNT ON;
-
-	SELECT FilmGenre 
-	FROM [FILMS] 
-	GROUP BY FilmGenre
-END
