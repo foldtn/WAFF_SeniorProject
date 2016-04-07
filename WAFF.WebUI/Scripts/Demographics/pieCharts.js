@@ -27,6 +27,9 @@ function drawChartIncome() {
         }
     };
 
+    var total = document.getElementById("graphIncomeTotal").value;
+    document.getElementById("incomeTotal").innerHTML = "Total: " + total;
+
     var chart = new google.visualization.PieChart(document.getElementById('demoIncome'));
     chart.draw(data, options);
 }
@@ -56,6 +59,9 @@ function drawChartAge() {
             width: "100%"
         }
     };
+
+    var total = document.getElementById("graphAgeTotal").value;
+    document.getElementById("ageTotal").innerHTML = "Total: " + total;
 
     var chart = new google.visualization.PieChart(document.getElementById('demoAge'));
     chart.draw(data, options);
@@ -87,6 +93,9 @@ function drawChartEducation() {
             width: "100%"
         }
     };
+
+    var total = document.getElementById("graphEducationTotal").value;
+    document.getElementById("educationTotal").innerHTML = "Total: " + total;
 
     var chart = new google.visualization.PieChart(document.getElementById('demoEducation'));
     chart.draw(data, options);
@@ -120,8 +129,13 @@ function drawChartEthnicity() {
         }
     };
 
+    var total = document.getElementById("graphEthnicityTotal").value;
+    document.getElementById("ethnicityTotal").innerHTML = "Total: " + total;
+
     var chart = new google.visualization.PieChart(document.getElementById('demoEthnicity'));
     chart.draw(data, options);
+
+
 }
 
 function resizeChart() {

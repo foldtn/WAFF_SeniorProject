@@ -2,10 +2,14 @@
 
 @{
     int count = 0;
+    int total = 0;
 
     foreach (var ethnicity in Model)
     {
         <input type="hidden" id="@("graphEthnicity" + count++)" value="@ethnicity.VoterCount" />
+        total = total + ethnicity.VoterCount;
     }
+    
+    <input type="hidden" id="graphEthnicityTotal" value="@total" />
 }
 
