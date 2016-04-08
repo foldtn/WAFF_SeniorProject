@@ -2,6 +2,7 @@
 
 @{
     int count = 0;
+    int total = 0;
 
     foreach (var graph in Model)
     {
@@ -9,8 +10,10 @@
         <input type="hidden" id="@("FilmName" + count)" value="@graph.FIlmName" />
         <input type="hidden" id="@("FilmVotes" + count)" value="@graph.FilmVotes" />
 
+        total = total + @graph.FilmVotes;
         count++;
     }
     
     <input type="hidden" id="maxGraphCount" value="@count" />
+    <input type="hidden" id="graphTotalVotes" value="@total" />
 }

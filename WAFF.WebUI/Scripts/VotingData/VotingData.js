@@ -97,4 +97,6 @@ function selectedFilm(film) {
     document.getElementById('film' + current).style.textDecoration = 'none';
     document.getElementById('film' + film).style.textDecoration = 'underline';
     document.getElementById('currentFilm').value = film;
+
+    selectSlice(film);
 }
