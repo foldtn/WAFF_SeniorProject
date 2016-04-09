@@ -20,6 +20,19 @@ namespace WAFF.DataAccess.ViewModels.Voting
         public DateTime BlockEnd { get; set; }
         public string BlockLocation { get; set; }
 
+        public string BlockDay
+        {
+            get { return BlockStart.DayOfWeek + " " + BlockStart.ToShortDateString(); }
+        }
+        public string BlockStartString
+        {
+            get { return BlockStart.ToShortTimeString();}
+        }
+        public string BlockEndString
+        {
+            get { return BlockEnd.ToShortTimeString();}
+        }
+
 
     }
 }

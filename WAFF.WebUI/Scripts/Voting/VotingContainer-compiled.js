@@ -84,6 +84,10 @@
 
             var blockIdTag = this.props.blockId;
 
+            var blockDay = this.props.films[0].BlockDay;
+            var blockStart = this.props.films[0].BlockStartString;
+            var blockEnd = this.props.films[0].BlockEndString;
+
             return React.createElement(
                 'div',
                 { style: { display: 'flex',
@@ -91,10 +95,25 @@
                         justifyContent: 'center',
                         alignItems: 'center',
                         width: '75%',
-                        margin: '15px' },
+                        margin: '15px',
+                        backgroundColor: '#f5f5f0' },
                     className: 'panel panel-default',
                     id: blockIdTag },
-                React.createElement('div', { id: 'timeInfo', style: { display: 'flex', justifyContent: 'center', alignItem: 'center' } }),
+                React.createElement(
+                    'div',
+                    { id: 'timeInfo',
+                        style: { display: 'flex', justifyContent: 'center', alignItem: 'center', flexDirection: 'column', backgroundColor: '#f5f5f0' } },
+                    React.createElement(
+                        'div',
+                        null,
+                        blockDay
+                    ),
+                    React.createElement(
+                        'div',
+                        { style: { textAlign: 'center' } },
+                        blockStart + "-" + blockEnd
+                    )
+                ),
                 React.createElement(
                     'div',
                     { style: blockStyle },

@@ -71,6 +71,10 @@
 
             var blockIdTag = this.props.blockId;
 
+            var blockDay = this.props.films[0].BlockDay;
+            var blockStart = this.props.films[0].BlockStartString;
+            var blockEnd = this.props.films[0].BlockEndString;
+
             return (
 
                 <div style={{display:'flex',
@@ -78,11 +82,19 @@
                              justifyContent:'center',
                              alignItems:'center',
                              width:'75%',
-                             margin: '15px'}}
+                             margin: '15px',
+                             backgroundColor: '#f5f5f0'}}
                      className="panel panel-default"
                      id={blockIdTag}>
 
-                    <div id="timeInfo" style={{display:'flex', justifyContent:'center', alignItem: 'center'}}>
+                    <div id="timeInfo"
+                         style={{display:'flex', justifyContent:'center', alignItem: 'center', flexDirection: 'column',backgroundColor:'#f5f5f0'}}>
+                        <div>
+                            {blockDay}
+                        </div>
+                        <div style={{textAlign:'center'}}>
+                            {blockStart + "-" + blockEnd}
+                        </div>
                     </div>
 
                     <div style={blockStyle}>
