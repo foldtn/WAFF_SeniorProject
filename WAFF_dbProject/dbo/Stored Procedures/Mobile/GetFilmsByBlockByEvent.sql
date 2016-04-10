@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[GetFilmsByBlockByEvent]
 	--DECLARE @currentDate DateTime
-	@currentDate datetime
-
+	--@currentDate datetime
+     
 AS
 
 	select

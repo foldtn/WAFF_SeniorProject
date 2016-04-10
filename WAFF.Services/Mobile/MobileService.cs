@@ -22,10 +22,10 @@ namespace WAFF.Services.Mobile
             currentTime = DateTime.Now;
 
             //set as sql parameter
-            SqlParameter mCurrentDate = new SqlParameter("@currentDate", currentTime);
+            //SqlParameter mCurrentDate = new SqlParameter("@currentDate", currentTime);
 
             //get query result as EventBlocksFilmsViewModel instance
-            var results = _dbContext.Database.SqlQuery<EventBlocksFilmsViewModel>("GetFilmsByBlockByEvent", mCurrentDate);
+            var results = _dbContext.Database.SqlQuery<EventBlocksFilmsViewModel>("GetFilmsByBlockByEvent");//, mCurrentDate);
 
             //return list of objects
             return results.ToList();
