@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Mvc;
 using WAFF.Services.Mobile;
+using WAFF.Services.Reports;
 
 
 namespace WAFF.WebUI.Controllers
@@ -15,20 +16,40 @@ namespace WAFF.WebUI.Controllers
     {
 
         private MobileService _mobileService = new MobileService();
+        private ReportService _reportService = new ReportService();
 
+        /// <summary>
+        /// Gets All Films By Event.
+        /// </summary>
+        /// <returns>A Json Result</returns>
         public JsonResult GetAllFilmsByEvent()
         {
             //front door
 
+            JsonResult json;
+            
             var result = _mobileService.GetFilmsByBlockByEvent();
-            //var result = Call Service passing along eventId
 
-
-
-            var json = new JsonResult() { Data = result, JsonRequestBehavior = JsonRequestBehavior.AllowGet};
+            json = new JsonResult() { Data = result, JsonRequestBehavior = JsonRequestBehavior.AllowGet};
 
             return json;
-        }
+        }//end GetAllFilmsByEvent()
+
+        public JsonResult GetLeaderBoard()
+        {
+
+            JsonResult result;
+
+            //get event id
+            int eventId = _mobileService.GetEventId();
+
+            var leaderboardList = _reportService.LeaderBoards(eventId);
+
+            result = new JsonResult() { Data = leaderboardList, JsonRequestBehavior = JsonRequestBehavior.AllowGet};
+
+            return result;
+            
+        }//end GetLeaderBoard()
 
         public JsonResult DummyAPI()
         {

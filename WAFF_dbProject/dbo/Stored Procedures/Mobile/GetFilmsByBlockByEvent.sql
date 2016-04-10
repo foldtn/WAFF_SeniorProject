@@ -1,13 +1,13 @@
 ﻿CREATE PROCEDURE [dbo].[GetFilmsByBlockByEvent]
 	--DECLARE @currentDate DateTime
-	@date date = '12-21-05',
-	@currentDate datetime = @date
-
-
+	--@currentDate datetime
+     
 AS
 
 	select
 		f.FilmID as [FilmId]
+		,e.EventStartDate as [Event Start Date]
+		,e.EventEndDate
 		,fb.BlockID as [BlockId]
 		,b.EventID as [EventId]
 		,f.FilmName as [FilmName]
@@ -19,15 +19,15 @@ AS
 		,b.BlockLocation as [BlockLocation]
 	from  films f
 
-	join FILMBLOCKS fb
+	left join FILMBLOCKS fb
 		on f.FilmID = fb.FilmID
 
-	join blocks b
+	left join blocks b
 		on b.BlockID = fb.BlockID
 
-	join [EVENTS] e
-		on e.EventEndDate = b.EventID
+	left join [EVENTS] e
+		on e.EventID = b.EventID
 
-	where (e.EventStartDate <= @currentDate AND e.EventEndDate >= @currentDate)
+	where (e.EventStartDate <= GETDATE() AND e.EventEndDate >= GETDATE())
 
 RETURN 0

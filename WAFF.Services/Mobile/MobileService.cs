@@ -17,17 +17,37 @@ namespace WAFF.Services.Mobile
 
         public IEnumerable<EventBlocksFilmsViewModel> GetFilmsByBlockByEvent()
         {
-
+            //get current date
             var currentTime = new DateTime();
             currentTime = DateTime.Now;
 
-            SqlParameter mCurrentDate = new SqlParameter("@currentDate", currentTime);
+            //set as sql parameter
+            //SqlParameter mCurrentDate = new SqlParameter("@currentDate", currentTime);
 
-            var results = _dbContext.Database.SqlQuery<EventBlocksFilmsViewModel>("GetFilmsByBlockByEvent", mCurrentDate);
+            //get query result as EventBlocksFilmsViewModel instance
+            var results = _dbContext.Database.SqlQuery<EventBlocksFilmsViewModel>("GetFilmsByBlockByEvent");//, mCurrentDate);
 
             //return list of objects
             return results.ToList();
-        }
+
+        }//end GetFilmsByBlockByEvent()
+
+        public int GetEventId()
+        {
+
+            int eventId;
+
+            //get current time
+            var now = DateTime.Now;
+
+            //find event
+            var resultEvent = _dbContext.Events.FirstOrDefault(x => x.EventStartDate <= now);
+
+            eventId = resultEvent.EventID;
+
+            return eventId;
+
+        }//end GetEventId()
 
         public JsonResult GetFilmsJson()
         {
@@ -42,6 +62,10 @@ namespace WAFF.Services.Mobile
     {
 
         public int FilmId { get; set; }
+
+        public DateTime EventStartDate { get; set; }
+
+        public DateTime EventEndDate { get; set; }
 
         public int BlockId { get; set; }
 
