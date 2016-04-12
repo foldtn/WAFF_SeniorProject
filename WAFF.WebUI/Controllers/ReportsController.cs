@@ -137,5 +137,12 @@ namespace WAFF.WebUI.Controllers
 
             return PartialView(ethnicity);
         }
+
+        public ActionResult GenerateVoters()
+        {
+            var voters = _service.GetVoters();
+
+            return View();
+        }
     }
 }

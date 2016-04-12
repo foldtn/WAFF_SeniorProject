@@ -393,7 +393,7 @@ namespace WAFF.Services.Reports
             var results = _db.Database.SqlQuery<filmInfoVD>("getFilmInfo @film", pFilm).ToList();
 
             return results;
-        }
+        } // End GetFilmInfo
 
         private voterCount getIncomeCount(int eventID, int begin, double end)
         {
@@ -404,7 +404,7 @@ namespace WAFF.Services.Reports
             var temp = _db.Database.SqlQuery<voterCount>("getVoterIncomeCount @begin, @end, @event", pBegin, pEnd, pEvent).First();
 
             return temp;
-        }
+        } // End getIncomeCount
         
         public IEnumerable<voterCount> GetIncomeChart(int eventID)
         {
@@ -424,7 +424,7 @@ namespace WAFF.Services.Reports
             results.Add(getIncomeCount(eventID, 200000, 999999999999.99)); // Made it highly unlikely to reach "max" of $999 billion income...
 
             return results;
-        }
+        } // End GetIncomeChart
 
         private voterCount getAgeCount(int eventID, int begin, int end)
         {
@@ -435,7 +435,7 @@ namespace WAFF.Services.Reports
             var temp = _db.Database.SqlQuery<voterCount>("getVoterAgeCount @begin, @end, @event", pBegin, pEnd, pEvent).First();
 
             return temp;
-        }
+        } // End getAgeCount
 
         public IEnumerable<voterCount> GetAgeChart(int eventID)
         {
@@ -453,7 +453,7 @@ namespace WAFF.Services.Reports
             results.Add(getAgeCount(eventID, 55, 200));
 
             return results;
-        }
+        } // End GeAgeChart
 
         private voterCount getEducationCount(int eventID, string education)
         {
@@ -463,7 +463,7 @@ namespace WAFF.Services.Reports
             var temp = _db.Database.SqlQuery<voterCount>("getVoterEducationCount @education, @event", pEducation, pEvent).First();
 
             return temp;
-        }
+        } // End getEducationCount
 
         public IEnumerable<voterCount> GetEducationChart(int eventID)
         {
@@ -477,7 +477,7 @@ namespace WAFF.Services.Reports
             results.Add(getEducationCount(eventID, "Doctorate"));
 
             return results;
-        }
+        } // End GetEducationChart
 
         private voterCount getEthnicityCount(int eventID, string ethnicity)
         {
@@ -487,7 +487,7 @@ namespace WAFF.Services.Reports
             var temp = _db.Database.SqlQuery<voterCount>("getVoterEthnicityCount @ethnicity, @event", pEthnicity, pEvent).First();
 
             return temp;
-        }
+        } // End getEthnicityCount
 
         public IEnumerable<voterCount> GetEthnicityChart(int eventID)
         {
@@ -500,6 +500,13 @@ namespace WAFF.Services.Reports
             results.Add(getEthnicityCount(eventID, "Asian/Pacific Islander"));
             results.Add(getEthnicityCount(eventID, "Caucasian"));
             results.Add(getEthnicityCount(eventID, "Prefer Not to Answer"));
+
+            return results;
+        } // End GetEthnicityChart
+
+        public IEnumerable<VoterIDs> GetVoters()
+        {
+            var results = _db.Database.SqlQuery<VoterIDs>("GetVoterIDs").ToList();
 
             return results;
         }
