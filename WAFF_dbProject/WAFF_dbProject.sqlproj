@@ -94,8 +94,7 @@
     <Build Include="dbo\Stored Procedures\Reports\Demographics\getVoterEducationCount.sql" />
     <Build Include="dbo\Stored Procedures\Reports\Demographics\getVoterEthnicityCount.sql" />
     <Build Include="dbo\Stored Procedures\GetEventBlocksFilmsDetail.sql" />
-    <Build Include="dbo\Stored Procedures\getGraphB.sql" />
-    <Build Include="dbo\Stored Procedures\getGraphG.sql" />
+    <Build Include="dbo\Stored Procedures\Reports\GetVoterIDs.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />

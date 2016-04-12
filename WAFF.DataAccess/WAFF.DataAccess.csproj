@@ -95,6 +95,7 @@
     <Compile Include="Entity\Voter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Demographics\voterCount.cs" />
+    <Compile Include="ViewModels\VoterID.cs" />
     <Compile Include="ViewModels\Voting Data\blockVD.cs" />
     <Compile Include="ViewModels\eventDate.cs" />
     <Compile Include="ViewModels\Voting Data\filmInfoVD.cs" />

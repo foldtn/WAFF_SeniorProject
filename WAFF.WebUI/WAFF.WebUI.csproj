@@ -243,6 +243,7 @@
     <Content Include="Views\Reports\getAge.cshtml" />
     <Content Include="Views\Reports\getEducation.cshtml" />
     <Content Include="Views\Reports\getEthnicity.cshtml" />
+    <Content Include="Views\Reports\GenerateVoters.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
