@@ -8,14 +8,27 @@ namespace WAFF.WebUI.App_Start
 {
     public class BundleConfig
     {
-        public static void ResgisterBundles(BundleCollection bundle)
+        public static void RegisterBundles(BundleCollection bundles)
         {
-            var waffBundle = new ScriptBundle("~/scripts/react");
+            RegisterVotingBundles(bundles);
 
-            waffBundle.Include("~/Scripts/react-with-addons.js");
-            waffBundle.Include("~/Scripts/Voting/VotingContainer-compiled.js");
+            RegisterAdminBundles(bundles);
+        }
 
-            bundle.Add(waffBundle);
+        public static void RegisterVotingBundles(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Scripts/voting").Include(
+                "~/Scripts/react-with-addons.js",
+                "~/Scripts/Voting/VotingContainer-compiled.js"
+                ));
+        }
+
+        public static void RegisterAdminBundles(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Scripts/admin").Include(
+                "~/Scripts/react-with-addons.js",
+                "~/Scripts/adminTools/AdminToolsContainer-compiled.js"
+                ));
         }
     }
 }
