@@ -1,0 +1,27 @@
+﻿@model WAFF.DataAccess.ViewModels.Admin.AdminEventViewModel
+@using System.Web.Optimization
+@using Newtonsoft.Json
+
+@{
+    ViewBag.Title = "ManageEventFilms";
+}
+
+<div id="admin-mount">
+
+</div>
+
+@section adminTool {
+    @Scripts.Render("~/Scripts/admin")
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <script type="text/javascript">
+        var viewModel = @Html.Raw(JsonConvert.SerializeObject(Model));
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+
+            React.render(React.createElement(AdminToolsContainer, {}), document.getElementById("admin-mount"));
+        })();
+    </script>
+}

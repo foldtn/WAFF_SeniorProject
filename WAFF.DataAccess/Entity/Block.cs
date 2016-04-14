@@ -21,6 +21,8 @@ namespace WAFF.DataAccess.Entity
         [DisplayName("Type")]
         public string BlockType { get; set; }
         public int EventID { get; set; }
-
+        [DataType(DataType.MultilineText)]
+        [DisplayName("Description")]
+        public string BlockDescription { get; set; }
     }
 }
