@@ -1,25 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WAFF.DataAccess.Contexts;
 using WAFF.DataAccess.Entity;
+using WAFF.Services.Admin;
 
 namespace WAFF.WebUI.Controllers
 {
     public class EventsController : Controller
     {
-        private EFDbContext db = new EFDbContext();
+        private readonly EFDbContext _db = new EFDbContext();
+        private readonly AdminService _adminService = new AdminService();
 
         // GET: Events
         public ActionResult Index()
         {
-            return View(db.Events.ToList());
+            return View(_db.Events.ToList());
         }
+
+        public ActionResult ManageEventFilms(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            var model = _adminService.GetAdminEventViewModelById(id);
+
+            return View(model);
+        }
+
+        public ActionResult EventManageList()
+        {
+            return View(_db.Events.ToList());
+        }
+
+        // GET: Events/Details/5
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Event @event = _db.Events.Find(id);
+        //    if (@event == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(@event);
+        //}
 
         // GET: Events/Create
         public ActionResult Create()
@@ -36,8 +64,8 @@ namespace WAFF.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Events.Add(@event);
-                db.SaveChanges();
+                _db.Events.Add(@event);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -51,7 +79,7 @@ namespace WAFF.WebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
+            Event @event = _db.Events.Find(id);
             if (@event == null)
             {
                 return HttpNotFound();
@@ -68,8 +96,8 @@ namespace WAFF.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(@event).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(@event).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(@event);
@@ -82,7 +110,7 @@ namespace WAFF.WebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
+            Event @event = _db.Events.Find(id);
             if (@event == null)
             {
                 return HttpNotFound();
@@ -95,9 +123,9 @@ namespace WAFF.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Event @event = db.Events.Find(id);
-            db.Events.Remove(@event);
-            db.SaveChanges();
+            Event @event = _db.Events.Find(id);
+            _db.Events.Remove(@event);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -105,7 +133,7 @@ namespace WAFF.WebUI.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

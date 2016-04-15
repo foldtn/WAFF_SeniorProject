@@ -140,7 +140,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\adminTools\AdminToolsContainer-compiled.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\adminTools\AdminToolsContainer-compiled.js" />
+    <Content Include="Scripts\adminTools\AdminToolsContainer.jsx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -244,6 +247,8 @@
     <Content Include="Views\Reports\getEducation.cshtml" />
     <Content Include="Views\Reports\getEthnicity.cshtml" />
     <Content Include="Views\Reports\GenerateVoters.cshtml" />
+    <Content Include="Views\Events\EventManageList.cshtml" />
+    <Content Include="Views\Events\ManageEventFilms.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -19,6 +19,17 @@ namespace WAFF.Services.Reports
     {
         private EFDbContext _db = new EFDbContext();
 
+        public void Test()
+        {
+            int eventId;
+
+            var now = DateTime.Now;
+
+            var resultingEvent = _db.Events.FirstOrDefault(x => x.EventStartDate <= now);
+
+            eventId = resultingEvent.EventID;
+        }
+
         public List<LeaderBoardEntry> LeaderBoards(int EventID)
         {
             // declare variables
@@ -405,7 +416,7 @@ namespace WAFF.Services.Reports
 
             return temp;
         } // End getIncomeCount
-        
+
         public IEnumerable<voterCount> GetIncomeChart(int eventID)
         {
             List<voterCount> results = new List<voterCount>();
