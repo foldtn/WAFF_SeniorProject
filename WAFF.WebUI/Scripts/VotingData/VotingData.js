@@ -98,5 +98,10 @@ function selectedFilm(film) {
     document.getElementById('film' + film).style.textDecoration = 'underline';
     document.getElementById('currentFilm').value = film;
 
+    if (document.getElementById('FilmInfoVotes' + film) != null)
+    {
+        document.getElementById('filmTotal').innerHTML = document.getElementById('FilmInfoVotes' + film).value;
+    }
+
     selectSlice(film);
 }

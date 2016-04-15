@@ -9,11 +9,12 @@
         <input type="hidden" id="@("FilmID" + count)" value="@block.FilmID" />
         <input type="hidden" id="@("FilmName" + count)" value="@block.FIlmName" />
         <input type="hidden" id="@("FilmVotes" + count)" value="@block.FilmVotes" />
-        
+        <input type="hidden" id="@("FilmInfoVotes" + block.FilmID)" value="@block.FilmVotes" />
+    
         total = total + @block.FilmVotes;
         count++;
     }
-    
+
     <input type="hidden" id="maxGraphCount" value="@count" />
     <input type="hidden" id="graphTotalVotes" value="@total" />
 }
