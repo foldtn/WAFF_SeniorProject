@@ -61,12 +61,19 @@ function drawChart() {
 
 function selectSlice(film) {
     var max = document.getElementById('maxGraphCount').value;
+    var count = 0;
 
     for (var x = 0; x < max; x++) {
         if(film == data.getValue(x,2))
         {
             chart.setSelection([{ row: x }]);
+            count++;
         }
+    }
+
+    if (count == 0)
+    {
+        chart.setSelection([]);
     }
 }
 
