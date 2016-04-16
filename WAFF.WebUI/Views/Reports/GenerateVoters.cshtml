@@ -4,5 +4,34 @@
     ViewBag.Title = "GenerateVoters";
 }
 
+<script type="text/javascript" src="~/Scripts/GenVoters/GenVoters.js"></script>
+
 <h2>GenerateVoters</h2>
-<br/><br/><br/>
+<hr/>
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-3">Enter Number of Votes:</label>
+        <input id="numOfVoters" class="col-md-2" list="NumberOfVoters" type="number" min="0" max="1000" step="25">
+        <datalist id="NumberOfVoters"></datalist>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-3">Number of Voters Created:</label>
+        <label id="subNumVoters" class="col-md-2">test</label>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-default" onclick="submit()">Create Voters</button>
+        </div>
+    </div>
+</div>
+
+<div style="display:none">
+    @Ajax.ActionLink("genVoters", "GenerateVoters", "Reports",
+    new AjaxOptions
+    {
+        OnSuccess = "submitted()"
+    },
+    new { id = "genVoters" })
+</div>

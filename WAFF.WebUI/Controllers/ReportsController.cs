@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using WAFF.Services.Reports;
 using WAFF.WebUI.Models;
+using WAFF.DataAccess.ViewModels;
 
 namespace WAFF.WebUI.Controllers
 {
@@ -142,7 +143,13 @@ namespace WAFF.WebUI.Controllers
         {
             var voters = _service.GetVoters();
 
-            return View();
+            return View(voters);
+        }
+
+        public void GenerateVoters(int numOfVoters, List<VoterIDs> voters)
+        {
+            _service.CreateVoters(numOfVoters, voters);
+
         }
     }
 }

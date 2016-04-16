@@ -520,6 +520,11 @@ namespace WAFF.Services.Reports
             var results = _db.Database.SqlQuery<VoterIDs>("GetVoterIDs").ToList();
 
             return results;
+        } // End GetVoters
+
+        public void CreateVoters(int numOfVoters, List<VoterIDs> currentVoterIDs)
+        {
+
         }
     } // End ReportService
 }

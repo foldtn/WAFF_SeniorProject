@@ -146,6 +146,7 @@
     <Content Include="Scripts\adminTools\AdminToolsContainer.jsx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\GenVoters\GenVoters.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Scripts\Demographics\Demographics.js" />
     <Content Include="Scripts\Demographics\pieCharts.js" />
