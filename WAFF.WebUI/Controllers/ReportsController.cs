@@ -141,15 +141,15 @@ namespace WAFF.WebUI.Controllers
 
         public ActionResult GenerateVoters()
         {
-            var voters = _service.GetVoters();
-
-            return View(voters);
+            return View();
         }
 
-        public void GenerateVoters(int numOfVoters, List<VoterIDs> voters)
+        
+        public void genVoters(int numOfVoters)
         {
-            _service.CreateVoters(numOfVoters, voters);
+            var voters = _service.GetVoters();
 
+            _service.CreateVoters(numOfVoters, voters);
         }
     }
 }

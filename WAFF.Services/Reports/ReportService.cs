@@ -522,9 +522,20 @@ namespace WAFF.Services.Reports
             return results;
         } // End GetVoters
 
-        public void CreateVoters(int numOfVoters, List<VoterIDs> currentVoterIDs)
+        public void CreateVoters(int numOfVoters, IEnumerable<VoterIDs> currentVoterIDs)
         {
+            var voter = new Voter();
+            voter.VoterID = 1021;
 
+            _db.Voters.Add(voter);
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     } // End ReportService
 }

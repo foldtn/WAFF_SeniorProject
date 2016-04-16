@@ -1,5 +1,4 @@
-﻿@model IEnumerable<WAFF.DataAccess.ViewModels.VoterIDs>
-
+﻿
 @{
     ViewBag.Title = "GenerateVoters";
 }
@@ -28,7 +27,7 @@
 </div>
 
 <div style="display:none">
-    @Ajax.ActionLink("genVoters", "GenerateVoters", "Reports",
+    @Ajax.ActionLink("genVoters", "genVoters", "Reports",
     new AjaxOptions
     {
         OnSuccess = "submitted()"
