@@ -4,33 +4,50 @@
     ViewBag.Title = "Event: Edit";
 }
 
-<div class="panel">
-    <div class="panel-heading">
-        <h3>Edit Event</h3>
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Block</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.EventID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EventStartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="date" id="EventStartDate" name="EventStartDate" />
+                @Html.ValidationMessageFor(model => model.EventStartDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EventEndDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="date" id="EventEndDate" name="EventEndDate" />
+                @Html.ValidationMessageFor(model => model.EventEndDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EventLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EventLocation)
+                @Html.ValidationMessageFor(model => model.EventLocation)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
     </div>
-    @using (Html.BeginForm())
-    {
-        @Html.HiddenFor(X => X.EventID)
-        @Html.AntiForgeryToken()
-        <div class="panel-body" style="margin-top:50px">
-            @Html.ValidationSummary(true)
-            @foreach (var property in ViewData.ModelMetadata.Properties)
-            {
-                if (property.PropertyName != "EventID")
-                {
-                    <div class="form-group">
-                        <label>@(property.DisplayName ?? property.PropertyName)</label>
-                        @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
-                        @Html.ValidationMessage(property.PropertyName)
-                    </div>
-                }
-            }
-        </div>
+}
 
-
-        <div class="panel-footer">
-            <input type="submit" value="Save" class="btn btn-primary" />
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
-        </div>
-    }
+<div>
+    @Html.ActionLink("Back to List", "Index")
 </div>
