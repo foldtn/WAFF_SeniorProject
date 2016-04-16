@@ -11,6 +11,7 @@ using WAFF.DataAccess.Entity;
 
 namespace WAFF.WebUI.Controllers
 {
+    [Authorize]
     public class BlocksController : Controller
     {
         private EFDbContext db = new EFDbContext();

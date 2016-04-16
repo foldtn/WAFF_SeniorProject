@@ -91,6 +91,7 @@
     <Compile Include="Entity\Film.cs" />
     <Compile Include="Entity\FilmArtist.cs" />
     <Compile Include="Entity\FilmBlock.cs" />
+    <Compile Include="Entity\User.cs" />
     <Compile Include="Entity\Vote.cs" />
     <Compile Include="Entity\Voter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

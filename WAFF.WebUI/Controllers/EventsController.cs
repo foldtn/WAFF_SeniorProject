@@ -8,6 +8,7 @@ using WAFF.Services.Admin;
 
 namespace WAFF.WebUI.Controllers
 {
+    [Authorize]
     public class EventsController : Controller
     {
         private readonly EFDbContext _db = new EFDbContext();

@@ -10,6 +10,7 @@ using WAFF.DataAccess.ViewModels;
 
 namespace WAFF.WebUI.Controllers
 {
+    [Authorize]
     public class ReportsController : Controller
     {
         // Create a ReportsService object to get information for Leaderboards

@@ -181,6 +181,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\ArtistsController.cs" />
     <Compile Include="Controllers\BlocksController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
@@ -250,6 +251,7 @@
     <Content Include="Views\Reports\GenerateVoters.cshtml" />
     <Content Include="Views\Events\EventManageList.cshtml" />
     <Content Include="Views\Events\ManageEventFilms.cshtml" />
+    <Content Include="Views\Accounts\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
