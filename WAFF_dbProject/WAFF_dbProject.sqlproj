@@ -66,6 +66,7 @@
     <Folder Include="dbo\Stored Procedures\Reports\Leader Board" />
     <Folder Include="dbo\Stored Procedures\Reports\Voting Data" />
     <Folder Include="dbo\Stored Procedures\Reports\Demographics" />
+    <Folder Include="dbo\Stored Procedures\Admin" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\tables\VOTERS.sql" />
@@ -95,6 +96,8 @@
     <Build Include="dbo\Stored Procedures\Reports\Demographics\getVoterEthnicityCount.sql" />
     <Build Include="dbo\Stored Procedures\GetEventBlocksFilmsDetail.sql" />
     <Build Include="dbo\Stored Procedures\Reports\GetVoterIDs.sql" />
+    <Build Include="dbo\Stored Procedures\Admin\GetBlockRemainingDurationByBlockId.sql" />
+    <Build Include="dbo\Stored Procedures\Admin\GetBlocksCurrentFilmsByBlockAndEvent.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="WAFF_dbProject.refactorlog" />

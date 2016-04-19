@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using WAFF.DataAccess.Contexts;
 using WAFF.DataAccess.Entity;
@@ -35,20 +36,37 @@ namespace WAFF.WebUI.Controllers
             return View(_db.Events.ToList());
         }
 
-        // GET: Events/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Event @event = _db.Events.Find(id);
-        //    if (@event == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(@event);
-        //}
+        public async Task<JsonResult> GetBlocksCurrentFilms(int blockId, int eventId)
+        {
+            var result = await _adminService.GetBlocksCurrentFilmsByBlockAndEvent(blockId, eventId);
+
+            var json = new JsonResult() { Data = result, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+
+            return json;
+        }
+
+        public async Task<JsonResult> GetBlockRemainingDuration(int blockId)
+        {
+            var result = await _adminService.GetBlockRemainingDuration(blockId);
+
+            var json = new JsonResult() {Data = result, JsonRequestBehavior = JsonRequestBehavior.AllowGet};
+
+            return json;
+        }
+
+        public int RemoveFilmFromBlock(int blockId, int filmId)
+        {
+            var result = _adminService.RemoveFilmFromBlock(blockId, filmId);
+
+            return result;
+        }
+
+        public int AddFilmToBlock(int blockId, int filmId)
+        {
+            var result = _adminService.AddFilmToBlock(blockId, filmId);
+
+            return result;
+        }
 
         // GET: Events/Create
         public ActionResult Create()
