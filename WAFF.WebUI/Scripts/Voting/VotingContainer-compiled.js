@@ -218,9 +218,9 @@
 
         render: function render() {
             //eager loaded data
-            var blocks = Blocks.Lists;
+            var model = VoteDetail.Model;
 
-            var blocksAndFilms = blocks.map(function (array, i) {
+            var blocksAndFilms = model.BlockViewModels.map(function (array, i) {
                 return React.createElement(Block, { films: array,
                     key: i,
                     blockId: array[0].BlockId });
@@ -235,6 +235,120 @@
                         backgroundColor: '#8a8a5c' } },
                 blocksAndFilms
             );
+        },
+        _renderDemoForm: function _renderDemoForm() {
+            //styles
+            var demoBox = {
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '50%',
+                flexDirection: 'column'
+                // border: 'solid 1px'
+            };
+
+            var inputBox = {
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '75%',
+                border: 'solid 1px'
+            };
+
+            return React.createElement(
+                'div',
+                { style: demoBox, id: 'demoSubmitBox' },
+                React.createElement(
+                    'div',
+                    { className: 'input-group', style: { padding: '5px', margin: '5px' } },
+                    React.createElement(
+                        'span',
+                        { className: 'input-group-addon', id: 'basic-addon3' },
+                        'Your Age:'
+                    ),
+                    React.createElement('input', { type: 'text', className: 'form-control', id: 'inputAge', 'aria-describedby': 'basic-addon3' })
+                ),
+                React.createElement(
+                    'div',
+                    { className: 'input-group', style: { padding: '5px', margin: '5px' } },
+                    React.createElement(
+                        'span',
+                        { className: 'input-group-addon', id: 'basic-addon3' },
+                        'Your Ethnicity: '
+                    ),
+                    React.createElement('input', { type: 'text', className: 'form-control', id: 'inputEthnicity', 'aria-describedby': 'basic-addon3' })
+                ),
+                React.createElement(
+                    'div',
+                    { className: 'input-group', style: { padding: '5px', margin: '5px' } },
+                    React.createElement(
+                        'span',
+                        { className: 'input-group-addon', id: 'basic-addon3' },
+                        'Your Education: '
+                    ),
+                    React.createElement('input', { type: 'text', className: 'form-control', id: 'inputEducation', 'aria-describedby': 'basic-addon3' })
+                ),
+                React.createElement(
+                    'div',
+                    { className: 'input-group', style: { padding: '5px', margin: '5px' } },
+                    React.createElement(
+                        'span',
+                        { className: 'input-group-addon', id: 'basic-addon3' },
+                        'Your Income: '
+                    ),
+                    React.createElement('input', { type: 'text', className: 'form-control', id: 'inputIncome', 'aria-describedby': 'basic-addon3' })
+                ),
+                React.createElement(
+                    'button',
+                    { type: 'button',
+                        onClick: this._onDemoSubmit,
+                        className: 'btn btn-lg btn-primary',
+                        style: { width: '30%', backgroundColor: '#0d0d0d' } },
+                    'Submit Info'
+                )
+            );
+        },
+
+        _onDemoSubmit: function _onDemoSubmit() {
+            var _this4 = this;
+
+            var voterAge = document.getElementById("inputAge").value;
+            var voterEthnicity = document.getElementById("inputEthnicity").value;
+            var voterEducation = document.getElementById("inputEducation").value;
+            var voterIncome = document.getElementById("inputIncome").value;
+
+            var voterInfo = {
+                VoterID: VoteDetail.Model.Voter.VoterID,
+                VoterAge: voterAge,
+                VoterEthnicity: voterEthnicity,
+                VoterEducation: voterEducation,
+                VoterIncome: voterIncome
+            };
+
+            $.ajax({
+                url: '/Vote/SubmitDemoInfo/',
+                type: 'POST',
+                data: voterInfo,
+                success: function success() {
+                    return _this4._greyOutDemoBlock();
+                },
+                error: function error() {
+                    return alert("error?");
+                }
+            });
+        },
+
+        _greyOutDemoBlock: function _greyOutDemoBlock() {
+            //demoSubmitBox
+            var thanks = "";
+
+            if (true) {
+                thanks = "<h1 class='text-center' style={{fontSize: '3rem'}}>Your info has been saved <br/>Thank You!</h1>";
+            } else thanks = "<h1 style={{fontSize: '4rem'}}>Thanks for submitting your info!</h1>";
+
+            var killThisBlock = document.getElementById("demoSubmitBox");
+
+            killThisBlock.innerHTML = thanks;
         }
     });
 })(window.React);

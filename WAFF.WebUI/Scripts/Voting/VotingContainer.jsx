@@ -188,16 +188,16 @@
 
         render(){
             //eager loaded data
-            var blocks = Blocks.Lists;
+            var model = VoteDetail.Model;
 
-            var blocksAndFilms = blocks.map((array, i) =>
+            var blocksAndFilms = model.BlockViewModels.map((array, i) =>
                 <Block films={array}
                        key={i}
                        blockId={array[0].BlockId}/>
             );
 
             return (
-                <div style= {{display:'flex',
+                <div style={{display:'flex',
                              justifyContent: 'center',
                              alignItems: 'center',
                              flexDirection: 'column',
@@ -205,6 +205,91 @@
 
                     {blocksAndFilms}
                 </div>)
+        },
+            _renderDemoForm(){
+                //styles
+                var demoBox = {
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: '50%',
+                    flexDirection: 'column'
+                    // border: 'solid 1px'
+                };
+
+                var inputBox = {
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: '75%',
+                    border: 'solid 1px'
+                };
+
+                return (
+                    <div style={demoBox} id="demoSubmitBox">
+                        <div className="input-group" style={{padding: '5px', margin: '5px'}}>
+                            <span className="input-group-addon" id="basic-addon3">Your Age:</span>
+                            <input type="text" className="form-control" id="inputAge" aria-describedby="basic-addon3" />
+                        </div>
+                        <div className="input-group" style={{padding: '5px', margin: '5px'}}>
+                            <span className="input-group-addon" id="basic-addon3">Your Ethnicity: </span>
+                            <input type="text" className="form-control" id="inputEthnicity" aria-describedby="basic-addon3" />
+                        </div>
+                        <div className="input-group" style={{padding: '5px', margin: '5px'}}>
+                            <span className="input-group-addon" id="basic-addon3">Your Education: </span>
+                            <input type="text" className="form-control" id="inputEducation" aria-describedby="basic-addon3" />
+                        </div>
+                        <div className="input-group" style={{padding: '5px', margin: '5px'}}>
+                            <span className="input-group-addon" id="basic-addon3">Your Income: </span>
+                            <input type="text" className="form-control" id="inputIncome" aria-describedby="basic-addon3" />
+                        </div>
+                        <button type="button"
+                                onClick={this._onDemoSubmit}
+                                className="btn btn-lg btn-primary"
+                                style={{width:'30%',backgroundColor:'#0d0d0d'}}>
+                            Submit Info
+                        </button>
+                    </div>
+
+                )
+            },
+
+            _onDemoSubmit(){
+                var voterAge = document.getElementById("inputAge").value;
+                var voterEthnicity = document.getElementById("inputEthnicity").value;
+                var voterEducation = document.getElementById("inputEducation").value;
+                var voterIncome = document.getElementById("inputIncome").value;
+
+                var voterInfo = {
+                    VoterID: VoteDetail.Model.Voter.VoterID,
+                    VoterAge: voterAge,
+                    VoterEthnicity: voterEthnicity,
+                    VoterEducation: voterEducation,
+                    VoterIncome: voterIncome
+                };
+
+                $.ajax({
+                    url: '/Vote/SubmitDemoInfo/',
+                    type: 'POST',
+                    data: voterInfo,
+                    success:() => this._greyOutDemoBlock(),
+                    error:() => alert("error?")
+                })
+            },
+
+            _greyOutDemoBlock() {
+                //demoSubmitBox
+                var thanks = "";
+
+                if(true){
+                    thanks = "<h1 class='text-center' style={{fontSize: '3rem'}}>Your info has been saved <br/>Thank You!</h1>"
+                } else  (
+                    thanks = "<h1 style={{fontSize: '4rem'}}>Thanks for submitting your info!</h1>"
+                );
+
+                var killThisBlock = document.getElementById("demoSubmitBox");
+
+                killThisBlock.innerHTML = thanks;
         }
     });
 

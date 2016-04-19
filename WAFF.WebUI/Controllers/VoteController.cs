@@ -24,6 +24,8 @@ namespace WAFF.WebUI.Controllers
             if (!isLegitVoter)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
+            var voterEntity = _service.GetVoterInfoById(id);
+
             var currentDate = DateTime.Now;
            
             var results = _service.GetAllBlocksForEventsAsync(currentDate);
@@ -42,7 +44,13 @@ namespace WAFF.WebUI.Controllers
                 BlockEnd = x.BlockEnd
             }).Where(y => y.BlockId == i).ToList()));
 
-            return View(listOfLists);
+            var model = new EventVoteViewModel
+            {
+                BlockViewModels = listOfLists,
+                Voter = voterEntity
+            };
+
+            return View(model);
         }
 
         [HttpPost]
@@ -51,6 +59,10 @@ namespace WAFF.WebUI.Controllers
             return _service.SaveVote(vote);
         }
 
+        public int SubmitDemoInfo(Voter voterInfo)
+        {
+            return _service.SaveVoterInfo(voterInfo);
+        }
        
     }
 }
