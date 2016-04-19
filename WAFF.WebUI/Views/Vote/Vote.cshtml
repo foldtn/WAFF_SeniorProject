@@ -8,8 +8,8 @@
 
 </div>
 
-@section voting {
-    @Scripts.Render("~/Scripts/voting")
+@section scripts {
+    @Scripts.Render("~/scripts/voting") 
     <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
 
     <script type="text/javascript">
@@ -20,7 +20,7 @@
         (function() {
 
             React.render(React.createElement(VotingContainer, {}), document.getElementById("voting-mount"));
-        })();
+         })();
     </script>
 }
     

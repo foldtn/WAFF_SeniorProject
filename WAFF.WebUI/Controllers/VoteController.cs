@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Web;
+using System.Net;
 using System.Web.Mvc;
 using WAFF.DataAccess.Entity;
 using WAFF.DataAccess.ViewModels.Voting;
@@ -18,6 +19,11 @@ namespace WAFF.WebUI.Controllers
         [HttpGet]
         public ActionResult Vote(int id)
         {
+            var isLegitVoter = _service.CheckIfVoterExistsById(id);
+
+            if (!isLegitVoter)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
             var voterEntity = _service.GetVoterInfoById(id);
 
             if (voterEntity == null)
@@ -26,7 +32,7 @@ namespace WAFF.WebUI.Controllers
             }
 
             var currentDate = DateTime.Now;
-
+           
             var results = _service.GetAllBlocksForEventsAsync(currentDate);
 
             var blockIdArray = results.Select(x => x.BlockId).Distinct().ToList();

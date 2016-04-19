@@ -64,6 +64,11 @@ namespace WAFF.Services.Votes
             return tempList;*/
         }
 
+        public bool CheckIfVoterExistsById(int id)
+        {
+            return _db.Voters.Any(x => x.VoterID == id);
+        }
+
         public Voter GetVoterInfoById(int id)
         {
             var result = _db.Voters.Find(id);
