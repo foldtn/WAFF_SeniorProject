@@ -91,28 +91,27 @@ namespace WAFF.Services.Votes
             return _db.Voters.Any(x => x.VoterID == id);
         }
 
-        public Voter GetVoterInfoById(int id)
-        {
-            var result = _db.Voters.Find(id);
+        //public Voter GetVoterInfoById(int id)
+        //{
+        //    var result = _db.Voters.Find(id);
 
-            return result;
-        }
+        //    return result;
+        //}
 
 
-        public int SaveVoterInfo(Voter voterInfo)
-        {
-            var voter = _db.Voters.Find(voterInfo.VoterID);
+        //public int SaveVoterInfo(Voter voterInfo)
+        //{
+        //    var voter = _db.Voters.Find(voterInfo.VoterID);
 
-            voter.VoterAge = voterInfo.VoterAge;
-            voter.VoterEducation = voterInfo.VoterEducation;
-            voter.VoterEthnicity = voterInfo.VoterEthnicity;
-            voter.VoterIncome = voterInfo.VoterIncome;
+        //    voter.VoterAge = voterInfo.VoterAge;
+        //    voter.VoterEducation = voterInfo.VoterEducation;
+        //    voter.VoterEthnicity = voterInfo.VoterEthnicity;
+        //    voter.VoterIncome = voterInfo.VoterIncome;
 
-            voter.VoterFirstTimer = false;
+        //    voter.VoterFirstTimer = false;
 
-            _db.SaveChanges();
+        //    _db.SaveChanges();
 
-            return 1;
+            //return 1;
         }
     }
-}
