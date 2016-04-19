@@ -105,5 +105,6 @@
     <None Include="Scripts\seedJohn.sql" />
     <None Include="Scripts\demoTimmy.sql" />
     <None Include="WAFF_dbProject.local.publish.xml" />
+    <None Include="Scripts\seedVoterDemo.sql" />
   </ItemGroup>
 </Project>

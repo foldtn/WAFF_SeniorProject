@@ -252,6 +252,7 @@
     <Content Include="Views\Events\EventManageList.cshtml" />
     <Content Include="Views\Events\ManageEventFilms.cshtml" />
     <Content Include="Views\Accounts\Login.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

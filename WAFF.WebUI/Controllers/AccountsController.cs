@@ -43,11 +43,11 @@ namespace WAFF.WebUI.Controllers
                             return RedirectToAction("Index", "Home");
                         }
                     }
+                    else
+                    {
+                        ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                    }
                 }
-            }
-            else
-            {
-                ModelState.AddModelError("", "The user name or password provided is incorrect.");
             }
 
             return View(model);
