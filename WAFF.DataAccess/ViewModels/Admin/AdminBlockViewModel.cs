@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WAFF.DataAccess.ViewModels.Admin
 {
@@ -12,12 +13,18 @@ namespace WAFF.DataAccess.ViewModels.Admin
 
         public DateTime BlockEnd { get; set; }
 
-        public string BlockStartString{get{ return BlockStart.DayOfWeek + " - " + BlockStart.ToShortTimeString();}}
+        public string BlockStartString { get { return BlockStart.DayOfWeek + " - " + BlockStart.ToShortTimeString(); } }
 
-        public string BlockEndString{get{ return BlockEnd.DayOfWeek + " - " + BlockEnd.ToShortTimeString();}}
+        public string BlockEndString { get { return BlockEnd.DayOfWeek + " - " + BlockEnd.ToShortTimeString(); } }
 
-        public int Duration { get { var duration = BlockEnd - BlockStart;
-        return (int) duration.TotalMinutes; }}
+        public int Duration
+        {
+            get
+            {
+                var duration = BlockEnd - BlockStart;
+                return (int)duration.TotalMinutes;
+            }
+        }
 
         public string BlockLocation { get; set; }
 

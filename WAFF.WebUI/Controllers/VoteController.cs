@@ -18,9 +18,17 @@ namespace WAFF.WebUI.Controllers
         [HttpGet]
         public ActionResult Vote(int id)
         {
+            var voterEntity = _service.GetVoterInfoById(id);
+
+            if (voterEntity == null)
+            {
+                return View();
+            }
+
             var currentDate = DateTime.Now;
-           
+
             var results = _service.GetAllBlocksForEventsAsync(currentDate);
+
             var blockIdArray = results.Select(x => x.BlockId).Distinct().ToList();
 
             var listOfLists = new List<List<FilmVoteViewModel>>() { };
@@ -36,7 +44,13 @@ namespace WAFF.WebUI.Controllers
                 BlockEnd = x.BlockEnd
             }).Where(y => y.BlockId == i).ToList()));
 
-            return View(listOfLists);
+            var model = new EventVoteViewModel
+            {
+                BlockViewModels = listOfLists,
+                Voter = voterEntity
+            };
+
+            return View(model);
         }
 
         [HttpPost]
@@ -45,7 +59,10 @@ namespace WAFF.WebUI.Controllers
             return _service.SaveVote(vote);
         }
 
-       
+        public int SubmitDemoInfo(Voter voterInfo)
+        {
+            return _service.SaveVoterInfo(voterInfo);
+        }
     }
 }
 
