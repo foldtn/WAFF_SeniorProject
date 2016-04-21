@@ -64,8 +64,22 @@ namespace WAFF.Services.Mobile
         public int FilmId { get; set; }
 
         public DateTime EventStartDate { get; set; }
+        public string EventStartDateString 
+        {
+            get
+            { 
+                return EventStartDate.ToShortDateString(); 
+            }//end get
+        }//end EventStartDateString
 
         public DateTime EventEndDate { get; set; }
+        public string EventEndDateString
+        {
+            get
+            {
+                return EventEndDate.ToShortDateString();
+            }//end get
+        }//end EventEndDateString
 
         public int BlockId { get; set; }
 
@@ -82,8 +96,22 @@ namespace WAFF.Services.Mobile
         public string BlockType { get; set; }
 
         public DateTime BlockStart { get; set; }
+        public string BlockStartString
+        {
+            get
+            {
+                return BlockStart.ToShortDateString();
+            }//end get
+        }//end BlockStartString
 
         public DateTime BlockEnd { get; set; }
+        public string BlockEndString
+        {
+            get
+            {
+                return BlockEnd.ToShortDateString();
+            }//end get
+        }//end BlockEndString
 
         public string BlockLocation { get; set; }
 
