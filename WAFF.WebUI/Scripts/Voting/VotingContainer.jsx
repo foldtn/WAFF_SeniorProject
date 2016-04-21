@@ -203,6 +203,12 @@
                              flexDirection: 'column',
                              backgroundColor:'#8a8a5c'}}>
 
+                    {model.Voter.VoterFirstTimer ?
+                    this._renderDemoForm()
+                    :
+                        <div></div>
+                    }
+
                     {blocksAndFilms}
                 </div>)
         },
