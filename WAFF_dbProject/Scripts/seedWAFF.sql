@@ -73,13 +73,13 @@ INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
 VALUES ('The Music is Moving', 'Student', 'A look at the visual side of music', 5)
 
 INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
-VALUES ('Ability: Journey with Rachel', 'Documentory', 'Follow the life of an extraordinary teen', 20)
+VALUES ('Ability: Journey with Rachel', 'Documentary', 'Follow the life of an extraordinary teen', 20)
 
 INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
 VALUES ('The Sad Snow Man', 'New Media', 'This simple story is about a boy who makes a snowman’s dream a reality.', 5)
 
 INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
-VALUES ('The Great Codesby', 'Documentory', 'Dummy film 7', 7)
+VALUES ('The Great Codesby', 'Documentary', 'Dummy film 7', 7)
 
 INSERT INTO [FILMS] (FilmName, FilmGenre, FilmDesc, FilmLength)
 VALUES ('Coding 101', 'Student', 'Dummy film 8', 4)
