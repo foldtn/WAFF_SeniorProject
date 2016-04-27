@@ -25,6 +25,7 @@
                 <div style={filmContain}>
                     <div style={filmInfoDiv}>Name:{this.props.filmName}</div>
                     <div style={filmInfoDiv}>Duration:{this.props.filmDuration}</div>
+                    
                     <div>
                         <button type="button"
                                 onClick={this._removeFilmFromBlock.bind(null, this.props.filmId)}
@@ -35,6 +36,8 @@
                     </div>
                 </div>
             )
+
+            
         },
 
         _removeFilmFromBlock(filmId){

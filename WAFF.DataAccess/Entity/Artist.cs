@@ -27,7 +27,7 @@ namespace WAFF.DataAccess.Entity
         [DisplayName("State")]
         public string ArtistState { get; set; }
         [DisplayName("Zip Code")]
-        public int ArtistZip { get; set; }
+        public int? ArtistZip { get; set; }
         [DisplayName("Phone")]
         public string ArtistPhone { get; set; }
     }
