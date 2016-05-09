@@ -21,6 +21,8 @@ namespace WAFF.DataAccess.Entity
 
         public bool VoterFirstTimer { get; set; }
 
+        public int EventID { get; set; }
+
         //public bool VoterFirstTimer { get; set; }
 
     }
